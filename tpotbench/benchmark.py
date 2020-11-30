@@ -15,14 +15,11 @@ from typing import (
 from slurmjobmanager import SlurmEnvironment
 from slurmjobmanager.job import Job
 
-from bench_config import default_config, BenchmarkConfig
-from jobs import SingleAlgorithmJob, BaselineJob, SelectorJob, TPOTJob
+from .jobs import SingleAlgorithmJob, BaselineJob, SelectorJob, TPOTJob
 
 cdir = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
 runner_dir = os.path.join(cdir, 'runners')
-single_algorithm_runner = os.path.join(runner_dir, 'single_algorithm_runner.py')
-baseline_runner = os.path.join(runner_dir, 'baseline_runner.py')
-selector_runner = os.path.join(runner_dir, 'selector_runner.py')
+default_config_template = os.path.join(cdir, 'template_config.json')
 
 class Benchmark:
     """ #TODO """
@@ -39,37 +36,59 @@ class Benchmark:
         'in_progress': lambda job: job.in_progress(),
     }
 
+    runners = {
+        'single_algorithm_runner' : os.path.join(runner_dir,
+                                                 'single_algorithm_runner.py'),
+        'baseline_runner' : os.path.join(runner_dir, 'baseline_runner.py'),
+        'selector_runner' : os.path.join(runner_dir, 'selector_runner.py'),
+    }
+
     def __init__(
         self,
-        config: Optional[BenchmarkConfig] = None
+        config_path: Optional[str] = None,
+        username: Optional[str] = None,
+        saveto: Optional[str] = None,
     ) -> None:
-        if config is None:
-            config = default_config
+        """
+        Params
+        ======
+        config_path : str
+            path to the config to load
+            Warning, does not do a config check, may result in delayed errors
+        """
+        assert config_path or (username and saveto), \
+            'must specify either a config or at least username and saveto'
+
+        config : Dict[str, Any] = {}
+
+        # User specified config
+        if config_path:
+            template : Dict[str, Any] = {}
+            user_config : Dict[str, Any] = {}
+
+            with open(default_config_template) as default_template:
+                template = json.load(default_template)
+
+            with open(config_path, 'r') as config_file:
+                user_config = json.load(config_file)
+
+            config = {**template, **user_config}
+
+        # Default config template
+        else:
+            config_path = default_config_template
+            with open(config_path, 'r') as config_file:
+                config = json.load(config_file)
+                config['username'] = username
+                config['dir'] = saveto
+
+
 
         self.env = SlurmEnvironment(config['username'])
         self.config = config
         self.folders : Dict[str, str] = {
             'root': os.path.abspath(os.path.join(config['dir'], config['id']))
         }
-
-    @staticmethod
-    def from_json(config_path: str) -> Benchmark:
-        """
-        Create a Benchmark from a path to a json config file
-
-        Params
-        ======
-        config_path: str
-            path to the json config file
-
-        Returns
-        =======
-        Benchmark
-            A benchmark object based on the config parsed
-        """
-        with open(config_path, 'r') as config_file:
-            config = json.load(config_file)
-            return Benchmark(config)
 
     def create(self) -> None:
         """ Create the folders required for the benchmark """
@@ -130,10 +149,11 @@ class Benchmark:
         tasks = config['openml_tasks']
         splits = config['data_splits']
         algorithms = config['algorithms']
+        runner = Benchmark.runners['single_algorithm_runner']
 
         return [
             SingleAlgorithmJob(self.env, seed, times, task, root, split, algo,
-                               single_algorithm_runner)
+                               runner)
             for seed, task, split, algo
             in product(seeds, tasks, splits, algorithms)
         ]
@@ -153,6 +173,7 @@ class Benchmark:
         times = config['times_in_mins']
         tasks = config['openml_tasks']
         splits = config['data_splits']
+        runner = Benchmark.runners['baseline_runner']
 
         # Scale up times to enable fair compute resource comparisons
         # and reduce to unique times
@@ -166,7 +187,7 @@ class Benchmark:
 
         return [
             BaselineJob(self.env, seed, list(baseline_times), task, root, split,
-                        baseline_runner)
+                        runner)
             for seed, task, split
             in product(seeds, tasks, splits)
         ]
@@ -199,6 +220,24 @@ class Benchmark:
         self,
         selector_config: Mapping[str, Any]
     ) -> List[SelectorJob]:
+        """
+        Returns selector jobs for type "all" which use
+        `all` single algorithms in its seleciton training and prediction
+
+        Params
+        ======
+        selector_config: Mapping[str, Any]
+            Config of selector
+            {
+                "name": "name id for job",
+                "type": "all"
+            },
+
+        Returns
+        =======
+        List[SelectorJob]
+            The list of selector jobs that will use all algorithms
+        """
         config = self.config
         root = self.folders['root']
 
@@ -207,6 +246,9 @@ class Benchmark:
         tasks = config['openml_tasks']
         splits = config['data_splits']
         algorithms = config['algorithms']
+
+        single_algorithm_runner = Benchmark.runners['single_algorithm_runner']
+        selector_runner = Benchmark.runners['selector_runner']
 
         selector_name = selector_config['name']
 
@@ -230,14 +272,14 @@ class Benchmark:
         self,
         selector_config: Mapping[str, Any],
     ) -> List[SelectorJob]:
-        # TODO
+        """ #TODO """
         return []
 
     def selector_jobs_n_least_overlapping(
         self,
         selector_config: Mapping[str, Any],
     ) -> List[SelectorJob]:
-        # TODO
+        """ # TODO """
         return []
 
     def selector_jobs_n_most_coverage(
@@ -251,6 +293,34 @@ class Benchmark:
         self,
         selector_config: Mapping[str, Any],
     ) -> List[SelectorJob]:
+        """
+        Returns the list of SelectorJob's that will use `n` random single
+        algorithms in its training and prediction.
+
+        Will
+
+        Params
+        ======
+        selector_config: Mapping[str, Any]
+            The config to base off of,
+                'n': amount of algorithms to choose randomly
+                'selection_seeds': the different seeds to use when randomly
+                                    selecting algorithms. Creates one job for
+                                    every seed.
+
+            Example:
+            {
+                "name": "myID",
+                "type": "n_random_selection",
+                "n": 4,
+                "selection_seeds": [1,2,3]
+            }
+
+        Returns
+        =======
+        List[SelectorJob]
+            The list of selector jobs that will use `n` random algorithms.
+        """
         config = self.config
         root = self.folders['root']
 
@@ -259,6 +329,9 @@ class Benchmark:
         tasks = config['openml_tasks']
         splits = config['data_splits']
         algorithms = config['algorithms']
+
+        single_algorithm_runner = Benchmark.runners['single_algorithm_runner']
+        selector_runner = Benchmark.runners['selector_runner']
 
         n_algorithms = selector_config['n']
         selection_seeds = selector_config['selection_seeds']

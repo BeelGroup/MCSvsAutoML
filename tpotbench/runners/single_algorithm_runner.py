@@ -5,7 +5,7 @@ import json
 import numpy as np
 from tpot import TPOTClassifier
 
-from util import get_task_splits
+from .util import get_task_splits
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -27,6 +27,7 @@ if __name__ == "__main__":
 
     data_splits = get_task_splits(task_id, seed, splits)
     X_train, y_train = data_splits['algo_train']
+    select_X_train, selector_y_train = data_splits['selector_train']
     X_test, y_test = data_splits['test']
 
     tpot = TPOTClassifier(**tpot_params)

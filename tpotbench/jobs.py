@@ -10,7 +10,7 @@ from typing import Iterable, Tuple, Dict, List, Union, Any, Mapping, Literal
 from tpot.config import classifier_config_dict
 from slurmjobmanager import SlurmJob, SlurmEnvironment
 
-from custom_json_encoder import CustomEncoder
+from .custom_json_encoder import CustomEncoder
 
 #pylint: disable=too-many-instance-attributes
 class TPOTJob(SlurmJob):
