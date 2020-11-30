@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     data_splits = get_task_splits(task_id, seed, splits)
     X_train, y_train = data_splits['algo_train']
-    select_X_train, selector_y_train = data_splits['selector_train']
+    selector_X_train, selector_y_train = data_splits['selector_train']
     X_test, y_test = data_splits['test']
 
     tpot = TPOTClassifier(**tpot_params)
@@ -36,18 +36,39 @@ if __name__ == "__main__":
 
         tpot.fit(X_train, y_train)
 
-        classifications = tpot.predict(X_test)
-        classification_path = os.path.join(
+        # Save classficiations for test data
+        test_classifications = tpot.predict(X_test)
+        test_classification_path = os.path.join(
             folders['classifications'], f'classifications_{time}.npy'
         )
-        np.save(classification_path, classifications)
+        np.save(test_classification_path, test_classifications)
+
+        # Save classificaitons for selector training
+        selector_training_classifications = tpot.predict(selector_X_train)
+        selector_training_classification_path = os.path.join(
+            folders['selector_training_classifications'],
+            f'selector_training_classifications_{time}.npy'
+        )
+        np.save(selector_training_classification_path,
+                selector_training_classifications)
 
         try:
+            # Save predictions for test data
             predictions = tpot.predict_proba(X_test)
             prediction_path = os.path.join(
                 folders['predictions'], f'predictions_{time}.npy'
             )
             np.save(prediction_path, predictions)
+
+            # Save predictions for selector training
+            selector_training_predictions = tpot.predict_proba(selector_X_train)
+            selector_training_prediction_path = os.path.join(
+                folders['selector_training_predictions'], 
+                f'selector_training_predictions_{time}.npy'
+            )
+            np.save(selector_training_prediction_path, 
+                    selector_training_predictions)
+
         except RuntimeError as err:
             print('\n\n Probably could not use predict_proba \n\n')
             print(err)
