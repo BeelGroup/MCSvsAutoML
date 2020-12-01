@@ -5,7 +5,7 @@ import json
 import numpy as np
 from tpot import TPOTClassifier
 
-from .util import get_task_splits
+from util import get_task_splits
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
