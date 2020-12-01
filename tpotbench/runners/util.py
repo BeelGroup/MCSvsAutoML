@@ -71,5 +71,16 @@ def get_task_splits(task_id, seed, splits):
             'test': train_test_splits['split_2']
         }
 
-
-
+def instance_wise_algorithm_correct_vectors(
+    classification_files_by_time,
+    time,
+    y
+):
+    classification_files = classification_files_by_time[str(time)].values()
+    classifications = [np.load(file) for file in classification_files]
+    algorithm_wise_correct = [
+        np.equal(algo_classifications, y).astype(int)
+        for algo_classifications in classifications
+    ]
+    instance_wise_correct = np.transpose(np.asarray(algorithm_wise_correct))
+    return instance_wise_correct

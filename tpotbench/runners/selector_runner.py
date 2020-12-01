@@ -5,7 +5,7 @@ import json
 import numpy as np
 from tpot import TPOTClassifier
 
-from util import get_task_splits
+from util import get_task_splits, instance_wise_algorithm_correct_vectors
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -26,17 +26,47 @@ if __name__ == "__main__":
     tpot_params = config['tpot_params']
     algorithms = config['algorithms']
 
+    # Get the training and test data splits
     data_splits = get_task_splits(task_id, seed, splits)
-
-    # We have to get the predictions of the algorithm
     selector_X_train, selector_y_train = data_splits['selector_train']
     X_test, y_test = data_splits['test']
+
+    training_classifications_by_time = algorithms['selector_training_classifications']
+    testing_classifications_by_time = algorithms['test_classifications']
 
     tpot = TPOTClassifier(**tpot_params)
 
     for time in times:
 
-        tpot.fit(X_train, y_train)
+        # Get the instance wise algorithm correct vectors
+        # These are a row of (1) or (0) depending on if the algorithm
+        # correctly classified the instance.
+        train_correct_vectors = instance_wise_algorithm_correct_vectors(
+            training_classifications_by_time, time, selector_y_train
+        )
+        test_correct_vectors = instance_wise_algorithm_correct_vectors(
+            testing_classifications_by_time, time, y_test
+        )
+
+        # TPOT can be 'hackily' `refit` such that it keeps the same genetic
+        # population but resets the scores for each found model.
+        # This is needed as the algorithms that give the predictions could
+        # change at each timestep so keeping the previous selector model might
+        # not be ideal. Ideally the models in the pool are suited for selection
+        # and the rescoring should help identify good candidates.
+        #
+        # Hack for refit:
+        # https://github.com/EpistasisLab/tpot/issues/881#issuecomment-504421537
+        # ========
+        for ind in tpot._pop:
+            del ind.fitness.values
+
+        tpot._last_optimized_pareto_front = None
+        tpot._last_optimized_pareto_front_n_gens = None
+        tpot._pareto_front = None
+        # ========
+
+        tpot.fit(selector_X_train, train_correct_vectors)
 
         classifications = tpot.predict(X_test)
         classification_path = os.path.join(
@@ -55,8 +85,10 @@ if __name__ == "__main__":
             print(err)
             print('\n\n')
 
-        print(f'\n\nTrain Score: {tpot.score(X_train, y_train)=}\n\n')
-        print(f'\n\nTest Score: {tpot.score(X_test, y_test)=}\n\n')
+        train_score = tpot.score(selector_X_train, train_correct_vectors)
+        test_score = tpot.score(X_test, test_correct_vectors)
+        print(f'\n\nTrain Score: {train_score}\n\n')
+        print(f'\n\nTest Score: {test_score}\n\n')
 
         export_path = os.path.join(
             folders['exports'], f'export_{time}.py'
