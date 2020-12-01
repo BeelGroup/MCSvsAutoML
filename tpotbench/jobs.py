@@ -443,16 +443,19 @@ class SelectorJob(TPOTJob):
             'files': self.files,
             'tpot_params': self.default_tpot_params(),
             'algorithms': {
-                algo.name() : {
-                    'test_classifications': {
-                        time : algo.classification_path(time)
-                        for time in algo.times
-                    },
-                    'selector_training_classifications': {
-                        time : algo.selector_training_classification_path(time)
-                        for time in algo.times
+                'selector_training_classifications' : {
+                    time : {
+                        algo.name() : algo.selector_training_classification_path(time)
+                        for algo in self.single_algorithms
                     }
+                    for time in self.times
+                },
+                'test_classifications' : {
+                    time : {
+                        algo.name() : algo.selector_training_classification_path(time)
+                        for algo in self.single_algorithms
+                    }
+                    for time in self.times
                 }
-                for algo in self.single_algorithms
             }
         }
