@@ -55,15 +55,23 @@ if __name__ == "__main__":
         # not be ideal. Ideally the models in the pool are suited for selection
         # and the rescoring should help identify good candidates.
         #
-        # Hack for refit:
+        # Modified hack for refit:
         # https://github.com/EpistasisLab/tpot/issues/881#issuecomment-504421537
+        #
+        # Modified not to set anything if it doesn't exists
         # ========
-        for ind in tpot._pop:
-            del ind.fitness.values
+        if hasattr(tpot, '._pop'):
+            for ind in tpot._pop:
+                del ind.fitness.values
 
-        tpot._last_optimized_pareto_front = None
-        tpot._last_optimized_pareto_front_n_gens = None
-        tpot._pareto_front = None
+        if hasattr(tpot, '._last_optimized_pareto_front'):
+            tpot._last_optimized_pareto_front = None
+
+        if hasattr(tpot, '._last_optimized_pareto_front_n_gens'):
+            tpot._last_optimized_pareto_front_n_gens = None
+
+        if hasattr(tpot, '._pareto_front'):
+            tpot._pareto_front = None
         # ========
 
         tpot.fit(selector_X_train, train_correct_vectors)

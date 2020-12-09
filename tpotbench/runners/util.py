@@ -1,5 +1,6 @@
 import pandas
 import openml
+import numpy as np
 
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import ShuffleSplit

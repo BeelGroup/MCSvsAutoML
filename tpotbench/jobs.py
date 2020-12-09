@@ -452,7 +452,7 @@ class SelectorJob(TPOTJob):
                 },
                 'test_classifications' : {
                     time : {
-                        algo.name() : algo.selector_training_classification_path(time)
+                        algo.name() : algo.classification_path(time)
                         for algo in self.single_algorithms
                     }
                     for time in self.times

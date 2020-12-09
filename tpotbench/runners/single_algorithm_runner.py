@@ -63,10 +63,10 @@ if __name__ == "__main__":
             # Save predictions for selector training
             selector_training_predictions = tpot.predict_proba(selector_X_train)
             selector_training_prediction_path = os.path.join(
-                folders['selector_training_predictions'], 
+                folders['selector_training_predictions'],
                 f'selector_training_predictions_{time}.npy'
             )
-            np.save(selector_training_prediction_path, 
+            np.save(selector_training_prediction_path,
                     selector_training_predictions)
 
         except RuntimeError as err:
