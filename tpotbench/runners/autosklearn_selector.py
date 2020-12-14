@@ -15,12 +15,12 @@ if __name__ == "__main__":
 
     seed = config['seed']
     times = config['times']
+    files = config['files']
     splits = config['splits']
     folders = config['folders']
-    files = config['files']
-    task_id = config['openml_task_id']
-    autosklearn_params = config['tpot_params']
     algorithms = config['algorithms']
+    task_id = config['openml_task_id']
+    autosklearn_params = config['autosklearn_params']
 
     # Get the training and test data splits
     data_splits = get_task_splits(task_id, seed, splits)
@@ -30,9 +30,10 @@ if __name__ == "__main__":
     training_classifications_by_time = algorithms['selector_training_classifications']
     testing_classifications_by_time = algorithms['test_classifications']
 
-    automodel = AutuoSklearn2Classifier(**autosklearn_params)
-
     for time in times:
+
+        # Create a new automodel that will be trained
+        automodel = AutoSklearn2Classifier(**autosklearn_params)
 
         # Get the instance wise algorithm correct vectors
         # These are a row of (1) or (0) depending on if the algorithm
@@ -49,21 +50,23 @@ if __name__ == "__main__":
         automodel.fit(selector_X_train, train_correct_vectors,
                       X_test=X_test, y_test=test_correct_vectors)
 
+        # Generate training and test classifications
         train_classifications = automodel.predict(selector_X_train)
-        classifications = automodel.predict(X_test)
+        train_score = accuracy_score(classifications, train_correct_vectors)
+        print(f'\n\nTrain Score: {train_score}\n\n')
+
+        test_classifications = automodel.predict(X_test)
+        test_score = accuracy_score(test_classifications, test_correct_vectors)
+        print(f'\n\nTest Score: {test_score}\n\n')
+
+        # Save the classifications and predictions
         classification_path = os.path.join(
             folders['classifications'], f'classifications_{time}.npy'
         )
-        np.save(classification_path, classifications)
+        np.save(classification_path, test_classifications)
 
-        predictions = automodel.predict_proba(X_test)
+        test_predictions = automodel.predict_proba(X_test)
         prediction_path = os.path.join(
             folders['predictions'], f'predictions_{time}.npy'
         )
-        np.save(prediction_path, predictions)
-
-        train_score = accuracy_score(classifications, train_correct_vectors)
-        train_score = tpot.score(train_classifications, test_correct_vectors)
-        test_score = tpot.score(classifications, test_correct_vectors)
-        print(f'\n\nTrain Score: {train_score}\n\n')
-        print(f'\n\nTest Score: {test_score}\n\n')
+        np.save(prediction_path, test_predictions)
