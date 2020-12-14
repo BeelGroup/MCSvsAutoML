@@ -426,6 +426,12 @@ class SelectorJob(TPOTJob):
         self.single_algorithms = single_algorithms
         super().__init__(env, seed, openml_task_id, times, benchdir, splits,
                          runner_path)
+        self.folders['autosklearn_tmp'] = os.path.join(
+            self.folders['root'], 'autosklearn_tmp'
+        )
+        self.folders['autosklearn_output'] = os.path.join(
+            self.folders['root'], 'autosklearn_output'
+        )
 
     def name(self) -> str:
         return f's{self.selector_name}_s{self.seed}_t{self.openml_task_id}'
@@ -441,7 +447,13 @@ class SelectorJob(TPOTJob):
             'splits': self.splits,
             'folders': self.folders,
             'files': self.files,
-            'tpot_params': self.default_tpot_params(),
+            'autosklearn_params': {
+                'time_left_for_this_task': 2*60*60,
+                'seed': self.seed,
+                'tmp_folder': self.folders['autosklearn_tmp'],
+                'output_folder': self.folders['autosklearn_output'],
+                'n_jobs': 4,
+            },
             'algorithms': {
                 'selector_training_classifications' : {
                     time : {
