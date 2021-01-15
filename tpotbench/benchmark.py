@@ -40,7 +40,7 @@ class Benchmark:
         'single_algorithm_runner' : os.path.join(runner_dir,
                                                  'single_algorithm_runner.py'),
         'baseline_runner' : os.path.join(runner_dir, 'baseline_runner.py'),
-        'selector_runner' : os.path.join(runner_dir, 'selector_runner.py'),
+        'selector_runner' : os.path.join(runner_dir, 'autosklearn_selector.py'),
     }
 
     def __init__(
@@ -86,8 +86,14 @@ class Benchmark:
 
         self.env = SlurmEnvironment(config['username'])
         self.config = config
+
+        root_folder = os.path.abspath(os.path.join(config['dir'], config['id']))
+
         self.folders : Dict[str, str] = {
-            'root': os.path.abspath(os.path.join(config['dir'], config['id']))
+            'root': root_folder,
+            'results': os.path.join(root_folder, 'results'),
+            'graphs': os.path.join(root_folder, 'graphs'),
+            'plots': os.path.join(root_folder, 'plots')
         }
 
     def create(self) -> None:
@@ -98,6 +104,12 @@ class Benchmark:
 
         if not os.path.exists(self.folders['root']):
             os.mkdir(self.folders['root'])
+
+        if not os.path.exists(self.folders['results']):
+            os.mkdir(self.folders['results'])
+
+        if not os.path.exists(self.folders['plots']):
+            os.mkdir(self.folders['plots'])
 
         for job in self.jobs():
             job.create()

@@ -3,7 +3,7 @@ import sys
 import json
 
 import numpy as np
-from autosklearn.experimental.askl2 import AutuoSklearn2Classifier
+from autosklearn.classification import AutoSklearnClassifier
 from sklearn.metrics import accuracy_score
 
 from util import get_task_splits, instance_wise_algorithm_correct_vectors
@@ -12,6 +12,11 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         raise RuntimeError('Please provide a config\n'
                            + f'{sys.argv[0]} /path/to/config')
+
+    config = {}
+    config_path = sys.argv[1]
+    with open(sys.argv[1], 'r') as config_file:
+        config = json.load(config_file)
 
     seed = config['seed']
     times = config['times']
@@ -33,7 +38,7 @@ if __name__ == "__main__":
     for time in times:
 
         # Create a new automodel that will be trained
-        automodel = AutoSklearn2Classifier(**autosklearn_params)
+        automodel = AutoSklearnClassifier(**autosklearn_params)
 
         # Get the instance wise algorithm correct vectors
         # These are a row of (1) or (0) depending on if the algorithm
@@ -52,7 +57,7 @@ if __name__ == "__main__":
 
         # Generate training and test classifications
         train_classifications = automodel.predict(selector_X_train)
-        train_score = accuracy_score(classifications, train_correct_vectors)
+        train_score = accuracy_score(train_classifications, train_correct_vectors)
         print(f'\n\nTrain Score: {train_score}\n\n')
 
         test_classifications = automodel.predict(X_test)

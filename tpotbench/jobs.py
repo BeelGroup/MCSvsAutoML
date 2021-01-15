@@ -207,21 +207,6 @@ class TPOTJob(SlurmJob):
     def reset(self) -> None:
         rmtree(self.folders['root'])
 
-    # TODO improve Typing
-    def slurm_args(self) -> Dict[str, Union[int, str]]:
-        total_time = max(self.times)
-        return {
-            'job-name': self.name(),
-            'nodes': 1,
-            'ntasks': 1,
-            'cpus-per-task': 4,
-            'output': self.files['slurm_out'],
-            'error': self.files['slurm_err'],
-            'export': 'ALL',
-            'mem': 16000,
-            **self.env.slurm_time_and_partition(total_time, buffer=0.4)
-        }
-
     def slurm_opts(self) -> List[str]:
         return []
 
@@ -342,7 +327,7 @@ class SingleAlgorithmJob(TPOTJob):
         return all(os.path.exists(file) for file in files)
 
     def name(self) -> str:
-        return f'a{self.algorithm_family}_s{self.seed}_t{self.openml_task_id}'
+        return f'a{self.algorithm_family}_s{self.seed}_sp{self.splits[0]}_t{self.openml_task_id}'
 
     def blocked(self) -> bool:
         return False
@@ -364,6 +349,19 @@ class SingleAlgorithmJob(TPOTJob):
             'tpot_params': params,
         }
 
+    def slurm_args(self) -> Dict[str, Union[int, str]]:
+        total_time = max(self.times)
+        return {
+            'job-name': self.name(),
+            'nodes': 1,
+            'ntasks': 1,
+            'cpus-per-task': 4,
+            'output': self.files['slurm_out'],
+            'error': self.files['slurm_err'],
+            'export': 'ALL',
+            'mem': 24000,
+            **self.env.slurm_time_and_partition(total_time, buffer=0.4)
+        }
 
 class BaselineJob(TPOTJob):
     """
@@ -401,6 +399,20 @@ class BaselineJob(TPOTJob):
             'tpot_params': self.default_tpot_params(),
         }
 
+    def slurm_args(self) -> Dict[str, Union[int, str]]:
+        total_time = max(self.times)
+        return {
+            'job-name': self.name(),
+            'nodes': 1,
+            'ntasks': 1,
+            'cpus-per-task': 4,
+            'output': self.files['slurm_out'],
+            'error': self.files['slurm_err'],
+            'export': 'ALL',
+            'mem': 24000,
+            **self.env.slurm_time_and_partition(total_time, buffer=0.4)
+        }
+
 
 class SelectorJob(TPOTJob):
     """
@@ -426,18 +438,23 @@ class SelectorJob(TPOTJob):
         self.single_algorithms = single_algorithms
         super().__init__(env, seed, openml_task_id, times, benchdir, splits,
                          runner_path)
-        self.folders['autosklearn_tmp'] = os.path.join(
-            self.folders['root'], 'autosklearn_tmp'
-        )
-        self.folders['autosklearn_output'] = os.path.join(
-            self.folders['root'], 'autosklearn_output'
-        )
 
     def name(self) -> str:
-        return f's{self.selector_name}_s{self.seed}_t{self.openml_task_id}'
+        return f's{self.selector_name}_s{self.seed}_sp{self.splits[0]}_t{self.openml_task_id}'
 
     def blocked(self) -> bool:
         return not all(algo.complete() for algo in self.single_algorithms)
+
+    def autosklearn_params(self) -> Dict[str, Any]:
+        return {
+            'time_left_for_this_task': 2*60*60,
+            'seed': self.seed,
+            'memory_limit': 12000,
+            # This is forced to 0 by default with autosklearn2classifier
+            # Must set manually with normal autosklearnclassifier
+            'initial_configurations_via_metalearning': 0,
+            'n_jobs': 4,
+        }
 
     def create_config(self) -> Dict[str, Any]:
         return {
@@ -447,13 +464,7 @@ class SelectorJob(TPOTJob):
             'splits': self.splits,
             'folders': self.folders,
             'files': self.files,
-            'autosklearn_params': {
-                'time_left_for_this_task': 2*60*60,
-                'seed': self.seed,
-                'tmp_folder': self.folders['autosklearn_tmp'],
-                'output_folder': self.folders['autosklearn_output'],
-                'n_jobs': 4,
-            },
+            'autosklearn_params': self.autosklearn_params(),
             'algorithms': {
                 'selector_training_classifications' : {
                     time : {
@@ -470,4 +481,19 @@ class SelectorJob(TPOTJob):
                     for time in self.times
                 }
             }
+        }
+
+    def slurm_args(self) -> Dict[str, Union[int, str]]:
+        time_in_seconds = self.autosklearn_params()['time_left_for_this_task'] * len(self.times)
+        time_in_minutes = time_in_seconds / 60
+        return {
+            'job-name': self.name(),
+            'nodes': 1,
+            'ntasks': 1,
+            'cpus-per-task': 4,
+            'output': self.files['slurm_out'],
+            'error': self.files['slurm_err'],
+            'export': 'ALL',
+            'mem': 24000,
+            **self.env.slurm_time_and_partition(time_in_minutes, buffer=0.4)
         }
