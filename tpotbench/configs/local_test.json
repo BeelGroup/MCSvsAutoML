@@ -1,0 +1,66 @@
+{
+  "id": "localtest",
+  "env": {
+    "type": "local"
+  },
+  "path": "./local_test_benchmark",
+  "classifiers": [
+    {
+      "type": "TPOT",
+      "name": "T-NB_3_2_1",
+      "seed": 1,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "classifier": "NB",
+      "time": 2,
+      "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {
+        "max_eval_time_mins": 2
+      }
+    },
+    {
+      "type": "TPOT",
+      "name": "T-TR_3_2_1",
+      "seed": 1,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "classifier": "TR",
+      "time": 2,
+      "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {
+        "max_eval_time_mins": 2
+      }
+    }
+  ],
+  "selectors": [
+    {
+      "type": "autosklearn",
+      "name": "ASK-3_5_1",
+      "seed": 1,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "cpus": 4,
+      "time": 300,
+      "task": 3,
+      "memory": 20000,
+      "model_params": {},
+      "classifiers": [
+        "T-NB_3_2_1",
+        "T-TR_3_2_1"
+      ]
+    }
+  ]
+}

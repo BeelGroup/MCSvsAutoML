@@ -5,7 +5,6 @@ that the model is run off through the function `tpot_params`. Users can
 overwrite these defaults or any other parameters by providing 'model_params' in
 the config.
 """
-import os
 import sys
 import json
 import pickle
@@ -14,7 +13,8 @@ import numpy as np
 from tpot import TPOTClassifier
 from tpot.config import classifier_config_dict
 
-from tpotbench.runner_util import get_task_splits
+from tpotbench.runner_util import get_task_split
+
 
 def tpot_params(time, seed, algorithm_family, checkpoint_folder, cpus, logfile,
                 model_params):
@@ -63,43 +63,39 @@ def tpot_params(time, seed, algorithm_family, checkpoint_folder, cpus, logfile,
     }
     return {**core_params, **model_params}
 
+
 def run(config_path):
 
     config = {}
     with open(config_path, 'r') as config_file:
         config = json.load(config_file)
 
-    started_at = config['started_at']
-    os.system(f'date > {started_at}')
-
     files = config['files']
-    folders = config['folders']
-    seed = config['seed']
-    time = config['time']
-    cpus = config['cpus']
-    splits = config['splits']
-    task_id = config['task_id']
-    algorithm_family = config['algorithm_family']
-    model_params = config.get('model_params', {})
 
-    data_splits = get_task_splits(task_id, seed, splits)
-    X_train, y_train = data_splits['algo_train']
-    selector_X_train, selector_y_train = data_splits['selector_train']
-    X_test, y_test = data_splits['test']
+    # Get the training and test data splits
+    data_split = get_task_split(task_id=config['task_id'],
+                                seed=config['seed'],
+                                split=config['split'])
 
-    params = tpot_params(time=time,
-                         seed=seed,
-                         algorithm_family=algorithm_family,
-                         checkpoint_folder=folders['checkpoints'],
-                         cpus=cpus,
-                         logfile=files['tpot_log'],
-                         model_params=model_params)
+    X_train, y_train = data_split['algo_train']
+    selector_X_train, selector_y_train = data_split['selector_train']
+    X_test, y_test = data_split['test']
+
+    # Create the tpot model and fit it
+    params = tpot_params(time=config['time'],
+                         seed=config['seed'],
+                         algorithm_family=config['algorithm_family'],
+                         checkpoint_folder=config['folders']['checkpoints'],
+                         cpus=config['cpus'],
+                         logfile=files['log'],
+                         model_params=config['model_params'])
     tpot = TPOTClassifier(**params)
 
     tpot.fit(X_train, y_train)
 
     # Save best pipeline
-    pickle.dump(tpot.fitted_pipeline_, files['model'])
+    with open(files['model'], 'wb') as f:
+        pickle.dump(tpot.fitted_pipeline_, f)
 
     # Save classifications
     train_classifications = tpot.predict(X_train)

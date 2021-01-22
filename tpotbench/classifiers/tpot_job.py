@@ -1,6 +1,7 @@
 from typing import Tuple, Dict, Any, Optional
 
 import os
+import json
 from os.path import join
 from shutil import rmtree
 
@@ -10,7 +11,7 @@ from ..benchmarkjob import BenchmarkJob
 class TPOTClassifierJob(BenchmarkJob):
 
     _runner_path = os.path.join(
-        os.path.dirname(os.path.abspath(__file__)), 'autosklearn_runner.py'
+        os.path.dirname(os.path.abspath(__file__)), 'tpot_runner.py'
     )
 
     defaults = {
@@ -25,14 +26,14 @@ class TPOTClassifierJob(BenchmarkJob):
         task_id: int,
         time: int,
         basedir: str,
-        splits: Tuple[float, float, float],
+        split: Tuple[float, float, float],
         algorithm_family: str,
         memory: int,
         cpus: int,
         model_params: Optional[Dict[str, Any]] = None
     ) -> None:
         super().__init__(
-            jobname, seed, task_id, time, basedir, splits, memory, cpus
+            jobname, seed, task_id, time, basedir, split, memory, cpus
         )
         self.algorithm_family = algorithm_family
         self.model_params = model_params
@@ -40,20 +41,20 @@ class TPOTClassifierJob(BenchmarkJob):
             'basedir': basedir,
             'files': {
                 'config': join(basedir, 'config.json'),
-                'log': join(basedir, 'tpot_log'),
+                'log': join(basedir, 'tpot_log.txt'),
                 'export': join(basedir, 'export.py'),
                 'model': join(basedir, 'model.pkl'),
                 'metrics': join(basedir, 'metrics.json'),
-                'train_classifications': join(basedir, 'train_classifications'),
-                'train_probabilities': join(basedir, 'train_probabilities'),
+                'train_classifications': join(basedir, 'train_classifications.npy'),
+                'train_probabilities': join(basedir, 'train_probabilities.npy'),
                 'selector_training_classifications': join(
-                    basedir, 'selector_training_classifications'
+                    basedir, 'selector_training_classifications.npy'
                 ),
                 'selector_training_probabilities': join(
-                    basedir, 'selector_training_probabilities'
+                    basedir, 'selector_training_probabilities.npy'
                 ),
-                'test_classifications': join(basedir, 'test_classifications'),
-                'test_probabilities': join(basedir, 'test_probabilities'),
+                'test_classifications': join(basedir, 'test_classifications.npy'),
+                'test_probabilities': join(basedir, 'test_probabilities.npy'),
             },
             'folders': {
                 'checkpoints': join(basedir, 'checkpoints')
@@ -78,10 +79,14 @@ class TPOTClassifierJob(BenchmarkJob):
 
     def setup(self) -> None:
         if not os.path.exists(self._paths['basedir']):
-            os.mkdir(self._paths['folders']['basedir'])
+            os.mkdir(self._paths['basedir'])
 
         if not os.path.exists(self._paths['folders']['checkpoints']):
             os.mkdir(self._paths['folders']['checkpoints'])
+
+        job_config = self.config()
+        with open(self._paths['files']['config'], 'w') as f:
+            json.dump(job_config, f, indent=2)
 
     def reset(self) -> None:
         rmtree(self._paths['basedir'])
@@ -92,7 +97,7 @@ class TPOTClassifierJob(BenchmarkJob):
         return {
             'seed': self.seed,
             'time': self.time,
-            'splits': self.splits,
+            'split': self.split,
             'task_id': self.task_id,
             'cpus': self.cpus,
             'algorithm_family': self.algorithm_family,
@@ -103,7 +108,7 @@ class TPOTClassifierJob(BenchmarkJob):
 
     def command(self) -> str:
         config_path = self._paths['files']['config']
-        return f'python {self.runner_path} {config_path}'
+        return f'python {self.runner_path()} {config_path}'
 
     @classmethod
     def runner_path(cls) -> str:
@@ -123,7 +128,7 @@ class TPOTClassifierJob(BenchmarkJob):
                    task_id=cfg['task'],
                    time=cfg['time'],
                    basedir=basedir,
-                   splits=cfg['splits'],
+                   split=cfg['split'],
                    algorithm_family=cfg['classifier'],
                    memory=cfg.get('memory', cls.defaults['memory']),
                    cpus=cfg.get('cpus', cls.defaults['cpus']),

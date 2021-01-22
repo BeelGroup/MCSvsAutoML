@@ -1,3 +1,6 @@
+# https://stackoverflow.com/a/33533514/5332072
+from __future__ import annotations
+
 import os
 from abc import abstractmethod
 from typing import Mapping, Dict, Any, Tuple, Type
@@ -14,7 +17,7 @@ class BenchmarkJob(Job):
             task_id: int,
             time: int,
             basedir: str,
-            splits: Tuple[float, float, float],
+            split: Tuple[float, float, float],
             memory: int,
             cpus: int,
             *args,
@@ -24,16 +27,11 @@ class BenchmarkJob(Job):
         self.jobname = jobname
         self.seed = seed
         self.task_id = task_id
-        self.splits = splits
+        self.split = split
         self.time = time
         self.basedir = basedir
         self.memory = memory
         self.cpus = cpus
-
-        # Used to indicate a job having started which is also used to indicate
-        # if a job has failed, i.e. not in progress, not complete and started_at
-        # exists
-        self._started_at = os.path.join(basedir, 'started_at')
 
     @abstractmethod
     def paths(self) -> Dict[str, Any]:
@@ -43,19 +41,22 @@ class BenchmarkJob(Job):
     def config(self) -> Mapping[str, Any]:
         pass
 
-    @abstractmethod
     @classmethod
+    @abstractmethod
     def runner_path(cls) -> str:
         pass
 
-    @abstractmethod
     @classmethod
+    @abstractmethod
     def from_config(
-        cls: Type[BenchmarkJob],
+        cls,
         cfg: Dict[str, Any],
         basedir: str,
     ) -> BenchmarkJob:
         pass
+
+    def name(self) -> str:
+        return self.jobname
 
     def ready(self) -> bool:
         return not self.blocked() and not self.complete()

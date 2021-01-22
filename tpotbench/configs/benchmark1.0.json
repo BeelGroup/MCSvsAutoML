@@ -1,0 +1,318 @@
+{
+  "id": "benchmark1.0",
+  "path": "./benchmark1.0",
+  "env": {
+    "type": "slurm",
+    "username": "eb130475"
+  },
+  "classifiers": [
+    {
+      "type": "TPOT",
+      "name": "T-NB_3_120_5",
+      "classifier": "NB",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-TR_3_120_5",
+      "classifier": "TR",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-KNN_3_120_5",
+      "classifier": "KNN",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-MLP_3_120_5",
+      "classifier": "MLP",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-LR_3_120_5",
+      "classifier": "LR",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-XGB_3_120_5",
+      "classifier": "XGB",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-SVM_3_120_5",
+      "classifier": "SVM",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-SGD_3_120_5",
+      "classifier": "SGD",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-NB_6_120_5",
+      "classifier": "NB",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-TR_6_120_5",
+      "classifier": "TR",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-KNN_6_120_5",
+      "classifier": "KNN",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-MLP_6_120_5",
+      "classifier": "MLP",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-LR_6_120_5",
+      "classifier": "LR",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-XGB_6_120_5",
+      "classifier": "XGB",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-SVM_6_120_5",
+      "classifier": "SVM",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    },
+    {
+      "type": "TPOT",
+      "name": "T-SGD_6_120_5",
+      "classifier": "SGD",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 120,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {}
+    }
+  ],
+  "selectors": [
+    {
+      "type": "autosklearn",
+      "name": "ASK-3_120_5",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 7200,
+      "task": 3,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {},
+      "classifiers": [
+        "T-NB_3_120_5",
+        "T-TR_3_120_5",
+        "T-KNN_3_120_5",
+        "T-MLP_3_120_5",
+        "T-LR_3_120_5",
+        "T-XGB_3_120_5",
+        "T-SVM_3_120_5",
+        "T-SGD_3_120_5"
+      ]
+    },
+    {
+      "type": "autosklearn",
+      "name": "ASK-6_120_5",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 7200,
+      "task": 6,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {},
+      "classifiers": [
+        "T-NB_6_120_5",
+        "T-TR_6_120_5",
+        "T-KNN_6_120_5",
+        "T-MLP_6_120_5",
+        "T-LR_6_120_5",
+        "T-XGB_6_120_5",
+        "T-SVM_6_120_5",
+        "T-SGD_6_120_5"
+      ]
+    }
+  ]
+}

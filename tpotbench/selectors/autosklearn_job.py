@@ -1,6 +1,7 @@
 from typing import Tuple, Optional, Dict, Any, Iterable
 
 import os
+import json
 from os.path import join
 from shutil import rmtree
 
@@ -25,14 +26,14 @@ class AutoSklearnSelectorJob(BenchmarkJob):
         task_id: int,
         time: int,
         basedir: str,
-        splits: Tuple[float, float, float],
+        split: Tuple[float, float, float],
         classifier_jobs: Iterable[BenchmarkJob],
         memory: int,
         cpus: int,
         model_params: Optional[Dict[str, Any]] = None
     ) -> None:
         super().__init__(
-            jobname, seed, task_id, time, basedir, splits, memory, cpus
+            jobname, seed, task_id, time, basedir, split, memory, cpus
         )
         self.classifier_jobs = classifier_jobs
         self.model_params = model_params
@@ -46,16 +47,16 @@ class AutoSklearnSelectorJob(BenchmarkJob):
                     for clf in self.classifier_jobs
                 },
                 'selector_training_classifications': join(
-                    basedir, 'selector_training_classifications'
+                    basedir, 'selector_training_classifications.npy'
                 ),
                 'selector_training_probabilities': join(
-                    basedir, 'selector_training_probabilities'
+                    basedir, 'selector_training_probabilities.npy'
                 ),
                 'test_classifications': join(
-                    basedir, 'test_classifications'
+                    basedir, 'test_classifications.npy'
                 ),
                 'test_probabilities': join(
-                    basedir, 'test_probabilities'
+                    basedir, 'test_probabilities.npy'
                 ),
             },
             'metrics': join(basedir, 'metrics.json'),
@@ -86,7 +87,11 @@ class AutoSklearnSelectorJob(BenchmarkJob):
 
     def setup(self) -> None:
         if not os.path.exists(self._paths['basedir']):
-            os.mkdir(self._paths['folders']['basedir'])
+            os.mkdir(self._paths['basedir'])
+
+        job_config = self.config()
+        with open(self._paths['files']['config'], 'w') as f:
+            json.dump(job_config, f, indent=2)
 
     def reset(self) -> None:
         rmtree(self._paths['basedir'])
@@ -97,9 +102,10 @@ class AutoSklearnSelectorJob(BenchmarkJob):
         return {
             'seed': self.seed,
             'time': self.time,
-            'splits': self.splits,
+            'split': self.split,
             'task_id': self.task_id,
             'cpus': self.cpus,
+            'memory': self.memory,
             'model_params': model_params,
             'files': paths['files'],
             'folders': paths['folders']
@@ -119,7 +125,7 @@ class AutoSklearnSelectorJob(BenchmarkJob):
         cfg: Dict[str, Any],
         basedir: str,
     ) -> BenchmarkJob:
-        if cfg['type'] != 'TPOT':
+        if cfg['type'] != 'autosklearn':
             raise ValueError(f'Config object not a TPOT classifier,\n{cfg=}')
 
         return cls(jobname=cfg['name'],
@@ -127,7 +133,7 @@ class AutoSklearnSelectorJob(BenchmarkJob):
                    task_id=cfg['task'],
                    time=cfg['time'],
                    basedir=basedir,
-                   splits=cfg['splits'],
+                   split=cfg['split'],
                    classifier_jobs=cfg['classifier_jobs'],
                    memory=cfg.get('memory', cls.defaults['memory']),
                    cpus=cfg.get('cpus', cls.defaults['cpus']),

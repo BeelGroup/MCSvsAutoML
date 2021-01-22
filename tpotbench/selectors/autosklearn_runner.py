@@ -13,7 +13,7 @@ import numpy as np
 from autosklearn.classification import AutoSklearnClassifier
 
 from tpotbench.runner_util import (  # type: ignore[no-name-in-module]
-    get_task_splits, classifier_predictions_to_selector_labels
+    get_task_split, classifier_predictions_to_selector_labels
 )
 
 
@@ -22,9 +22,6 @@ def autosklearn_params(time, seed, cpus, memory, model_params):
         'time_left_for_this_task': time,
         'seed': seed,
         'memory_limit': memory,
-        # This is forced to 0 by default with autosklearn2classifier
-        # Must set manually with normal autosklearnclassifier
-        'initial_configurations_via_metalearning': 0,
         'n_jobs': cpus,
     }
     return {**core_params, **model_params}
@@ -38,18 +35,19 @@ def run(config_path):
     files = config['files']
 
     # Get the training and test data splits
-    data_splits = get_task_splits(task_id=config['task_id'],
-                                  seed=config['seed'],
-                                  splits=config['splits'])
+    data_split = get_task_split(task_id=config['task_id'],
+                                seed=config['seed'],
+                                split=config['split'])
 
-    selector_X_train, selector_y_train = data_splits['selector_train']
-    X_test, y_test = data_splits['test']
+    selector_X_train, selector_y_train = data_split['selector_train']
+    X_test, y_test = data_split['test']
 
     # Loading the training classifications over the models to save memory
+    print('Loading classifiers')
     clfs_selector_training_classifications = [
         np.load(clf_files['selector_training_classifications'])
         for clf_name, clf_files
-        in files['classifiers']
+        in files['classifiers'].items()
     ]
     selector_training_labels = classifier_predictions_to_selector_labels(
         clfs_selector_training_classifications, selector_y_train
@@ -65,6 +63,8 @@ def run(config_path):
 
     # Providing the X_test and y_test to allow for overtime
     # predictions
+    print(f'Fitting model with params {params=}')
+    print(f'Training on \n\tX={selector_X_train.shape}\n\ty={selector_training_labels.shape}')
     automodel.fit(selector_X_train, selector_training_labels)
 
     # Save the classification and probability output of the models

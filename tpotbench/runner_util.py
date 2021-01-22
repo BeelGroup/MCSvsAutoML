@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import ShuffleSplit
 
-def split(X, y, split_percentage, seed):
+def split_data(X, y, split_percentage, seed):
     splitter = ShuffleSplit(1, test_size=split_percentage, random_state=seed)
     split_1_idxs, split_2_idxs = next(splitter.split(X))
     return {
@@ -13,9 +13,9 @@ def split(X, y, split_percentage, seed):
         'split_2': (X[split_2_idxs], y[split_2_idxs])
     }
 
-def get_task_splits(task_id, seed, splits):
-    if not (len(splits) == 2 or len(splits) == 3):
-        raise ValueError(f'Splits must be either 2 or 3 floats\n{splits=}')
+def get_task_split(task_id, seed, split):
+    if not (len(split) == 2 or len(split) == 3):
+        raise ValueError(f'Splits must be either 2 or 3 floats\n{split=}')
 
     task = openml.tasks.get_task(task_id)
     X, y, categorical_mask, _ = task.get_dataset().get_data(task.target_name)
@@ -43,37 +43,37 @@ def get_task_splits(task_id, seed, splits):
     X = pandas.concat([X, *encoding_frames], axis=1)
     X = X.to_numpy()
 
-    # Create splits
-    if len(splits) == 2:
-        train_split = splits[0]
-        test_split = splits[1]
-        splits = split(X, y, test_split, seed)
+    # Create split
+    if len(split) == 2:
+        train_split = split[0]
+        test_split = split[1]
+        splits = split_data(X, y, test_split, seed)
         return {
             'baseline_train' : splits['split_1'],
             'baseline_test': splits['split_2']
         }
     else:
-        algo_split = splits[0]
-        selector_split = splits[1]
-        test_split = splits[2]
+        algo_split = split[0]
+        selector_split = split[1]
+        test_split = split[2]
 
         # Split data between testing and training
-        train_test_splits = split(X, y, test_split, seed)
+        train_test_split = split_data(X, y, test_split, seed)
 
         # Further divide the train split of train_test_split to be between
         # the algorithm and the selector
         selector_relative_split = selector_split / (algo_split + selector_split)
 
-        X_train, y_train = train_test_splits['split_1']
-        train_splits = split(X_train, y_train, selector_relative_split, seed)
+        X_train, y_train = train_test_split['split_1']
+        train_splits = split_data(X_train, y_train, selector_relative_split, seed)
         return {
             'algo_train' : train_splits['split_1'],
             'selector_train': train_splits['split_2'],
-            'test': train_test_splits['split_2']
+            'test': train_test_split['split_2']
         }
 
 def classifier_predictions_to_selector_labels(
-    classifiers_classifications,
+    all_model_classifications,
     y 
 ):
     """
@@ -86,6 +86,6 @@ def classifier_predictions_to_selector_labels(
     """
     correct_vectors = np.asarray([
         np.equal(model_classifications, y).astype(int)
-        for classifications in classifiers_classifications
+        for model_classifications in all_model_classifications
     ])
     return np.transpose(correct_vectors)

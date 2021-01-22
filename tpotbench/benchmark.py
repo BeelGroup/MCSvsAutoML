@@ -1,7 +1,7 @@
 """
 Manages job objects for the benchmark given a config to work from
 """
-from typing import Dict, Iterable
+from typing import Dict, Iterable, Optional
 
 import os
 import json
@@ -25,6 +25,7 @@ class Benchmark:
     def __init__(self, config_path):
 
         # load config
+        config_path = os.path.abspath(config_path)
         cfg = {}
         with open(config_path, 'r') as f:
             cfg = json.load(f)
@@ -67,7 +68,7 @@ class Benchmark:
             job_class, runner = classifier_job_map[clf_type]
 
             job = job_class.from_config(model_config, basedir)
-            self.classifier_jobs['name'] = job
+            self.classifier_jobs[name] = job
 
         # Create selector jobs
         self.selector_jobs = {}
@@ -80,13 +81,13 @@ class Benchmark:
             job_class, runner = selector_job_map[selector_type]
 
             # Replace the named classifiers with their job
-            model_config['classifiers_jobs'] = [
+            model_config['classifier_jobs'] = [
                 self.classifier_jobs[clf_name]
                 for clf_name in model_config['classifiers']
             ]
 
             job = job_class.from_config(model_config, basedir)
-            self.selector_jobs['name'] = job
+            self.selector_jobs[name] = job
 
     def job_failed(self, job: BenchmarkJob) -> bool:
         if job.complete():
@@ -126,9 +127,35 @@ class Benchmark:
     def jobs(self) -> Dict[str, BenchmarkJob]:
         return {**self.classifier_jobs, **self.selector_jobs}
 
-    def run(self, jobs: Iterable[BenchmarkJob]):
-        if isinstance(self.env, SlurmEnvironment):
-            for job in jobs:
-                self.env.run(job, slurm_job_options(job))
+    def run(
+        self,
+        jobs: Optional[Dict[str, BenchmarkJob]] = None
+    ) -> None:
+        # If no jobs specified, collect all the available ones
+        if jobs is None:
+            jobs = self.jobs()
+
+        # Filter out any complete or failed jobs
+        jobs = {
+            name: job for name, job in jobs.items()
+            if not job.complete() or self.job_failed(job)
+        }
+
+        # Run all jobs that are not blocked
+        blocked_jobs = {}
+        for name, job in jobs.items():
+            if not job.blocked():
+                if isinstance(self.env, SlurmEnvironment):
+                    self.env.run(job, slurm_job_options(job))
+                else:
+                    print(f'running {name}')
+                    self.env.run(job, {})
+            else:
+                blocked_jobs[name] = job
+
+        # Get count of any jobs that are now ready
+        n_ready = len(list(filter(lambda job: job.ready(), jobs.values())))
+        if n_ready > 0:
+            self.run(blocked_jobs)
         else:
-            self.env.run(job, {})
+            print('Finished')
