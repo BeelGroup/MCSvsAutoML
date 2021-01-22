@@ -18,7 +18,8 @@ setup(name='tpotbench',
           'pandas',
           'xgboost',
           'numpy',
-          'slurmjobmanager @ git+git://github.com/eddiebergman/slurmjobmanager.git'
+          'slurmjobmanager @ git+git://github.com/eddiebergman/slurmjobmanager.git',
+          'auto-sklearn'
       ],
       extras_require={
         'dev': [
