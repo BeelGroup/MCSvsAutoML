@@ -45,7 +45,7 @@ config = {
             'model_params': {}
         }
         for seed, split, time, task, clf
-        in product(seeds, splits, times_in_mins, tasks[0:2], tpot_classifiers)
+        in product(seeds, splits, times_in_mins, tasks[0:20], tpot_classifiers)
     ],
     'selectors': [
         {
@@ -53,7 +53,7 @@ config = {
             'name': f'ASK-{task}_{time}_{seed}',
             'seed': seed,
             'split': split,
-            'time': time * 60, # measure in seconds in autosklearn
+            'time': time,
             'task': task,
             'cpus': cpus,
             'memory': memory_selectors,
@@ -64,7 +64,7 @@ config = {
             ]
         }
         for seed, split, time, task
-        in product(seeds, splits, times_in_mins, tasks[0:2])
+        in product(seeds, splits, times_in_mins, tasks[0:20])
     ]
 }
 
