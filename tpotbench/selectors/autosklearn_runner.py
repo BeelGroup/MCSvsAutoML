@@ -19,7 +19,7 @@ from tpotbench.runner_util import (  # type: ignore[no-name-in-module]
 
 def autosklearn_params(time, seed, cpus, memory, model_params):
     core_params = {
-        'time_left_for_this_task': time,
+        'time_left_for_this_task': time * 60,
         'seed': seed,
         'memory_limit': memory,
         'n_jobs': cpus,

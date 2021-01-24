@@ -89,9 +89,10 @@ class AutoSklearnSelectorJob(BenchmarkJob):
         if not os.path.exists(self._paths['basedir']):
             os.mkdir(self._paths['basedir'])
 
-        job_config = self.config()
-        with open(self._paths['files']['config'], 'w') as f:
-            json.dump(job_config, f, indent=2)
+        if not os.path.exists(self._paths['files']['config']):
+            job_config = self.config()
+            with open(self._paths['files']['config'], 'w') as f:
+                json.dump(job_config, f, indent=2)
 
     def reset(self) -> None:
         rmtree(self._paths['basedir'])
