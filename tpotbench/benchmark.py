@@ -36,7 +36,7 @@ class Benchmark:
         # Setup environment
         self.env = None
         if cfg['env']['type'] == 'slurm':
-            username = cfg['env']
+            username = cfg['env']['username']
             self.env = SlurmEnvironment(username=username)
         else:
             self.env = LocalEnvironment()
@@ -96,12 +96,12 @@ class Benchmark:
         if isinstance(self.env, SlurmEnvironment):
             # Check if it's currently running
             in_progress = self.env.pending_jobs() + self.env.running_jobs()
-            if job in in_progress:
+            if job.name() in in_progress:
                 return False
 
             # Check if slurm script has been created, incomplete job
             slurm_opts = slurm_job_options(job)
-            script_path = slurm_opts['script_script_path']
+            script_path = slurm_opts['slurm_script_path']
             if os.path.exists(script_path):
                 return True
 
@@ -146,7 +146,9 @@ class Benchmark:
         for name, job in jobs.items():
             if not job.blocked():
                 if isinstance(self.env, SlurmEnvironment):
-                    self.env.run(job, slurm_job_options(job))
+                    info = self.env.info()
+                    if not name in info['pending'] + info['running']:
+                        self.env.run(job, slurm_job_options(job))
                 else:
                     print(f'running {name}')
                     self.env.run(job, {})

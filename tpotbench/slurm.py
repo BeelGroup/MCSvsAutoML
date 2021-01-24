@@ -61,7 +61,7 @@ def slurm_job_options(
             'export': 'ALL',
             'mem': job.memory,
             'time': time,
-            'parititon' : partition,
+            'partition' : partition,
         },
         'slurm_opts': [],
         'slurm_script_path': os.path.join(job.basedir, 'slurm_script.sh'),
