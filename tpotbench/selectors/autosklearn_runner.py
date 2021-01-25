@@ -68,19 +68,18 @@ def run(config_path):
     automodel.fit(selector_X_train, selector_training_labels)
 
     # Save the classification and probability output of the models
-    selector_training_classifications = automodel.predict(selector_X_train)
-    np.save(files['selector_training_classifications'],
-            selector_training_classifications)
+    selector_training_classifier_selections = automodel.predict(selector_X_train)
+    selector_training_classifier_competences = automodel.predict_proba(selector_X_train)
 
-    selector_training_probabilities = automodel.predict_proba(selector_X_train)
-    np.save(files['selector_training_probabilities'],
-            selector_training_probabilities)
+    test_classifier_selections = automodel.predict(X_test)
+    test_classifier_competences = automodel.predict_proba(X_test)
 
-    test_classifications = automodel.predict(X_test)
-    np.save(files['test_classifications'], test_classifications)
-
-    test_probabilities = automodel.predict_proba(X_test)
-    np.save(files['test_probabilities'], test_probabilities)
+    file_paths_to_save_to = {
+        files['selector_training_classifier_selections']: selector_training_classifier_selections,
+        files['selector_training_classifier_competences']: selector_training_classifier_competences,
+        files['test_classifier_selections']: test_classifier_selections,
+        files['test_classifier_compteneces']: test_classifier_competences,
+    }
 
     # Save the model
     with open(files['model'], 'wb') as f:

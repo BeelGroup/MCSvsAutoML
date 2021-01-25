@@ -46,17 +46,17 @@ class AutoSklearnSelectorJob(BenchmarkJob):
                     clf.name(): clf.paths()['files']
                     for clf in self.classifier_jobs
                 },
-                'selector_training_classifications': join(
-                    basedir, 'selector_training_classifications.npy'
+                'selector_training_classifier_selections': join(
+                    basedir, 'selector_training_classifier_selections.npy'
                 ),
-                'selector_training_probabilities': join(
-                    basedir, 'selector_training_probabilities.npy'
+                'selector_training_classifier_competences': join(
+                    basedir, 'selector_training_competences.npy'
                 ),
-                'test_classifications': join(
-                    basedir, 'test_classifications.npy'
+                'test_classifier_selections': join(
+                    basedir, 'test_classifier_selections.npy'
                 ),
-                'test_probabilities': join(
-                    basedir, 'test_probabilities.npy'
+                'test_classifier_competences': join(
+                    basedir, 'test_competences.npy'
                 ),
             },
             'metrics': join(basedir, 'metrics.json'),
