@@ -1,7 +1,7 @@
 """
 Manages job objects for the benchmark given a config to work from
 """
-from typing import Dict, Iterable, Optional
+from typing import Dict, Iterable, Optional, List
 
 import os
 import json
@@ -116,48 +116,65 @@ class Benchmark:
         # failed
         return False
 
-    def failed_jobs(self) -> Dict[str, BenchmarkJob]:
-        return {
-            name: job
-            for name, job
-            in self.jobs().items()
-            if self.job_failed(job)
-        }
+    def jobs(self) -> List[BenchmarkJob]:
+        return list(self.classifier_jobs.values()) + list(self.selector_jobs.values())
 
-    def jobs(self) -> Dict[str, BenchmarkJob]:
-        return {**self.classifier_jobs, **self.selector_jobs}
+    def status(
+        self,
+        jobs: Optional[Iterable[BenchmarkJob]] = None
+    ) -> Dict[str, List[BenchmarkJob]]:
+        if jobs is None:
+            jobs = self.jobs()
+
+        # TODO: Could be made quicker by only iterating through jobs once
+        results = {
+            'complete': [job for job in jobs if job.complete()],
+            'failed': [job for job in jobs if self.job_failed(job)],
+            'blocked': [job for job in jobs if job.blocked()],
+            'ready': [job for job in jobs if job.ready()],
+        }
+        if isinstance(self.env, SlurmEnvironment):
+            info = self.env.info()
+            results['pending'] = [
+                job for job in jobs if job.name() in info['pending']
+            ]
+            results['running'] = [
+                job for job in jobs if job.name() in info['running']
+            ]
+        return results
 
     def run(
         self,
-        jobs: Optional[Dict[str, BenchmarkJob]] = None
+        jobs: Optional[Iterable[BenchmarkJob]] = None
     ) -> None:
         # If no jobs specified, collect all the available ones
         if jobs is None:
             jobs = self.jobs()
 
         # Filter out any complete or failed jobs
-        jobs = {
-            name: job for name, job in jobs.items()
-            if not job.complete() or self.job_failed(job)
-        }
+        jobs = [
+            job for job in jobs if not job.complete() or self.job_failed(job)
+        ]
 
         # Run all jobs that are not blocked
-        blocked_jobs = {}
-        for name, job in jobs.items():
+        blocked_jobs = []
+        for job in jobs:
             if not job.blocked():
                 if isinstance(self.env, SlurmEnvironment):
+                    self.env.refresh_info()
                     info = self.env.info()
-                    if not name in info['pending'] + info['running']:
+                    in_progress = info['pending'] + info['running']
+                    if not job.name() in in_progress:
                         self.env.run(job, slurm_job_options(job))
                 else:
-                    print(f'running {name}')
+                    print(f'running {job.name()}')
                     self.env.run(job, {})
             else:
-                blocked_jobs[name] = job
+                blocked_jobs.append(job)
 
         # Get count of any jobs that are now ready
-        n_ready = len(list(filter(lambda job: job.ready(), jobs.values())))
-        if n_ready > 0:
+        ready_jobs = [job for job in jobs if job.ready()]
+        if len(ready_jobs) > 0:
             self.run(blocked_jobs)
         else:
             print('Finished')
