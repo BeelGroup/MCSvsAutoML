@@ -68,18 +68,19 @@ class AutoSklearnSelectorJob(BenchmarkJob):
 
     def complete(self) -> bool:
         files = self._paths['files']
-        classification_files = [
-            files[f'{t}_classifications']
+        classifier_selection_files = [
+            files[f'{t}_classifier_selections']
             for t in ['test', 'selector_training']
         ]
-        probability_files = [
-            files[f'{t}_probabilities']
+        classifier_competence_files = [
+            files[f'{t}_classifier_competences']
             for t in ['test', 'selector_training']
         ]
         model = files['model']
         return all(
             os.path.exists(file)
-            for file in classification_files + probability_files + [model]
+            for file 
+            in classifier_selection_files + classifier_competence_files + [model]
         )
 
     def blocked(self) -> bool:
