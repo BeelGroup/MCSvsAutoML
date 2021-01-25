@@ -1,65 +1,101 @@
 {
-  "id": "localtest",
+  "id": "local_test",
+  "path": "./local_test",
   "env": {
     "type": "local"
   },
-  "path": "./local_test_benchmark",
   "classifiers": [
     {
       "type": "TPOT",
-      "name": "T-NB_3_2_1",
-      "seed": 1,
+      "name": "T-NB_3_5_5",
+      "seed": 5,
       "split": [
         0.5,
         0.3,
         0.2
       ],
-      "classifier": "NB",
-      "time": 2,
+      "time": 5,
       "task": 3,
       "cpus": 4,
       "memory": 12000,
       "model_params": {
-        "max_eval_time_mins": 2
+        "algorithm_family": "NB"
       }
     },
     {
       "type": "TPOT",
-      "name": "T-TR_3_2_1",
-      "seed": 1,
+      "name": "T-TR_3_5_5",
+      "seed": 5,
       "split": [
         0.5,
         0.3,
         0.2
       ],
-      "classifier": "TR",
-      "time": 2,
+      "time": 5,
       "task": 3,
       "cpus": 4,
       "memory": 12000,
       "model_params": {
-        "max_eval_time_mins": 2
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "type": "TPOT",
+      "name": "T-LR_3_5_5",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 5,
+      "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {
+        "algorithm_family": "LR"
       }
     }
   ],
   "selectors": [
     {
       "type": "autosklearn",
-      "name": "ASK-3_5_1",
-      "seed": 1,
+      "name": "ASK-3_5_5",
+      "seed": 5,
       "split": [
         0.5,
         0.3,
         0.2
       ],
-      "cpus": 4,
-      "time": 300,
+      "time": 5,
       "task": 3,
+      "cpus": 4,
       "memory": 20000,
       "model_params": {},
       "classifiers": [
-        "T-NB_3_2_1",
-        "T-TR_3_2_1"
+        "T-NB_3_5_5",
+        "T-TR_3_5_5",
+        "T-LR_3_5_5"
+      ]
+    },
+    {
+      "type": "metades",
+      "name": "MDES-3_5_5",
+      "seed": 5,
+      "split": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "time": 5,
+      "task": 3,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {},
+      "classifiers": [
+        "T-NB_3_5_5",
+        "T-TR_3_5_5",
+        "T-LR_3_5_5"
       ]
     }
   ]
