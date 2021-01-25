@@ -131,7 +131,6 @@ class Benchmark:
             'complete': [job for job in jobs if job.complete()],
             'failed': [job for job in jobs if self.job_failed(job)],
             'blocked': [job for job in jobs if job.blocked()],
-            'ready': [job for job in jobs if job.ready()],
         }
         if isinstance(self.env, SlurmEnvironment):
             info = self.env.info()
@@ -141,6 +140,13 @@ class Benchmark:
             results['running'] = [
                 job for job in jobs if job.name() in info['running']
             ]
+            results['ready'] = [
+                job for job in jobs
+                if job.ready() and not job in info['pending'] + info['running']
+            ],
+        else:
+            results['ready'] = [ job for job in jobs if job.ready() ]
+
         return results
 
     def run(
