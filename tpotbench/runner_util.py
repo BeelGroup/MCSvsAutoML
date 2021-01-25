@@ -13,11 +13,11 @@ def split_data(X, y, split_percentage, seed):
         'split_2': (X[split_2_idxs], y[split_2_idxs])
     }
 
-def get_task_split(task_id, seed, split):
+def get_task_split(task, seed, split):
     if not (len(split) == 2 or len(split) == 3):
         raise ValueError(f'Splits must be either 2 or 3 floats\n{split=}')
 
-    task = openml.tasks.get_task(task_id)
+    task = openml.tasks.get_task(task)
     X, y, categorical_mask, _ = task.get_dataset().get_data(task.target_name)
 # Process labels
     if y is not None:
@@ -89,3 +89,17 @@ def classifier_predictions_to_selector_labels(
         for model_classifications in all_model_classifications
     ])
     return np.transpose(correct_vectors)
+
+def deslib_competences(des_model, X):
+    distances, neighbors = des_model._get_region_competence(X)
+    classifier_probabilities = des_model._predict_proba_base(X)
+
+    competences = des_model.estimate_competence_from_proba(
+        query=X, neighbors=neighbors, probabilities=classifier_probabilities,
+        distances=distances)
+    return competences
+
+def deslib_selections(des_model, X):
+    competences = deslib_competences(des_model, X)
+    selections = des_model.select(competences)
+    return selections
