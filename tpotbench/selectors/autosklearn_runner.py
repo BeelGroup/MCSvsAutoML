@@ -8,6 +8,7 @@ the config.
 import sys
 import json
 import pickle
+from datetime import datetime
 
 import numpy as np
 from autosklearn.classification import AutoSklearnClassifier
@@ -18,16 +19,19 @@ from tpotbench.runner_util import (  # type: ignore[no-name-in-module]
 
 
 def autosklearn_params(time, seed, cpus, memory, model_params):
-    core_params = {
+    params = {
         'time_left_for_this_task': time * 60,
         'seed': seed,
         'memory_limit': memory,
         'n_jobs': cpus,
+        **model_params
     }
-    return {**core_params, **model_params}
+    return params
 
 
 def run(config_path):
+    start_at = datetime.now()
+
     config = {}
     with open(config_path, 'r') as config_file:
         config = json.load(config_file)
@@ -35,7 +39,7 @@ def run(config_path):
     files = config['files']
 
     # Get the training and test data splits
-    data_split = get_task_split(task_id=config['task_id'],
+    data_split = get_task_split(task=config['task'],
                                 seed=config['seed'],
                                 split=config['split'])
 
@@ -74,16 +78,24 @@ def run(config_path):
     test_classifier_selections = automodel.predict(X_test)
     test_classifier_competences = automodel.predict_proba(X_test)
 
+    # Save data
     file_paths_to_save_to = {
         files['selector_training_classifier_selections']: selector_training_classifier_selections,
         files['selector_training_classifier_competences']: selector_training_classifier_competences,
         files['test_classifier_selections']: test_classifier_selections,
-        files['test_classifier_compteneces']: test_classifier_competences,
+        files['test_classifier_competences']: test_classifier_competences,
     }
+    for path, data in file_paths_to_save_to.items():
+        np.save(path, data)
 
     # Save the model
     with open(files['model'], 'wb') as f:
         pickle.dump(automodel, f)
+
+    # Overwrites any metrics if experiment is run again
+    with open(files['metrics'], 'w') as f:
+        times = {'time': {'start': str(start_at), 'end': str(datetime.now())}}
+        json.dump(times, f, indent=2)
 
 
 if __name__ == "__main__":

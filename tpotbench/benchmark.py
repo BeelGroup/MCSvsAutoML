@@ -65,7 +65,7 @@ class Benchmark:
             name = model_config['name']
 
             basedir = os.path.join(self.benchmark_path, name)
-            job_class, runner = classifier_job_map[clf_type]
+            job_class = classifier_job_map[clf_type]
 
             job = job_class.from_config(model_config, basedir)
             self.classifier_jobs[name] = job
@@ -78,10 +78,10 @@ class Benchmark:
             name = model_config['name']
 
             basedir = os.path.join(self.benchmark_path, name)
-            job_class, runner = selector_job_map[selector_type]
+            job_class = selector_job_map[selector_type]
 
             # Replace the named classifiers with their job
-            model_config['classifier_jobs'] = [
+            model_config['classifiers'] = [
                 self.classifier_jobs[clf_name]
                 for clf_name in model_config['classifiers']
             ]

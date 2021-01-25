@@ -8,6 +8,7 @@ the config.
 import sys
 import json
 import pickle
+from datetime import datetime
 
 import numpy as np
 from tpot import TPOTClassifier
@@ -16,8 +17,7 @@ from tpot.config import classifier_config_dict
 from tpotbench.runner_util import get_task_split
 
 
-def tpot_params(time, seed, algorithm_family, checkpoint_folder, cpus, logfile,
-                model_params):
+def tpot_params(time, seed, checkpoint_folder, cpus, logfile, model_params):
     families = {
         'KNN': ['sklearn.neighbors.KNeighborsClassifier'],
         'LR': ['sklearn.linear_model.LogisticRegression'],
@@ -33,8 +33,7 @@ def tpot_params(time, seed, algorithm_family, checkpoint_folder, cpus, logfile,
                'sklearn.ensemble.RandomForestClassifier',
                'sklearn.ensemble.GradientBoostingClassifier'],
     }
-    algorithms = families[algorithm_family]
-    core_params = {
+    params = {
         'generations': None,
         'population_size': 100,
         'offspring_size': None,
@@ -49,7 +48,7 @@ def tpot_params(time, seed, algorithm_family, checkpoint_folder, cpus, logfile,
         'random_state': seed,
         'config_dict': {
             algorithm: classifier_config_dict[algorithm]
-            for algorithm in algorithms
+            for algorithm in families[model_params['algorithm_family']]
         },
         'template': None,
         'warm_start': True,
@@ -61,10 +60,11 @@ def tpot_params(time, seed, algorithm_family, checkpoint_folder, cpus, logfile,
         'disable_update_check': False,
         'log_file': logfile
     }
-    return {**core_params, **model_params}
+    return params
 
 
 def run(config_path):
+    start_at = datetime.now()
 
     config = {}
     with open(config_path, 'r') as config_file:
@@ -72,8 +72,8 @@ def run(config_path):
 
     files = config['files']
 
-    # Get the training and test data splits
-    data_split = get_task_split(task_id=config['task_id'],
+    # Get the training and test datu splits
+    data_split = get_task_split(task=config['task'],
                                 seed=config['seed'],
                                 split=config['split'])
 
@@ -84,7 +84,6 @@ def run(config_path):
     # Create the tpot model and fit it
     params = tpot_params(time=config['time'],
                          seed=config['seed'],
-                         algorithm_family=config['algorithm_family'],
                          checkpoint_folder=config['folders']['checkpoints'],
                          cpus=config['cpus'],
                          logfile=files['log'],
@@ -123,6 +122,11 @@ def run(config_path):
         print('\n\n')
 
     tpot.export(files['export'])
+
+    # Overwrites any metrics if experiment is run again
+    with open(files['metrics'], 'w') as f:
+        times = {'time': {'start': str(start_at), 'end': str(datetime.now())}}
+        json.dump(times, f, indent=2)
 
 
 if __name__ == "__main__":

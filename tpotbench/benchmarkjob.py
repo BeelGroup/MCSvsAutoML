@@ -12,9 +12,9 @@ class BenchmarkJob(Job):
     @abstractmethod
     def __init__(
             self,
-            jobname: str,
+            name: str,
             seed: int,
-            task_id: int,
+            task: int,
             time: int,
             basedir: str,
             split: Tuple[float, float, float],
@@ -24,9 +24,9 @@ class BenchmarkJob(Job):
             **kwargs
     ) -> None:
         super().__init__()
-        self.jobname = jobname
+        self._name = name
         self.seed = seed
-        self.task_id = task_id
+        self.task = task
         self.split = split
         self.time = time
         self.basedir = basedir
@@ -56,7 +56,7 @@ class BenchmarkJob(Job):
         pass
 
     def name(self) -> str:
-        return self.jobname
+        return self._name
 
     def ready(self) -> bool:
         return not self.blocked() and not self.complete()
