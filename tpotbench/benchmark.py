@@ -11,6 +11,7 @@ from slurmjobmanager import LocalEnvironment, SlurmEnvironment
 from .slurm import slurm_job_options
 from .selectors import selector_job_map
 from .classifiers import classifier_job_map
+from .baselines import baseline_job_map
 from .benchmarkjob import BenchmarkJob
 
 # TODO
@@ -32,6 +33,9 @@ class Benchmark:
 
         self.cfg = cfg
         self.id = cfg['id']
+        self.classifier_jobs = {}
+        self.baseline_jobs = {}
+        self.selector_jobs = {}
 
         # Setup environment
         self.env = None
@@ -58,7 +62,6 @@ class Benchmark:
             names.add(model['name'])
 
         # Create classifier jobs
-        self.classifier_jobs = {}
         for model_config in cfg['classifiers']:
 
             clf_type = model_config['type']
@@ -71,7 +74,6 @@ class Benchmark:
             self.classifier_jobs[name] = job
 
         # Create selector jobs
-        self.selector_jobs = {}
         for model_config in cfg['selectors']:
 
             selector_type = model_config['type']
@@ -88,6 +90,17 @@ class Benchmark:
 
             job = job_class.from_config(model_config, basedir)
             self.selector_jobs[name] = job
+
+        # Create baseline jobs
+        for model_config in cfg['baselines']:
+            baseline_type = model_config['type']
+            name = model_config['name']
+
+            basedir = os.path.join(self.benchmark_path, name)
+            job_class = baseline_job_map[baseline_type]
+
+            job = job_class.from_config(model_config, basedir)
+            self.baseline_jobs[name] = job
 
     def job_failed(self, job: BenchmarkJob) -> bool:
         if job.complete():
@@ -117,7 +130,9 @@ class Benchmark:
         return False
 
     def jobs(self) -> List[BenchmarkJob]:
-        return list(self.classifier_jobs.values()) + list(self.selector_jobs.values())
+        return list(self.classifier_jobs.values()) + \
+            list(self.selector_jobs.values()) + \
+            list(self.baseline_jobs.values())
 
     def status(
         self,
@@ -143,9 +158,9 @@ class Benchmark:
             results['ready'] = [
                 job for job in jobs
                 if job.ready() and not job.name() in info['pending'] + info['running']
-            ],
+            ]
         else:
-            results['ready'] = [ job for job in jobs if job.ready() ]
+            results['ready'] = [job for job in jobs if job.ready()]
 
         return results
 
