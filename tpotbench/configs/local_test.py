@@ -77,10 +77,10 @@ config = {
     'baselines' : [
         {
             'type': 'autosklearn',
-            'name': f'bASK-{task}_{time * 9}_{seed}',
+            'name': f'bASK-{task}_{time}_{seed}',
             'seed': seed,
-            'split': split,
-            'time': time * 9, # time for 8 single classifiers and selector
+            'split': [split[0] + split[1], split[2]],
+            'time': time, # time should be for 8 single classifiers and selector
             'task': task,
             'cpus': cpus,
             'memory': memory_selectors,
