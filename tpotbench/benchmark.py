@@ -142,7 +142,7 @@ class Benchmark:
             ]
             results['ready'] = [
                 job for job in jobs
-                if job.ready() and not job in info['pending'] + info['running']
+                if job.ready() and not job.name() in info['pending'] + info['running']
             ],
         else:
             results['ready'] = [ job for job in jobs if job.ready() ]
