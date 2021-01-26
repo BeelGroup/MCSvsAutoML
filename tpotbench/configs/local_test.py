@@ -73,6 +73,21 @@ config = {
         }
         for seed, split, time, task
         in product(seeds, splits, times_in_mins, tasks[0:1])
+    ],
+    'baselines' : [
+        {
+            'type': 'autosklearn',
+            'name': f'bASK-{task}_{time * 9}_{seed}',
+            'seed': seed,
+            'split': split,
+            'time': time * 9, # time for 8 single classifiers and selector
+            'task': task,
+            'cpus': cpus,
+            'memory': memory_selectors,
+            'model_params': {},
+        }
+        for seed, split, time, task
+        in product(seeds, splits, times_in_mins, tasks[0:1])
     ]
 }
 
