@@ -19,7 +19,6 @@ class BaselineJob(BenchmarkJob):
         time: int,
         basedir: str,
         split: Tuple[float, float, float],
-        classifiers: Iterable[BenchmarkJob],
         memory: int,
         cpus: int,
         model_params: Optional[Dict[str, Any]] = None
@@ -27,7 +26,6 @@ class BaselineJob(BenchmarkJob):
         super().__init__(
             name, seed, task, time, basedir, split, memory, cpus
         )
-        self.classifiers = classifiers
         self.model_params = model_params
         self._paths: Dict[str, Any] = {
             'basedir': basedir,

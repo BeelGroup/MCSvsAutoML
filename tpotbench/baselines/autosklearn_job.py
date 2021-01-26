@@ -2,10 +2,10 @@ from typing import Dict, Any
 
 import os
 
-from .selector_job import SelectorJob
+from .baseline_job import BaselineJob
 
 
-class AutoSklearnBaselineJob(SelectorJob):
+class AutoSklearnBaselineJob(BaselineJob):
 
     _runner_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                 'autosklearn_runner.py')
