@@ -33,7 +33,7 @@ class BaselineJob(BenchmarkJob):
                 'config': join(basedir, 'config.json'),
                 'model': join(basedir, 'model.pkl'),
                 'training_classifications': join(
-                    basedir, 'training.npy'
+                    basedir, 'training_classifications.npy'
                 ),
                 'training_probabilities': join(
                     basedir, 'training_probabilities.npy'

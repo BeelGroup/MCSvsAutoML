@@ -60,7 +60,7 @@ def run(config_path):
     automodel.fit(X_train, y_train)
 
     # Save the classification and probability output of the models
-    training_classificaitons = automodel.predict(X_train)
+    training_classifications = automodel.predict(X_train)
     training_probabilities = automodel.predict_proba(X_train)
 
     test_classifications = automodel.predict(X_test)
