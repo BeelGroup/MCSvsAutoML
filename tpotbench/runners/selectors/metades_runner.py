@@ -1,14 +1,14 @@
 import sys
 import json
 import pickle
-from datetime import datetime
 
 import numpy as np
-from deslib.des.meta_des import METADES # type: ignore
+from deslib.des.meta_des import METADES  # type: ignore
 
-from tpotbench.runner_util import (  # type: ignore[no-name-in-module]
+from tpotbench.runners.util import (  # type: ignore[no-name-in-module]
     get_task_split, deslib_competences, deslib_selections
 )
+
 
 def metades_params(seed, model_params):
     return {
@@ -16,13 +16,11 @@ def metades_params(seed, model_params):
         **model_params
     }
 
-def run(config_path):
-    start_at = datetime.now()
 
+def run(config_path):
     config = {}
     with open(config_path, 'r') as config_file:
         config = json.load(config_file)
-
 
     files = config['files']
 
@@ -42,7 +40,7 @@ def run(config_path):
             classifier_pool.append(model)
 
     # Make and fit model
-    params = metades_params(seed=config['seed'], 
+    params = metades_params(seed=config['seed'],
                             model_params=config['model_params'])
     metades_model = METADES(classifier_pool, **params)
 
@@ -73,11 +71,6 @@ def run(config_path):
     # Save the model
     with open(files['model'], 'wb') as f:
         pickle.dump(metades_model, f)
-
-    # Overwrites any metrics if experiment is run again
-    with open(files['metrics'], 'w') as f:
-        times = {'time': {'start': str(start_at), 'end': str(datetime.now())}}
-        json.dump(times, f, indent=2)
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

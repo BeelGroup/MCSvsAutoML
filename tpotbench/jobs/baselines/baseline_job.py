@@ -1,15 +1,17 @@
-from typing import Tuple, Optional, Dict, Any, Iterable
+from typing import Tuple, Optional, Dict, Any
 
 import os
 import json
-from abc import abstractmethod
+import pickle
+from abc import ABC
 from os.path import join
 from shutil import rmtree
 
 from ..benchmarkjob import BenchmarkJob
+from ...models import Model
 
 
-class BaselineJob(BenchmarkJob):
+class BaselineJob(BenchmarkJob, ABC):
 
     def __init__(
         self,
@@ -44,20 +46,13 @@ class BaselineJob(BenchmarkJob):
                 'test_probabilities': join(
                     basedir, 'test_probabilities.npy'
                 ),
-                'metrics': join(basedir, 'metrics.json'),
             },
             'folders': {}
         }
 
     @classmethod
-    @abstractmethod
-    def default_params(cls) -> Dict[str, Any]:
-        pass
-
-    @classmethod
-    @abstractmethod
-    def baseline_type(cls) -> str:
-        pass
+    def job_type(cls) -> str:
+        return 'baseline'
 
     def paths(self) -> Dict[str, Any]:
         return self._paths
@@ -100,7 +95,8 @@ class BaselineJob(BenchmarkJob):
         return {
             'seed': self.seed,
             'time': self.time,
-            'split': self.split,
+            # Use the training and selector split for training the baseline
+            'split': (self.split[0] + self.split[1], self.split[2]),
             'task': self.task,
             'cpus': self.cpus,
             'memory': self.memory,
@@ -109,23 +105,8 @@ class BaselineJob(BenchmarkJob):
             'folders': paths['folders']
         }
 
-    def command(self) -> str:
-        config_path = self._paths['files']['config']
-        return f'python {self.runner_path()} {config_path}'
-
-    @classmethod
-    def from_config(
-        cls,
-        cfg: Dict[str, Any],
-        basedir: str,
-    ) -> BenchmarkJob:
-        if cfg['type'] != cls.baseline_type():
-            raise ValueError(f'Config object not a {cls.baseline_type} '
-                             + f'baseline,\n{cfg=}')
-
-        # Remove it as it's not a constructor params
-        del cfg['type']
-
-        default_params = cls.default_params()
-        baseline_params = {**default_params, **cfg, 'basedir': basedir}
-        return cls(**baseline_params)
+    def model(self) -> Model:
+        baseline = None
+        with open(self._paths['files']['model'], 'rb') as f:
+            baseline = pickle.load(f)
+        return baseline

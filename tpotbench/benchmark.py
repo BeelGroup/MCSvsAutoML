@@ -1,18 +1,17 @@
 """
 Manages job objects for the benchmark given a config to work from
 """
-from typing import Dict, Iterable, Optional, List
+from typing import Dict, Iterable, Optional, List, Tuple, Any
 
 import os
 import json
 
+import numpy as np
 from slurmjobmanager import LocalEnvironment, SlurmEnvironment
 
 from .slurm import slurm_job_options
-from .selectors import selector_job_map
-from .classifiers import classifier_job_map
-from .baselines import baseline_job_map
-from .benchmarkjob import BenchmarkJob
+from .jobs import job_types, BenchmarkJob
+from .runners.util import get_task_split
 
 # TODO
 # Finished writing up the autosklearn selector and classifiers, should
@@ -32,10 +31,18 @@ class Benchmark:
             cfg = json.load(f)
 
         self.cfg = cfg
+        self.seed = cfg['seed']
+        self.split = cfg['split']
         self.id = cfg['id']
-        self.classifier_jobs = {}
-        self.baseline_jobs = {}
-        self.selector_jobs = {}
+        self.tasks = cfg['tasks']
+        self._jobs = {
+            'classifier': {},
+            'baseline': {},
+            'selector': {}
+        }
+
+        self.benchmark_path = os.path.abspath(cfg['path'])
+        self.results_path = os.path.join(self.benchmark_path, 'results.json')
 
         # Setup environment
         self.env = None
@@ -47,60 +54,34 @@ class Benchmark:
             print('No environment specified, running locally.\n'
                   + 'This may take a substantial amount of time')
 
-        # Test if directory can be made
-        self.benchmark_path = os.path.abspath(cfg['path'])
+        # Test if directories can be made
         if not os.path.exists(self.benchmark_path):
             os.mkdir(self.benchmark_path)
 
-        # Ensure names of jobs are unique
-        names = set()
-        models = cfg.get('classifiers', []) + cfg.get('selectors', [])
-        for model in models:
-            if model['name'] in names:
-                raise RuntimeError(f'Duplicate name, {model["name"]}')
+        for model_type in ['classifier', 'selector', 'baseline']:
 
-            names.add(model['name'])
+            for model_cfg in cfg[model_type]:
+                algo_type = model_cfg['algo_type']
+                name = model_cfg['name']
 
-        # Create classifier jobs
-        for model_config in cfg['classifiers']:
+                # Add seed and split to config
+                model_cfg['seed'] = self.seed
+                model_cfg['split'] = self.split
 
-            clf_type = model_config['type']
-            name = model_config['name']
+                basedir = os.path.join(self.benchmark_path, name)
 
-            basedir = os.path.join(self.benchmark_path, name)
-            job_class = classifier_job_map[clf_type]
+                # If it's a selector, add the classifiers it works from
+                if model_type == 'selector':
+                    model_cfg['classifiers'] = [
+                        self._jobs['classifier'][clf_name]
+                        for clf_name
+                        in model_cfg['classifiers']
+                    ]
 
-            job = job_class.from_config(model_config, basedir)
-            self.classifier_jobs[name] = job
+                job_class = job_types[model_type][algo_type]
+                job = job_class.from_config(model_cfg, basedir)
 
-        # Create selector jobs
-        for model_config in cfg['selectors']:
-
-            selector_type = model_config['type']
-            name = model_config['name']
-
-            basedir = os.path.join(self.benchmark_path, name)
-            job_class = selector_job_map[selector_type]
-
-            # Replace the named classifiers with their job
-            model_config['classifiers'] = [
-                self.classifier_jobs[clf_name]
-                for clf_name in model_config['classifiers']
-            ]
-
-            job = job_class.from_config(model_config, basedir)
-            self.selector_jobs[name] = job
-
-        # Create baseline jobs
-        for model_config in cfg['baselines']:
-            baseline_type = model_config['type']
-            name = model_config['name']
-
-            basedir = os.path.join(self.benchmark_path, name)
-            job_class = baseline_job_map[baseline_type]
-
-            job = job_class.from_config(model_config, basedir)
-            self.baseline_jobs[name] = job
+                self._jobs[model_type][name] = job
 
     def job_failed(self, job: BenchmarkJob) -> bool:
         if job.complete():
@@ -130,9 +111,34 @@ class Benchmark:
         return False
 
     def jobs(self) -> List[BenchmarkJob]:
-        return list(self.classifier_jobs.values()) + \
-            list(self.selector_jobs.values()) + \
-            list(self.baseline_jobs.values())
+        return list(self._jobs['classifier'].values()) + \
+            list(self._jobs['selector'].values()) + \
+            list(self._jobs['baseline'].values())
+
+    def jobs_and_data_by_task(
+        self
+    ) -> Iterable[Tuple[int, Dict[str, Any], np.ndarray, np.ndarray]]:
+        for task in self.tasks:
+            models = {
+                'classifiers': {
+                    name: clf.model()
+                    for name, clf in self._jobs['classifier'].items()
+                    if clf.task == task
+                },
+                'selectors': {
+                    name: sel.model() 
+                    for name, sel in self._jobs['selector'].items()
+                    if sel.task == task
+                },
+                'baselines': {
+                    name: baseline.model() 
+                    for name, baseline in self._jobs['baseline'].items()
+                    if baseline.task == task
+                }
+            }
+            data = get_task_split(task, self.seed, self.split)
+            X_test, y_test = data['test']
+            yield task, models, X_test, y_test
 
     def status(
         self,

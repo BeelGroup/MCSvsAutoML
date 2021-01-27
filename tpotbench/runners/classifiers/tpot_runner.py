@@ -8,13 +8,12 @@ the config.
 import sys
 import json
 import pickle
-from datetime import datetime
 
 import numpy as np
 from tpot import TPOTClassifier
 from tpot.config import classifier_config_dict
 
-from tpotbench.runner_util import get_task_split
+from tpotbench.runners.util import get_task_split
 
 
 def tpot_params(time, seed, checkpoint_folder, cpus, logfile, model_params):
@@ -64,8 +63,6 @@ def tpot_params(time, seed, checkpoint_folder, cpus, logfile, model_params):
 
 
 def run(config_path):
-    start_at = datetime.now()
-
     config = {}
     with open(config_path, 'r') as config_file:
         config = json.load(config_file)
@@ -122,11 +119,6 @@ def run(config_path):
         print('\n\n')
 
     tpot.export(files['export'])
-
-    # Overwrites any metrics if experiment is run again
-    with open(files['metrics'], 'w') as f:
-        times = {'time': {'start': str(start_at), 'end': str(datetime.now())}}
-        json.dump(times, f, indent=2)
 
 
 if __name__ == "__main__":

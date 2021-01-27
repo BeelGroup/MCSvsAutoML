@@ -31,7 +31,7 @@ config = {
         'type': 'slurm',
         'username': 'eb130475'
     },
-    'classifiers': [
+    'classifier': [
         {
             'type': 'TPOT',
             'name': f'T-{clf}_{task}_{time}_{seed}',
@@ -48,7 +48,7 @@ config = {
         for seed, split, time, task, clf
         in product(seeds, splits, times_in_mins, tasks[0:20], tpot_classifiers)
     ],
-    'selectors': [
+    'selector': [
         {
             'type': 'autosklearn',
             'name': f'ASK-{task}_{time}_{seed}',

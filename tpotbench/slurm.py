@@ -1,7 +1,7 @@
 import os
 from typing import Dict, Tuple, Any
 
-from .benchmarkjob import BenchmarkJob
+from .jobs import BenchmarkJob
 
 def slurm_time_and_partition(
     time: int,

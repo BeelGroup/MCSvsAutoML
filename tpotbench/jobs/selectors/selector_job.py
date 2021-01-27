@@ -2,14 +2,14 @@ from typing import Tuple, Optional, Dict, Any, Iterable
 
 import os
 import json
-from abc import abstractmethod
+from abc import ABC
 from os.path import join
 from shutil import rmtree
 
 from ..benchmarkjob import BenchmarkJob
 
 
-class SelectorJob(BenchmarkJob):
+class SelectorJob(BenchmarkJob, ABC):
 
     def __init__(
         self,
@@ -50,20 +50,13 @@ class SelectorJob(BenchmarkJob):
                 'test_classifier_competences': join(
                     basedir, 'test_competences.npy'
                 ),
-                'metrics': join(basedir, 'metrics.json'),
             },
             'folders': {}
         }
 
     @classmethod
-    @abstractmethod
-    def default_params(cls) -> Dict[str, Any]:
-        pass
-
-    @classmethod
-    @abstractmethod
-    def selector_type(cls) -> str:
-        pass
+    def job_type(cls) -> str:
+        return 'selector'
 
     def paths(self) -> Dict[str, Any]:
         return self._paths
@@ -114,24 +107,3 @@ class SelectorJob(BenchmarkJob):
             'files': paths['files'],
             'folders': paths['folders']
         }
-
-    def command(self) -> str:
-        config_path = self._paths['files']['config']
-        return f'python {self.runner_path()} {config_path}'
-
-    @classmethod
-    def from_config(
-        cls,
-        cfg: Dict[str, Any],
-        basedir: str,
-    ) -> BenchmarkJob:
-        if cfg['type'] != cls.selector_type():
-            raise ValueError(f'Config object not a {cls.selector_type} '
-                             + f'selector,\n{cfg=}')
-
-        # Remove it as it's not a constructor params
-        del cfg['type']
-
-        default_params = cls.default_params()
-        selector_params = {**default_params, **cfg, 'basedir': basedir}
-        return cls(**selector_params)

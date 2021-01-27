@@ -1,20 +1,11 @@
 from typing import Dict, Any, Tuple, Optional
 import os
+import json
 
 from .classifier_job import ClassifierJob
 
 
 class TPOTClassifierJob(ClassifierJob):
-
-    _runner_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                'tpot_runner.py')
-
-    _classifier_type = 'TPOT'
-    _default_params = {
-        'memory': 12000,
-        'cpus': 1,
-        'model_params': {}
-    }
 
     def __init__(
         self,
@@ -35,13 +26,17 @@ class TPOTClassifierJob(ClassifierJob):
         self._paths['files']['export'] = os.path.join(basedir, 'export.py')
 
     @classmethod
-    def runner_path(cls) -> str:
-        return cls._runner_path
+    def algo_type(cls) -> str:
+        return 'tpot'
 
-    @classmethod
-    def classifier_type(cls) -> str:
-        return cls._classifier_type
+    # overrides
+    def setup(self) -> None:
+        if not os.path.exists(self._paths['basedir']):
+            os.mkdir(self._paths['basedir'])
 
-    @classmethod
-    def default_params(cls) -> Dict[str, Any]:
-        return cls._default_params
+        if not os.path.exists(self._paths['folders']['checkpoints']):
+            os.mkdir(self._paths['folders']['checkpoints'])
+
+        job_config = self.config()
+        with open(self._paths['files']['config'], 'w') as f:
+            json.dump(job_config, f, indent=2)

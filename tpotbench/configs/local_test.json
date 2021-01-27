@@ -4,16 +4,21 @@
   "env": {
     "type": "local"
   },
-  "classifiers": [
+  "split": [
+    0.5,
+    0.3,
+    0.2
+  ],
+  "seed": 5,
+  "tasks": [
+    3,
+    6,
+    11
+  ],
+  "classifier": [
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_3_5_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 5,
       "task": 3,
       "cpus": 4,
@@ -23,14 +28,30 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
+      "name": "T-NB_6_5_5",
+      "time": 5,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_11_5_5",
+      "time": 5,
+      "task": 11,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
       "name": "T-TR_3_5_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 5,
       "task": 3,
       "cpus": 4,
@@ -40,14 +61,30 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
+      "name": "T-TR_6_5_5",
+      "time": 5,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_11_5_5",
+      "time": 5,
+      "task": 11,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
       "name": "T-LR_3_5_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 5,
       "task": 3,
       "cpus": 4,
@@ -55,18 +92,34 @@
       "model_params": {
         "algorithm_family": "LR"
       }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_6_5_5",
+      "time": 5,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_11_5_5",
+      "time": 5,
+      "task": 11,
+      "cpus": 4,
+      "memory": 12000,
+      "model_params": {
+        "algorithm_family": "LR"
+      }
     }
   ],
-  "selectors": [
+  "selector": [
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-3_5_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 5,
       "task": 3,
       "cpus": 4,
@@ -79,14 +132,36 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "autosklearn",
+      "name": "ASK-6_5_5",
+      "time": 5,
+      "task": 6,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {},
+      "classifiers": [
+        "T-NB_6_5_5",
+        "T-TR_6_5_5",
+        "T-LR_6_5_5"
+      ]
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "ASK-11_5_5",
+      "time": 5,
+      "task": 11,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {},
+      "classifiers": [
+        "T-NB_11_5_5",
+        "T-TR_11_5_5",
+        "T-LR_11_5_5"
+      ]
+    },
+    {
+      "algo_type": "metades",
       "name": "MDES-3_5_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 5,
       "task": 3,
       "cpus": 4,
@@ -97,19 +172,60 @@
         "T-TR_3_5_5",
         "T-LR_3_5_5"
       ]
+    },
+    {
+      "algo_type": "metades",
+      "name": "MDES-6_5_5",
+      "time": 5,
+      "task": 6,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {},
+      "classifiers": [
+        "T-NB_6_5_5",
+        "T-TR_6_5_5",
+        "T-LR_6_5_5"
+      ]
+    },
+    {
+      "algo_type": "metades",
+      "name": "MDES-11_5_5",
+      "time": 5,
+      "task": 11,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {},
+      "classifiers": [
+        "T-NB_11_5_5",
+        "T-TR_11_5_5",
+        "T-LR_11_5_5"
+      ]
     }
   ],
-  "baselines": [
+  "baseline": [
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "bASK-3_5_5",
-      "seed": 5,
-      "split": [
-        0.8,
-        0.2
-      ],
       "time": 5,
       "task": 3,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-6_5_5",
+      "time": 5,
+      "task": 6,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-11_5_5",
+      "time": 5,
+      "task": 11,
       "cpus": 4,
       "memory": 20000,
       "model_params": {}

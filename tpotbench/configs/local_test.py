@@ -8,8 +8,8 @@ config_path = os.path.join(current_dir, f'{benchmark_name}.json')
 
 tasks = [3, 6, 11]
 times_in_mins = [5]
-seeds = [5]
-splits = [[0.5, 0.3, 0.2]]
+seed = 5
+split = [0.5, 0.3, 0.2]
 cpus = 4
 memory_classifiers = 12000
 memory_selectors = 20000
@@ -19,13 +19,14 @@ selectors = ['autosklearn', 'metades']
 config = {
     'id': f'{benchmark_name}',
     'path': f'./{benchmark_name}',
-    'env': { 'type': 'local', },
-    'classifiers': [
+    'env': {'type': 'local', },
+    'split': split,
+    'seed': seed,
+    'tasks': tasks,
+    'classifier': [
         {
-            'type': 'TPOT',
+            'algo_type': 'tpot',
             'name': f'T-{clf}_{task}_{time}_{seed}',
-            'seed': seed,
-            'split': split,
             'time': time,
             'task': task,
             'cpus': cpus,
@@ -34,15 +35,13 @@ config = {
                 'algorithm_family': clf
             }
         }
-        for seed, split, time, task, clf
-        in product(seeds, splits, times_in_mins, tasks[0:1], tpot_classifiers)
+        for time, clf, task
+        in product(times_in_mins, tpot_classifiers, tasks)
     ],
-    'selectors': [
+    'selector': [
         {
-            'type': 'autosklearn',
+            'algo_type': 'autosklearn',
             'name': f'ASK-{task}_{time}_{seed}',
-            'seed': seed,
-            'split': split,
             'time': time,
             'task': task,
             'cpus': cpus,
@@ -53,14 +52,12 @@ config = {
                 for clf in tpot_classifiers
             ]
         }
-        for seed, split, time, task
-        in product(seeds, splits, times_in_mins, tasks[0:1])
+        for time, task
+        in product(times_in_mins, tasks)
     ] + [
         {
-            'type': 'metades',
+            'algo_type': 'metades',
             'name': f'MDES-{task}_{time}_{seed}',
-            'seed': seed,
-            'split': split,
             'time': time,
             'task': task,
             'cpus': cpus,
@@ -71,26 +68,23 @@ config = {
                 for clf in tpot_classifiers
             ]
         }
-        for seed, split, time, task
-        in product(seeds, splits, times_in_mins, tasks[0:1])
+        for time, task
+        in product(times_in_mins, tasks)
     ],
-    'baselines' : [
+    'baseline': [
         {
-            'type': 'autosklearn',
+            'algo_type': 'autosklearn',
             'name': f'bASK-{task}_{time}_{seed}',
-            'seed': seed,
-            'split': [split[0] + split[1], split[2]],
-            'time': time, # time should be for 8 single classifiers and selector
+            'time': time,  # time should be for 8 single classifiers and selector
             'task': task,
             'cpus': cpus,
             'memory': memory_selectors,
             'model_params': {},
         }
-        for seed, split, time, task
-        in product(seeds, splits, times_in_mins, tasks[0:1])
+        for time, task
+        in product(times_in_mins, tasks)
     ]
 }
 
 with open(config_path, 'w') as f:
     json.dump(config, f, indent=2)
-
