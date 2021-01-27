@@ -5,16 +5,90 @@
     "type": "slurm",
     "username": "eb130475"
   },
-  "classifiers": [
+  "split": [
+    0.5,
+    0.3,
+    0.2
+  ],
+  "seed": 5,
+  "tasks": [
+    3,
+    6,
+    11,
+    12,
+    14,
+    15,
+    16,
+    18,
+    22,
+    23,
+    28,
+    29,
+    31,
+    32,
+    37,
+    43,
+    45,
+    49,
+    53,
+    219,
+    2074,
+    2079,
+    3021,
+    3022,
+    3481,
+    3549,
+    3560,
+    3573,
+    3902,
+    3903,
+    3904,
+    3913,
+    3917,
+    3918,
+    7592,
+    9910,
+    9946,
+    9952,
+    9957,
+    9960,
+    9964,
+    9971,
+    9976,
+    9977,
+    9978,
+    9981,
+    9985,
+    10093,
+    10101,
+    14952,
+    14954,
+    14965,
+    14969,
+    14970,
+    125920,
+    125922,
+    146195,
+    146800,
+    146817,
+    146819,
+    146820,
+    146821,
+    146822,
+    146824,
+    146825,
+    167119,
+    167120,
+    167121,
+    167124,
+    167125,
+    167140,
+    167141
+  ],
+  "classifier": [
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_3_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 3,
       "cpus": 4,
@@ -24,14 +98,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_3_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 3,
       "cpus": 4,
@@ -41,14 +109,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_3_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 3,
       "cpus": 4,
@@ -58,14 +120,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_3_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 3,
       "cpus": 4,
@@ -75,14 +131,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_3_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 3,
       "cpus": 4,
@@ -92,14 +142,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_3_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 3,
       "cpus": 4,
@@ -109,14 +153,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_3_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 3,
       "cpus": 4,
@@ -126,14 +164,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_3_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 3,
       "cpus": 4,
@@ -143,14 +175,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_6_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 6,
       "cpus": 4,
@@ -160,14 +186,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_6_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 6,
       "cpus": 4,
@@ -177,14 +197,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_6_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 6,
       "cpus": 4,
@@ -194,14 +208,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_6_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 6,
       "cpus": 4,
@@ -211,14 +219,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_6_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 6,
       "cpus": 4,
@@ -228,14 +230,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_6_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 6,
       "cpus": 4,
@@ -245,14 +241,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_6_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 6,
       "cpus": 4,
@@ -262,14 +252,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_6_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 6,
       "cpus": 4,
@@ -279,14 +263,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_11_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 11,
       "cpus": 4,
@@ -296,14 +274,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_11_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 11,
       "cpus": 4,
@@ -313,14 +285,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_11_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 11,
       "cpus": 4,
@@ -330,14 +296,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_11_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 11,
       "cpus": 4,
@@ -347,14 +307,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_11_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 11,
       "cpus": 4,
@@ -364,14 +318,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_11_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 11,
       "cpus": 4,
@@ -381,14 +329,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_11_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 11,
       "cpus": 4,
@@ -398,14 +340,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_11_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 11,
       "cpus": 4,
@@ -415,14 +351,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_12_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 12,
       "cpus": 4,
@@ -432,14 +362,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_12_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 12,
       "cpus": 4,
@@ -449,14 +373,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_12_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 12,
       "cpus": 4,
@@ -466,14 +384,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_12_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 12,
       "cpus": 4,
@@ -483,14 +395,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_12_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 12,
       "cpus": 4,
@@ -500,14 +406,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_12_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 12,
       "cpus": 4,
@@ -517,14 +417,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_12_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 12,
       "cpus": 4,
@@ -534,14 +428,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_12_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 12,
       "cpus": 4,
@@ -551,14 +439,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_14_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 14,
       "cpus": 4,
@@ -568,14 +450,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_14_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 14,
       "cpus": 4,
@@ -585,14 +461,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_14_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 14,
       "cpus": 4,
@@ -602,14 +472,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_14_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 14,
       "cpus": 4,
@@ -619,14 +483,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_14_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 14,
       "cpus": 4,
@@ -636,14 +494,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_14_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 14,
       "cpus": 4,
@@ -653,14 +505,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_14_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 14,
       "cpus": 4,
@@ -670,14 +516,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_14_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 14,
       "cpus": 4,
@@ -687,14 +527,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_15_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 15,
       "cpus": 4,
@@ -704,14 +538,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_15_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 15,
       "cpus": 4,
@@ -721,14 +549,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_15_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 15,
       "cpus": 4,
@@ -738,14 +560,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_15_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 15,
       "cpus": 4,
@@ -755,14 +571,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_15_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 15,
       "cpus": 4,
@@ -772,14 +582,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_15_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 15,
       "cpus": 4,
@@ -789,14 +593,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_15_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 15,
       "cpus": 4,
@@ -806,14 +604,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_15_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 15,
       "cpus": 4,
@@ -823,14 +615,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_16_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 16,
       "cpus": 4,
@@ -840,14 +626,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_16_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 16,
       "cpus": 4,
@@ -857,14 +637,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_16_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 16,
       "cpus": 4,
@@ -874,14 +648,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_16_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 16,
       "cpus": 4,
@@ -891,14 +659,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_16_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 16,
       "cpus": 4,
@@ -908,14 +670,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_16_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 16,
       "cpus": 4,
@@ -925,14 +681,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_16_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 16,
       "cpus": 4,
@@ -942,14 +692,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_16_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 16,
       "cpus": 4,
@@ -959,14 +703,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_18_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 18,
       "cpus": 4,
@@ -976,14 +714,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_18_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 18,
       "cpus": 4,
@@ -993,14 +725,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_18_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 18,
       "cpus": 4,
@@ -1010,14 +736,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_18_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 18,
       "cpus": 4,
@@ -1027,14 +747,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_18_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 18,
       "cpus": 4,
@@ -1044,14 +758,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_18_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 18,
       "cpus": 4,
@@ -1061,14 +769,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_18_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 18,
       "cpus": 4,
@@ -1078,14 +780,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_18_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 18,
       "cpus": 4,
@@ -1095,14 +791,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_22_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 22,
       "cpus": 4,
@@ -1112,14 +802,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_22_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 22,
       "cpus": 4,
@@ -1129,14 +813,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_22_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 22,
       "cpus": 4,
@@ -1146,14 +824,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_22_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 22,
       "cpus": 4,
@@ -1163,14 +835,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_22_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 22,
       "cpus": 4,
@@ -1180,14 +846,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_22_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 22,
       "cpus": 4,
@@ -1197,14 +857,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_22_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 22,
       "cpus": 4,
@@ -1214,14 +868,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_22_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 22,
       "cpus": 4,
@@ -1231,14 +879,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_23_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 23,
       "cpus": 4,
@@ -1248,14 +890,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_23_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 23,
       "cpus": 4,
@@ -1265,14 +901,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_23_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 23,
       "cpus": 4,
@@ -1282,14 +912,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_23_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 23,
       "cpus": 4,
@@ -1299,14 +923,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_23_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 23,
       "cpus": 4,
@@ -1316,14 +934,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_23_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 23,
       "cpus": 4,
@@ -1333,14 +945,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_23_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 23,
       "cpus": 4,
@@ -1350,14 +956,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_23_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 23,
       "cpus": 4,
@@ -1367,14 +967,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_28_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 28,
       "cpus": 4,
@@ -1384,14 +978,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_28_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 28,
       "cpus": 4,
@@ -1401,14 +989,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_28_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 28,
       "cpus": 4,
@@ -1418,14 +1000,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_28_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 28,
       "cpus": 4,
@@ -1435,14 +1011,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_28_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 28,
       "cpus": 4,
@@ -1452,14 +1022,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_28_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 28,
       "cpus": 4,
@@ -1469,14 +1033,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_28_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 28,
       "cpus": 4,
@@ -1486,14 +1044,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_28_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 28,
       "cpus": 4,
@@ -1503,14 +1055,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_29_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 29,
       "cpus": 4,
@@ -1520,14 +1066,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_29_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 29,
       "cpus": 4,
@@ -1537,14 +1077,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_29_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 29,
       "cpus": 4,
@@ -1554,14 +1088,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_29_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 29,
       "cpus": 4,
@@ -1571,14 +1099,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_29_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 29,
       "cpus": 4,
@@ -1588,14 +1110,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_29_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 29,
       "cpus": 4,
@@ -1605,14 +1121,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_29_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 29,
       "cpus": 4,
@@ -1622,14 +1132,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_29_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 29,
       "cpus": 4,
@@ -1639,14 +1143,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_31_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 31,
       "cpus": 4,
@@ -1656,14 +1154,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_31_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 31,
       "cpus": 4,
@@ -1673,14 +1165,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_31_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 31,
       "cpus": 4,
@@ -1690,14 +1176,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_31_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 31,
       "cpus": 4,
@@ -1707,14 +1187,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_31_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 31,
       "cpus": 4,
@@ -1724,14 +1198,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_31_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 31,
       "cpus": 4,
@@ -1741,14 +1209,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_31_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 31,
       "cpus": 4,
@@ -1758,14 +1220,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_31_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 31,
       "cpus": 4,
@@ -1775,14 +1231,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_32_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 32,
       "cpus": 4,
@@ -1792,14 +1242,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_32_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 32,
       "cpus": 4,
@@ -1809,14 +1253,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_32_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 32,
       "cpus": 4,
@@ -1826,14 +1264,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_32_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 32,
       "cpus": 4,
@@ -1843,14 +1275,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_32_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 32,
       "cpus": 4,
@@ -1860,14 +1286,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_32_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 32,
       "cpus": 4,
@@ -1877,14 +1297,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_32_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 32,
       "cpus": 4,
@@ -1894,14 +1308,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_32_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 32,
       "cpus": 4,
@@ -1911,14 +1319,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_37_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 37,
       "cpus": 4,
@@ -1928,14 +1330,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_37_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 37,
       "cpus": 4,
@@ -1945,14 +1341,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_37_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 37,
       "cpus": 4,
@@ -1962,14 +1352,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_37_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 37,
       "cpus": 4,
@@ -1979,14 +1363,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_37_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 37,
       "cpus": 4,
@@ -1996,14 +1374,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_37_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 37,
       "cpus": 4,
@@ -2013,14 +1385,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_37_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 37,
       "cpus": 4,
@@ -2030,14 +1396,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_37_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 37,
       "cpus": 4,
@@ -2047,14 +1407,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_43_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 43,
       "cpus": 4,
@@ -2064,14 +1418,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_43_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 43,
       "cpus": 4,
@@ -2081,14 +1429,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_43_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 43,
       "cpus": 4,
@@ -2098,14 +1440,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_43_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 43,
       "cpus": 4,
@@ -2115,14 +1451,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_43_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 43,
       "cpus": 4,
@@ -2132,14 +1462,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_43_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 43,
       "cpus": 4,
@@ -2149,14 +1473,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_43_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 43,
       "cpus": 4,
@@ -2166,14 +1484,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_43_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 43,
       "cpus": 4,
@@ -2183,14 +1495,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_45_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 45,
       "cpus": 4,
@@ -2200,14 +1506,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_45_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 45,
       "cpus": 4,
@@ -2217,14 +1517,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_45_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 45,
       "cpus": 4,
@@ -2234,14 +1528,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_45_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 45,
       "cpus": 4,
@@ -2251,14 +1539,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_45_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 45,
       "cpus": 4,
@@ -2268,14 +1550,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_45_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 45,
       "cpus": 4,
@@ -2285,14 +1561,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_45_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 45,
       "cpus": 4,
@@ -2302,14 +1572,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_45_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 45,
       "cpus": 4,
@@ -2319,14 +1583,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_49_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 49,
       "cpus": 4,
@@ -2336,14 +1594,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_49_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 49,
       "cpus": 4,
@@ -2353,14 +1605,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_49_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 49,
       "cpus": 4,
@@ -2370,14 +1616,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_49_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 49,
       "cpus": 4,
@@ -2387,14 +1627,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_49_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 49,
       "cpus": 4,
@@ -2404,14 +1638,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_49_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 49,
       "cpus": 4,
@@ -2421,14 +1649,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_49_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 49,
       "cpus": 4,
@@ -2438,14 +1660,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_49_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 49,
       "cpus": 4,
@@ -2455,14 +1671,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_53_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 53,
       "cpus": 4,
@@ -2472,14 +1682,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_53_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 53,
       "cpus": 4,
@@ -2489,14 +1693,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_53_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 53,
       "cpus": 4,
@@ -2506,14 +1704,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_53_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 53,
       "cpus": 4,
@@ -2523,14 +1715,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_53_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 53,
       "cpus": 4,
@@ -2540,14 +1726,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_53_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 53,
       "cpus": 4,
@@ -2557,14 +1737,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_53_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 53,
       "cpus": 4,
@@ -2574,14 +1748,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_53_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 53,
       "cpus": 4,
@@ -2591,14 +1759,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-NB_219_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 219,
       "cpus": 4,
@@ -2608,14 +1770,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-TR_219_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 219,
       "cpus": 4,
@@ -2625,14 +1781,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-KNN_219_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 219,
       "cpus": 4,
@@ -2642,14 +1792,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-MLP_219_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 219,
       "cpus": 4,
@@ -2659,14 +1803,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-LR_219_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 219,
       "cpus": 4,
@@ -2676,14 +1814,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-XGB_219_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 219,
       "cpus": 4,
@@ -2693,14 +1825,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SVM_219_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 219,
       "cpus": 4,
@@ -2710,14 +1836,8 @@
       }
     },
     {
-      "type": "TPOT",
+      "algo_type": "tpot",
       "name": "T-SGD_219_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 219,
       "cpus": 4,
@@ -2727,16 +1847,10 @@
       }
     }
   ],
-  "selectors": [
+  "selector": [
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-3_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 3,
       "cpus": 4,
@@ -2754,14 +1868,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-6_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 6,
       "cpus": 4,
@@ -2779,14 +1887,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-11_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 11,
       "cpus": 4,
@@ -2804,14 +1906,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-12_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 12,
       "cpus": 4,
@@ -2829,14 +1925,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-14_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 14,
       "cpus": 4,
@@ -2854,14 +1944,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-15_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 15,
       "cpus": 4,
@@ -2879,14 +1963,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-16_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 16,
       "cpus": 4,
@@ -2904,14 +1982,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-18_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 18,
       "cpus": 4,
@@ -2929,14 +2001,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-22_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 22,
       "cpus": 4,
@@ -2954,14 +2020,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-23_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 23,
       "cpus": 4,
@@ -2979,14 +2039,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-28_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 28,
       "cpus": 4,
@@ -3004,14 +2058,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-29_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 29,
       "cpus": 4,
@@ -3029,14 +2077,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-31_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 31,
       "cpus": 4,
@@ -3054,14 +2096,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-32_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 32,
       "cpus": 4,
@@ -3079,14 +2115,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-37_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 37,
       "cpus": 4,
@@ -3104,14 +2134,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-43_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 43,
       "cpus": 4,
@@ -3129,14 +2153,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-45_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 45,
       "cpus": 4,
@@ -3154,14 +2172,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-49_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 49,
       "cpus": 4,
@@ -3179,14 +2191,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-53_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 53,
       "cpus": 4,
@@ -3204,14 +2210,8 @@
       ]
     },
     {
-      "type": "autosklearn",
+      "algo_type": "autosklearn",
       "name": "ASK-219_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 219,
       "cpus": 4,
@@ -3229,14 +2229,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-3_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 3,
       "cpus": 4,
@@ -3254,14 +2248,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-6_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 6,
       "cpus": 4,
@@ -3279,14 +2267,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-11_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 11,
       "cpus": 4,
@@ -3304,14 +2286,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-12_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 12,
       "cpus": 4,
@@ -3329,14 +2305,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-14_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 14,
       "cpus": 4,
@@ -3354,14 +2324,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-15_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 15,
       "cpus": 4,
@@ -3379,14 +2343,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-16_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 16,
       "cpus": 4,
@@ -3404,14 +2362,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-18_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 18,
       "cpus": 4,
@@ -3429,14 +2381,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-22_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 22,
       "cpus": 4,
@@ -3454,14 +2400,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-23_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 23,
       "cpus": 4,
@@ -3479,14 +2419,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-28_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 28,
       "cpus": 4,
@@ -3504,14 +2438,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-29_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 29,
       "cpus": 4,
@@ -3529,14 +2457,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-31_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 31,
       "cpus": 4,
@@ -3554,14 +2476,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-32_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 32,
       "cpus": 4,
@@ -3579,14 +2495,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-37_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 37,
       "cpus": 4,
@@ -3604,14 +2514,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-43_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 43,
       "cpus": 4,
@@ -3629,14 +2533,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-45_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 45,
       "cpus": 4,
@@ -3654,14 +2552,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-49_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 49,
       "cpus": 4,
@@ -3679,14 +2571,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-53_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 53,
       "cpus": 4,
@@ -3704,14 +2590,8 @@
       ]
     },
     {
-      "type": "metades",
+      "algo_type": "metades",
       "name": "MDES-219_120_5",
-      "seed": 5,
-      "split": [
-        0.5,
-        0.3,
-        0.2
-      ],
       "time": 120,
       "task": 219,
       "cpus": 4,
@@ -3727,6 +2607,656 @@
         "T-SVM_219_120_5",
         "T-SGD_219_120_5"
       ]
+    }
+  ],
+  "baseline": [
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3_120_5",
+      "time": 120,
+      "task": 3,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-6_120_5",
+      "time": 120,
+      "task": 6,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-11_120_5",
+      "time": 120,
+      "task": 11,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-12_120_5",
+      "time": 120,
+      "task": 12,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-14_120_5",
+      "time": 120,
+      "task": 14,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-15_120_5",
+      "time": 120,
+      "task": 15,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-16_120_5",
+      "time": 120,
+      "task": 16,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-18_120_5",
+      "time": 120,
+      "task": 18,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-22_120_5",
+      "time": 120,
+      "task": 22,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-23_120_5",
+      "time": 120,
+      "task": 23,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-28_120_5",
+      "time": 120,
+      "task": 28,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-29_120_5",
+      "time": 120,
+      "task": 29,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-31_120_5",
+      "time": 120,
+      "task": 31,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-32_120_5",
+      "time": 120,
+      "task": 32,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-37_120_5",
+      "time": 120,
+      "task": 37,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-43_120_5",
+      "time": 120,
+      "task": 43,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-45_120_5",
+      "time": 120,
+      "task": 45,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-49_120_5",
+      "time": 120,
+      "task": 49,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-53_120_5",
+      "time": 120,
+      "task": 53,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-219_120_5",
+      "time": 120,
+      "task": 219,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-2074_120_5",
+      "time": 120,
+      "task": 2074,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-2079_120_5",
+      "time": 120,
+      "task": 2079,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3021_120_5",
+      "time": 120,
+      "task": 3021,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3022_120_5",
+      "time": 120,
+      "task": 3022,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3481_120_5",
+      "time": 120,
+      "task": 3481,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3549_120_5",
+      "time": 120,
+      "task": 3549,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3560_120_5",
+      "time": 120,
+      "task": 3560,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3573_120_5",
+      "time": 120,
+      "task": 3573,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3902_120_5",
+      "time": 120,
+      "task": 3902,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3903_120_5",
+      "time": 120,
+      "task": 3903,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3904_120_5",
+      "time": 120,
+      "task": 3904,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3913_120_5",
+      "time": 120,
+      "task": 3913,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3917_120_5",
+      "time": 120,
+      "task": 3917,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-3918_120_5",
+      "time": 120,
+      "task": 3918,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-7592_120_5",
+      "time": 120,
+      "task": 7592,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9910_120_5",
+      "time": 120,
+      "task": 9910,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9946_120_5",
+      "time": 120,
+      "task": 9946,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9952_120_5",
+      "time": 120,
+      "task": 9952,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9957_120_5",
+      "time": 120,
+      "task": 9957,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9960_120_5",
+      "time": 120,
+      "task": 9960,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9964_120_5",
+      "time": 120,
+      "task": 9964,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9971_120_5",
+      "time": 120,
+      "task": 9971,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9976_120_5",
+      "time": 120,
+      "task": 9976,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9977_120_5",
+      "time": 120,
+      "task": 9977,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9978_120_5",
+      "time": 120,
+      "task": 9978,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9981_120_5",
+      "time": 120,
+      "task": 9981,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-9985_120_5",
+      "time": 120,
+      "task": 9985,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-10093_120_5",
+      "time": 120,
+      "task": 10093,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-10101_120_5",
+      "time": 120,
+      "task": 10101,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-14952_120_5",
+      "time": 120,
+      "task": 14952,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-14954_120_5",
+      "time": 120,
+      "task": 14954,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-14965_120_5",
+      "time": 120,
+      "task": 14965,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-14969_120_5",
+      "time": 120,
+      "task": 14969,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-14970_120_5",
+      "time": 120,
+      "task": 14970,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-125920_120_5",
+      "time": 120,
+      "task": 125920,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-125922_120_5",
+      "time": 120,
+      "task": 125922,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-146195_120_5",
+      "time": 120,
+      "task": 146195,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-146800_120_5",
+      "time": 120,
+      "task": 146800,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-146817_120_5",
+      "time": 120,
+      "task": 146817,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-146819_120_5",
+      "time": 120,
+      "task": 146819,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-146820_120_5",
+      "time": 120,
+      "task": 146820,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-146821_120_5",
+      "time": 120,
+      "task": 146821,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-146822_120_5",
+      "time": 120,
+      "task": 146822,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-146824_120_5",
+      "time": 120,
+      "task": 146824,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-146825_120_5",
+      "time": 120,
+      "task": 146825,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-167119_120_5",
+      "time": 120,
+      "task": 167119,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-167120_120_5",
+      "time": 120,
+      "task": 167120,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-167121_120_5",
+      "time": 120,
+      "task": 167121,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-167124_120_5",
+      "time": 120,
+      "task": 167124,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-167125_120_5",
+      "time": 120,
+      "task": 167125,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-167140_120_5",
+      "time": 120,
+      "task": 167140,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-167141_120_5",
+      "time": 120,
+      "task": 167141,
+      "cpus": 4,
+      "memory": 20000,
+      "model_params": {}
     }
   ]
 }
