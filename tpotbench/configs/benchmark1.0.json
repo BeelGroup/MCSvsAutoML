@@ -31,59 +31,7 @@
     45,
     49,
     53,
-    219,
-    2074,
-    2079,
-    3021,
-    3022,
-    3481,
-    3549,
-    3560,
-    3573,
-    3902,
-    3903,
-    3904,
-    3913,
-    3917,
-    3918,
-    7592,
-    9910,
-    9946,
-    9952,
-    9957,
-    9960,
-    9964,
-    9971,
-    9976,
-    9977,
-    9978,
-    9981,
-    9985,
-    10093,
-    10101,
-    14952,
-    14954,
-    14965,
-    14969,
-    14970,
-    125920,
-    125922,
-    146195,
-    146800,
-    146817,
-    146819,
-    146820,
-    146821,
-    146822,
-    146824,
-    146825,
-    167119,
-    167120,
-    167121,
-    167124,
-    167125,
-    167140,
-    167141
+    219
   ],
   "classifier": [
     {
@@ -1854,7 +1802,7 @@
       "time": 120,
       "task": 3,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_3_120_5",
@@ -1863,7 +1811,6 @@
         "T-MLP_3_120_5",
         "T-LR_3_120_5",
         "T-XGB_3_120_5",
-        "T-SVM_3_120_5",
         "T-SGD_3_120_5"
       ]
     },
@@ -1873,7 +1820,7 @@
       "time": 120,
       "task": 6,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_6_120_5",
@@ -1882,7 +1829,6 @@
         "T-MLP_6_120_5",
         "T-LR_6_120_5",
         "T-XGB_6_120_5",
-        "T-SVM_6_120_5",
         "T-SGD_6_120_5"
       ]
     },
@@ -1892,7 +1838,7 @@
       "time": 120,
       "task": 11,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_11_120_5",
@@ -1901,7 +1847,6 @@
         "T-MLP_11_120_5",
         "T-LR_11_120_5",
         "T-XGB_11_120_5",
-        "T-SVM_11_120_5",
         "T-SGD_11_120_5"
       ]
     },
@@ -1911,7 +1856,7 @@
       "time": 120,
       "task": 12,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_12_120_5",
@@ -1920,7 +1865,6 @@
         "T-MLP_12_120_5",
         "T-LR_12_120_5",
         "T-XGB_12_120_5",
-        "T-SVM_12_120_5",
         "T-SGD_12_120_5"
       ]
     },
@@ -1930,7 +1874,7 @@
       "time": 120,
       "task": 14,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_14_120_5",
@@ -1939,7 +1883,6 @@
         "T-MLP_14_120_5",
         "T-LR_14_120_5",
         "T-XGB_14_120_5",
-        "T-SVM_14_120_5",
         "T-SGD_14_120_5"
       ]
     },
@@ -1949,7 +1892,7 @@
       "time": 120,
       "task": 15,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_15_120_5",
@@ -1958,7 +1901,6 @@
         "T-MLP_15_120_5",
         "T-LR_15_120_5",
         "T-XGB_15_120_5",
-        "T-SVM_15_120_5",
         "T-SGD_15_120_5"
       ]
     },
@@ -1968,7 +1910,7 @@
       "time": 120,
       "task": 16,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_16_120_5",
@@ -1977,7 +1919,6 @@
         "T-MLP_16_120_5",
         "T-LR_16_120_5",
         "T-XGB_16_120_5",
-        "T-SVM_16_120_5",
         "T-SGD_16_120_5"
       ]
     },
@@ -1987,7 +1928,7 @@
       "time": 120,
       "task": 18,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_18_120_5",
@@ -1996,7 +1937,6 @@
         "T-MLP_18_120_5",
         "T-LR_18_120_5",
         "T-XGB_18_120_5",
-        "T-SVM_18_120_5",
         "T-SGD_18_120_5"
       ]
     },
@@ -2006,7 +1946,7 @@
       "time": 120,
       "task": 22,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_22_120_5",
@@ -2015,7 +1955,6 @@
         "T-MLP_22_120_5",
         "T-LR_22_120_5",
         "T-XGB_22_120_5",
-        "T-SVM_22_120_5",
         "T-SGD_22_120_5"
       ]
     },
@@ -2025,7 +1964,7 @@
       "time": 120,
       "task": 23,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_23_120_5",
@@ -2034,7 +1973,6 @@
         "T-MLP_23_120_5",
         "T-LR_23_120_5",
         "T-XGB_23_120_5",
-        "T-SVM_23_120_5",
         "T-SGD_23_120_5"
       ]
     },
@@ -2044,7 +1982,7 @@
       "time": 120,
       "task": 28,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_28_120_5",
@@ -2053,7 +1991,6 @@
         "T-MLP_28_120_5",
         "T-LR_28_120_5",
         "T-XGB_28_120_5",
-        "T-SVM_28_120_5",
         "T-SGD_28_120_5"
       ]
     },
@@ -2063,7 +2000,7 @@
       "time": 120,
       "task": 29,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_29_120_5",
@@ -2072,7 +2009,6 @@
         "T-MLP_29_120_5",
         "T-LR_29_120_5",
         "T-XGB_29_120_5",
-        "T-SVM_29_120_5",
         "T-SGD_29_120_5"
       ]
     },
@@ -2082,7 +2018,7 @@
       "time": 120,
       "task": 31,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_31_120_5",
@@ -2091,7 +2027,6 @@
         "T-MLP_31_120_5",
         "T-LR_31_120_5",
         "T-XGB_31_120_5",
-        "T-SVM_31_120_5",
         "T-SGD_31_120_5"
       ]
     },
@@ -2101,7 +2036,7 @@
       "time": 120,
       "task": 32,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_32_120_5",
@@ -2110,7 +2045,6 @@
         "T-MLP_32_120_5",
         "T-LR_32_120_5",
         "T-XGB_32_120_5",
-        "T-SVM_32_120_5",
         "T-SGD_32_120_5"
       ]
     },
@@ -2120,7 +2054,7 @@
       "time": 120,
       "task": 37,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_37_120_5",
@@ -2129,7 +2063,6 @@
         "T-MLP_37_120_5",
         "T-LR_37_120_5",
         "T-XGB_37_120_5",
-        "T-SVM_37_120_5",
         "T-SGD_37_120_5"
       ]
     },
@@ -2139,7 +2072,7 @@
       "time": 120,
       "task": 43,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_43_120_5",
@@ -2148,7 +2081,6 @@
         "T-MLP_43_120_5",
         "T-LR_43_120_5",
         "T-XGB_43_120_5",
-        "T-SVM_43_120_5",
         "T-SGD_43_120_5"
       ]
     },
@@ -2158,7 +2090,7 @@
       "time": 120,
       "task": 45,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_45_120_5",
@@ -2167,7 +2099,6 @@
         "T-MLP_45_120_5",
         "T-LR_45_120_5",
         "T-XGB_45_120_5",
-        "T-SVM_45_120_5",
         "T-SGD_45_120_5"
       ]
     },
@@ -2177,7 +2108,7 @@
       "time": 120,
       "task": 49,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_49_120_5",
@@ -2186,7 +2117,6 @@
         "T-MLP_49_120_5",
         "T-LR_49_120_5",
         "T-XGB_49_120_5",
-        "T-SVM_49_120_5",
         "T-SGD_49_120_5"
       ]
     },
@@ -2196,7 +2126,7 @@
       "time": 120,
       "task": 53,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_53_120_5",
@@ -2205,7 +2135,6 @@
         "T-MLP_53_120_5",
         "T-LR_53_120_5",
         "T-XGB_53_120_5",
-        "T-SVM_53_120_5",
         "T-SGD_53_120_5"
       ]
     },
@@ -2215,7 +2144,7 @@
       "time": 120,
       "task": 219,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_219_120_5",
@@ -2224,7 +2153,6 @@
         "T-MLP_219_120_5",
         "T-LR_219_120_5",
         "T-XGB_219_120_5",
-        "T-SVM_219_120_5",
         "T-SGD_219_120_5"
       ]
     },
@@ -2234,7 +2162,7 @@
       "time": 120,
       "task": 3,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_3_120_5",
@@ -2243,7 +2171,6 @@
         "T-MLP_3_120_5",
         "T-LR_3_120_5",
         "T-XGB_3_120_5",
-        "T-SVM_3_120_5",
         "T-SGD_3_120_5"
       ]
     },
@@ -2253,7 +2180,7 @@
       "time": 120,
       "task": 6,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_6_120_5",
@@ -2262,7 +2189,6 @@
         "T-MLP_6_120_5",
         "T-LR_6_120_5",
         "T-XGB_6_120_5",
-        "T-SVM_6_120_5",
         "T-SGD_6_120_5"
       ]
     },
@@ -2272,7 +2198,7 @@
       "time": 120,
       "task": 11,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_11_120_5",
@@ -2281,7 +2207,6 @@
         "T-MLP_11_120_5",
         "T-LR_11_120_5",
         "T-XGB_11_120_5",
-        "T-SVM_11_120_5",
         "T-SGD_11_120_5"
       ]
     },
@@ -2291,7 +2216,7 @@
       "time": 120,
       "task": 12,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_12_120_5",
@@ -2300,7 +2225,6 @@
         "T-MLP_12_120_5",
         "T-LR_12_120_5",
         "T-XGB_12_120_5",
-        "T-SVM_12_120_5",
         "T-SGD_12_120_5"
       ]
     },
@@ -2310,7 +2234,7 @@
       "time": 120,
       "task": 14,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_14_120_5",
@@ -2319,7 +2243,6 @@
         "T-MLP_14_120_5",
         "T-LR_14_120_5",
         "T-XGB_14_120_5",
-        "T-SVM_14_120_5",
         "T-SGD_14_120_5"
       ]
     },
@@ -2329,7 +2252,7 @@
       "time": 120,
       "task": 15,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_15_120_5",
@@ -2338,7 +2261,6 @@
         "T-MLP_15_120_5",
         "T-LR_15_120_5",
         "T-XGB_15_120_5",
-        "T-SVM_15_120_5",
         "T-SGD_15_120_5"
       ]
     },
@@ -2348,7 +2270,7 @@
       "time": 120,
       "task": 16,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_16_120_5",
@@ -2357,7 +2279,6 @@
         "T-MLP_16_120_5",
         "T-LR_16_120_5",
         "T-XGB_16_120_5",
-        "T-SVM_16_120_5",
         "T-SGD_16_120_5"
       ]
     },
@@ -2367,7 +2288,7 @@
       "time": 120,
       "task": 18,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_18_120_5",
@@ -2376,7 +2297,6 @@
         "T-MLP_18_120_5",
         "T-LR_18_120_5",
         "T-XGB_18_120_5",
-        "T-SVM_18_120_5",
         "T-SGD_18_120_5"
       ]
     },
@@ -2386,7 +2306,7 @@
       "time": 120,
       "task": 22,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_22_120_5",
@@ -2395,7 +2315,6 @@
         "T-MLP_22_120_5",
         "T-LR_22_120_5",
         "T-XGB_22_120_5",
-        "T-SVM_22_120_5",
         "T-SGD_22_120_5"
       ]
     },
@@ -2405,7 +2324,7 @@
       "time": 120,
       "task": 23,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_23_120_5",
@@ -2414,7 +2333,6 @@
         "T-MLP_23_120_5",
         "T-LR_23_120_5",
         "T-XGB_23_120_5",
-        "T-SVM_23_120_5",
         "T-SGD_23_120_5"
       ]
     },
@@ -2424,7 +2342,7 @@
       "time": 120,
       "task": 28,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_28_120_5",
@@ -2433,7 +2351,6 @@
         "T-MLP_28_120_5",
         "T-LR_28_120_5",
         "T-XGB_28_120_5",
-        "T-SVM_28_120_5",
         "T-SGD_28_120_5"
       ]
     },
@@ -2443,7 +2360,7 @@
       "time": 120,
       "task": 29,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_29_120_5",
@@ -2452,7 +2369,6 @@
         "T-MLP_29_120_5",
         "T-LR_29_120_5",
         "T-XGB_29_120_5",
-        "T-SVM_29_120_5",
         "T-SGD_29_120_5"
       ]
     },
@@ -2462,7 +2378,7 @@
       "time": 120,
       "task": 31,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_31_120_5",
@@ -2471,7 +2387,6 @@
         "T-MLP_31_120_5",
         "T-LR_31_120_5",
         "T-XGB_31_120_5",
-        "T-SVM_31_120_5",
         "T-SGD_31_120_5"
       ]
     },
@@ -2481,7 +2396,7 @@
       "time": 120,
       "task": 32,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_32_120_5",
@@ -2490,7 +2405,6 @@
         "T-MLP_32_120_5",
         "T-LR_32_120_5",
         "T-XGB_32_120_5",
-        "T-SVM_32_120_5",
         "T-SGD_32_120_5"
       ]
     },
@@ -2500,7 +2414,7 @@
       "time": 120,
       "task": 37,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_37_120_5",
@@ -2509,7 +2423,6 @@
         "T-MLP_37_120_5",
         "T-LR_37_120_5",
         "T-XGB_37_120_5",
-        "T-SVM_37_120_5",
         "T-SGD_37_120_5"
       ]
     },
@@ -2519,7 +2432,7 @@
       "time": 120,
       "task": 43,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_43_120_5",
@@ -2528,7 +2441,6 @@
         "T-MLP_43_120_5",
         "T-LR_43_120_5",
         "T-XGB_43_120_5",
-        "T-SVM_43_120_5",
         "T-SGD_43_120_5"
       ]
     },
@@ -2538,7 +2450,7 @@
       "time": 120,
       "task": 45,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_45_120_5",
@@ -2547,7 +2459,6 @@
         "T-MLP_45_120_5",
         "T-LR_45_120_5",
         "T-XGB_45_120_5",
-        "T-SVM_45_120_5",
         "T-SGD_45_120_5"
       ]
     },
@@ -2557,7 +2468,7 @@
       "time": 120,
       "task": 49,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_49_120_5",
@@ -2566,7 +2477,6 @@
         "T-MLP_49_120_5",
         "T-LR_49_120_5",
         "T-XGB_49_120_5",
-        "T-SVM_49_120_5",
         "T-SGD_49_120_5"
       ]
     },
@@ -2576,7 +2486,7 @@
       "time": 120,
       "task": 53,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_53_120_5",
@@ -2585,7 +2495,6 @@
         "T-MLP_53_120_5",
         "T-LR_53_120_5",
         "T-XGB_53_120_5",
-        "T-SVM_53_120_5",
         "T-SGD_53_120_5"
       ]
     },
@@ -2595,7 +2504,7 @@
       "time": 120,
       "task": 219,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_219_120_5",
@@ -2604,7 +2513,6 @@
         "T-MLP_219_120_5",
         "T-LR_219_120_5",
         "T-XGB_219_120_5",
-        "T-SVM_219_120_5",
         "T-SGD_219_120_5"
       ]
     }
@@ -2616,7 +2524,7 @@
       "time": 120,
       "task": 3,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2625,7 +2533,7 @@
       "time": 120,
       "task": 6,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2634,7 +2542,7 @@
       "time": 120,
       "task": 11,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2643,7 +2551,7 @@
       "time": 120,
       "task": 12,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 30000,
       "model_params": {}
     },
     {
@@ -2652,7 +2560,7 @@
       "time": 120,
       "task": 14,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2661,7 +2569,7 @@
       "time": 120,
       "task": 15,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2670,7 +2578,7 @@
       "time": 120,
       "task": 16,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2679,7 +2587,7 @@
       "time": 120,
       "task": 18,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2688,7 +2596,7 @@
       "time": 120,
       "task": 22,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2697,7 +2605,7 @@
       "time": 120,
       "task": 23,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2706,7 +2614,7 @@
       "time": 120,
       "task": 28,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2715,7 +2623,7 @@
       "time": 120,
       "task": 29,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2724,7 +2632,7 @@
       "time": 120,
       "task": 31,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2733,7 +2641,7 @@
       "time": 120,
       "task": 32,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2742,7 +2650,7 @@
       "time": 120,
       "task": 37,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2751,7 +2659,7 @@
       "time": 120,
       "task": 43,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2760,7 +2668,7 @@
       "time": 120,
       "task": 45,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2769,7 +2677,7 @@
       "time": 120,
       "task": 49,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2778,7 +2686,7 @@
       "time": 120,
       "task": 53,
       "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     },
     {
@@ -2787,475 +2695,7 @@
       "time": 120,
       "task": 219,
       "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-2074_120_5",
-      "time": 120,
-      "task": 2074,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-2079_120_5",
-      "time": 120,
-      "task": 2079,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3021_120_5",
-      "time": 120,
-      "task": 3021,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3022_120_5",
-      "time": 120,
-      "task": 3022,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3481_120_5",
-      "time": 120,
-      "task": 3481,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3549_120_5",
-      "time": 120,
-      "task": 3549,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3560_120_5",
-      "time": 120,
-      "task": 3560,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3573_120_5",
-      "time": 120,
-      "task": 3573,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3902_120_5",
-      "time": 120,
-      "task": 3902,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3903_120_5",
-      "time": 120,
-      "task": 3903,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3904_120_5",
-      "time": 120,
-      "task": 3904,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3913_120_5",
-      "time": 120,
-      "task": 3913,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3917_120_5",
-      "time": 120,
-      "task": 3917,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-3918_120_5",
-      "time": 120,
-      "task": 3918,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-7592_120_5",
-      "time": 120,
-      "task": 7592,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9910_120_5",
-      "time": 120,
-      "task": 9910,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9946_120_5",
-      "time": 120,
-      "task": 9946,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9952_120_5",
-      "time": 120,
-      "task": 9952,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9957_120_5",
-      "time": 120,
-      "task": 9957,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9960_120_5",
-      "time": 120,
-      "task": 9960,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9964_120_5",
-      "time": 120,
-      "task": 9964,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9971_120_5",
-      "time": 120,
-      "task": 9971,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9976_120_5",
-      "time": 120,
-      "task": 9976,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9977_120_5",
-      "time": 120,
-      "task": 9977,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9978_120_5",
-      "time": 120,
-      "task": 9978,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9981_120_5",
-      "time": 120,
-      "task": 9981,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-9985_120_5",
-      "time": 120,
-      "task": 9985,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-10093_120_5",
-      "time": 120,
-      "task": 10093,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-10101_120_5",
-      "time": 120,
-      "task": 10101,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-14952_120_5",
-      "time": 120,
-      "task": 14952,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-14954_120_5",
-      "time": 120,
-      "task": 14954,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-14965_120_5",
-      "time": 120,
-      "task": 14965,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-14969_120_5",
-      "time": 120,
-      "task": 14969,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-14970_120_5",
-      "time": 120,
-      "task": 14970,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-125920_120_5",
-      "time": 120,
-      "task": 125920,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-125922_120_5",
-      "time": 120,
-      "task": 125922,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-146195_120_5",
-      "time": 120,
-      "task": 146195,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-146800_120_5",
-      "time": 120,
-      "task": 146800,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-146817_120_5",
-      "time": 120,
-      "task": 146817,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-146819_120_5",
-      "time": 120,
-      "task": 146819,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-146820_120_5",
-      "time": 120,
-      "task": 146820,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-146821_120_5",
-      "time": 120,
-      "task": 146821,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-146822_120_5",
-      "time": 120,
-      "task": 146822,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-146824_120_5",
-      "time": 120,
-      "task": 146824,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-146825_120_5",
-      "time": 120,
-      "task": 146825,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-167119_120_5",
-      "time": 120,
-      "task": 167119,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-167120_120_5",
-      "time": 120,
-      "task": 167120,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-167121_120_5",
-      "time": 120,
-      "task": 167121,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-167124_120_5",
-      "time": 120,
-      "task": 167124,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-167125_120_5",
-      "time": 120,
-      "task": 167125,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-167140_120_5",
-      "time": 120,
-      "task": 167140,
-      "cpus": 4,
-      "memory": 20000,
-      "model_params": {}
-    },
-    {
-      "algo_type": "autosklearn",
-      "name": "bASK-167141_120_5",
-      "time": 120,
-      "task": 167141,
-      "cpus": 4,
-      "memory": 20000,
+      "memory": 24000,
       "model_params": {}
     }
   ]
