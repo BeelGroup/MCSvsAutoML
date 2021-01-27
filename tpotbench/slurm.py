@@ -5,7 +5,7 @@ from .jobs import BenchmarkJob
 
 def slurm_time_and_partition(
     time: int,
-    buffer: float = 0.25
+    buffer: float = 0.5
 ) -> Tuple[str, str]:
     """
     Params
