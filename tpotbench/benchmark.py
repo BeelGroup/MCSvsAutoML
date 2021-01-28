@@ -119,26 +119,26 @@ class Benchmark:
         self
     ) -> Iterable[Tuple[int, Dict[str, Any], np.ndarray, np.ndarray]]:
         for task in self.tasks:
-            models = {
+            jobs = {
                 'classifiers': {
-                    name: clf.model()
+                    name: clf
                     for name, clf in self._jobs['classifier'].items()
                     if clf.task == task
                 },
                 'selectors': {
-                    name: sel.model() 
+                    name: sel
                     for name, sel in self._jobs['selector'].items()
                     if sel.task == task
                 },
                 'baselines': {
-                    name: baseline.model() 
+                    name: baseline
                     for name, baseline in self._jobs['baseline'].items()
                     if baseline.task == task
                 }
             }
             data = get_task_split(task, self.seed, self.split)
             X_test, y_test = data['test']
-            yield task, models, X_test, y_test
+            yield task, jobs, X_test, y_test
 
     def status(
         self,
