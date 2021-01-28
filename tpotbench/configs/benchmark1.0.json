@@ -102,28 +102,6 @@
     },
     {
       "algo_type": "tpot",
-      "name": "T-SVM_3_120_5",
-      "time": 120,
-      "task": 3,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_3_120_5",
-      "time": 120,
-      "task": 3,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
-      }
-    },
-    {
-      "algo_type": "tpot",
       "name": "T-NB_6_120_5",
       "time": 120,
       "task": 6,
@@ -186,28 +164,6 @@
       "memory": 12000,
       "model_params": {
         "algorithm_family": "XGB"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SVM_6_120_5",
-      "time": 120,
-      "task": 6,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_6_120_5",
-      "time": 120,
-      "task": 6,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
       }
     },
     {
@@ -278,28 +234,6 @@
     },
     {
       "algo_type": "tpot",
-      "name": "T-SVM_11_120_5",
-      "time": 120,
-      "task": 11,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_11_120_5",
-      "time": 120,
-      "task": 11,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
-      }
-    },
-    {
-      "algo_type": "tpot",
       "name": "T-NB_12_120_5",
       "time": 120,
       "task": 12,
@@ -362,28 +296,6 @@
       "memory": 12000,
       "model_params": {
         "algorithm_family": "XGB"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SVM_12_120_5",
-      "time": 120,
-      "task": 12,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_12_120_5",
-      "time": 120,
-      "task": 12,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
       }
     },
     {
@@ -454,28 +366,6 @@
     },
     {
       "algo_type": "tpot",
-      "name": "T-SVM_14_120_5",
-      "time": 120,
-      "task": 14,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_14_120_5",
-      "time": 120,
-      "task": 14,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
-      }
-    },
-    {
-      "algo_type": "tpot",
       "name": "T-NB_15_120_5",
       "time": 120,
       "task": 15,
@@ -538,28 +428,6 @@
       "memory": 12000,
       "model_params": {
         "algorithm_family": "XGB"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SVM_15_120_5",
-      "time": 120,
-      "task": 15,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_15_120_5",
-      "time": 120,
-      "task": 15,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
       }
     },
     {
@@ -630,28 +498,6 @@
     },
     {
       "algo_type": "tpot",
-      "name": "T-SVM_16_120_5",
-      "time": 120,
-      "task": 16,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_16_120_5",
-      "time": 120,
-      "task": 16,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
-      }
-    },
-    {
-      "algo_type": "tpot",
       "name": "T-NB_18_120_5",
       "time": 120,
       "task": 18,
@@ -714,28 +560,6 @@
       "memory": 12000,
       "model_params": {
         "algorithm_family": "XGB"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SVM_18_120_5",
-      "time": 120,
-      "task": 18,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_18_120_5",
-      "time": 120,
-      "task": 18,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
       }
     },
     {
@@ -806,28 +630,6 @@
     },
     {
       "algo_type": "tpot",
-      "name": "T-SVM_22_120_5",
-      "time": 120,
-      "task": 22,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_22_120_5",
-      "time": 120,
-      "task": 22,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
-      }
-    },
-    {
-      "algo_type": "tpot",
       "name": "T-NB_23_120_5",
       "time": 120,
       "task": 23,
@@ -890,28 +692,6 @@
       "memory": 12000,
       "model_params": {
         "algorithm_family": "XGB"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SVM_23_120_5",
-      "time": 120,
-      "task": 23,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_23_120_5",
-      "time": 120,
-      "task": 23,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
       }
     },
     {
@@ -982,28 +762,6 @@
     },
     {
       "algo_type": "tpot",
-      "name": "T-SVM_28_120_5",
-      "time": 120,
-      "task": 28,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_28_120_5",
-      "time": 120,
-      "task": 28,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
-      }
-    },
-    {
-      "algo_type": "tpot",
       "name": "T-NB_29_120_5",
       "time": 120,
       "task": 29,
@@ -1066,28 +824,6 @@
       "memory": 12000,
       "model_params": {
         "algorithm_family": "XGB"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SVM_29_120_5",
-      "time": 120,
-      "task": 29,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_29_120_5",
-      "time": 120,
-      "task": 29,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
       }
     },
     {
@@ -1158,28 +894,6 @@
     },
     {
       "algo_type": "tpot",
-      "name": "T-SVM_31_120_5",
-      "time": 120,
-      "task": 31,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_31_120_5",
-      "time": 120,
-      "task": 31,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
-      }
-    },
-    {
-      "algo_type": "tpot",
       "name": "T-NB_32_120_5",
       "time": 120,
       "task": 32,
@@ -1242,28 +956,6 @@
       "memory": 12000,
       "model_params": {
         "algorithm_family": "XGB"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SVM_32_120_5",
-      "time": 120,
-      "task": 32,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_32_120_5",
-      "time": 120,
-      "task": 32,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
       }
     },
     {
@@ -1334,28 +1026,6 @@
     },
     {
       "algo_type": "tpot",
-      "name": "T-SVM_37_120_5",
-      "time": 120,
-      "task": 37,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_37_120_5",
-      "time": 120,
-      "task": 37,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
-      }
-    },
-    {
-      "algo_type": "tpot",
       "name": "T-NB_43_120_5",
       "time": 120,
       "task": 43,
@@ -1418,28 +1088,6 @@
       "memory": 12000,
       "model_params": {
         "algorithm_family": "XGB"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SVM_43_120_5",
-      "time": 120,
-      "task": 43,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_43_120_5",
-      "time": 120,
-      "task": 43,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
       }
     },
     {
@@ -1510,28 +1158,6 @@
     },
     {
       "algo_type": "tpot",
-      "name": "T-SVM_45_120_5",
-      "time": 120,
-      "task": 45,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_45_120_5",
-      "time": 120,
-      "task": 45,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
-      }
-    },
-    {
-      "algo_type": "tpot",
       "name": "T-NB_49_120_5",
       "time": 120,
       "task": 49,
@@ -1594,28 +1220,6 @@
       "memory": 12000,
       "model_params": {
         "algorithm_family": "XGB"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SVM_49_120_5",
-      "time": 120,
-      "task": 49,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_49_120_5",
-      "time": 120,
-      "task": 49,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
       }
     },
     {
@@ -1686,28 +1290,6 @@
     },
     {
       "algo_type": "tpot",
-      "name": "T-SVM_53_120_5",
-      "time": 120,
-      "task": 53,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_53_120_5",
-      "time": 120,
-      "task": 53,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
-      }
-    },
-    {
-      "algo_type": "tpot",
       "name": "T-NB_219_120_5",
       "time": 120,
       "task": 219,
@@ -1771,28 +1353,6 @@
       "model_params": {
         "algorithm_family": "XGB"
       }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SVM_219_120_5",
-      "time": 120,
-      "task": 219,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SVM"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-SGD_219_120_5",
-      "time": 120,
-      "task": 219,
-      "cpus": 4,
-      "memory": 12000,
-      "model_params": {
-        "algorithm_family": "SGD"
-      }
     }
   ],
   "selector": [
@@ -1853,7 +1413,7 @@
       "time": 120,
       "task": 12,
       "cpus": 4,
-      "memory": 48000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_12_120_5",
@@ -2074,7 +1634,7 @@
       "time": 120,
       "task": 45,
       "cpus": 4,
-      "memory": 48000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_45_120_5",
@@ -2125,7 +1685,7 @@
       "time": 120,
       "task": 219,
       "cpus": 4,
-      "memory": 30000,
+      "memory": 24000,
       "model_params": {},
       "classifiers": [
         "T-NB_219_120_5",
@@ -2511,7 +2071,7 @@
       "time": 120,
       "task": 12,
       "cpus": 4,
-      "memory": 30000,
+      "memory": 24000,
       "model_params": {}
     },
     {

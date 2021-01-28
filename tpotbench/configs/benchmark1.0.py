@@ -51,7 +51,7 @@ config = {
             }
         }
         for time, task, clf
-        in product(times_in_mins, tasks[0:20], tpot_classifiers)
+        in product(times_in_mins, tasks[0:20], tpot_classifiers_modified)
     ],
     'selector': [
         {
