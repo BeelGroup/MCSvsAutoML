@@ -1853,7 +1853,7 @@
       "time": 120,
       "task": 12,
       "cpus": 4,
-      "memory": 30000,
+      "memory": 48000,
       "model_params": {},
       "classifiers": [
         "T-NB_12_120_5",
@@ -2074,7 +2074,7 @@
       "time": 120,
       "task": 45,
       "cpus": 4,
-      "memory": 30000,
+      "memory": 48000,
       "model_params": {},
       "classifiers": [
         "T-NB_45_120_5",
