@@ -21,7 +21,7 @@ def autosklearn_params(time, seed, cpus, memory, model_params):
     params = {
         'time_left_for_this_task': time * 60,
         'seed': seed,
-        'memory_limit': memory,
+        'memory_limit': int(memory * 0.75) ,
         'n_jobs': cpus,
         **model_params
     }
