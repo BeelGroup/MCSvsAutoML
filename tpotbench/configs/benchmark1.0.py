@@ -24,7 +24,7 @@ memory_selectors = 24000
 tpot_classifiers = ['NB', 'TR', 'KNN', 'MLP', 'LR', 'XGB', 'SVM', 'SGD']
 
 # https://github.com/EpistasisLab/tpot/issues/1170
-tpot_classifiers_no_svm = ['NB', 'TR', 'KNN', 'MLP', 'LR', 'XGB', 'SGD']
+tpot_classifiers_modified = ['NB', 'TR', 'KNN', 'MLP', 'LR', 'XGB']
 
 selectors = ['autosklearn', 'metades']
 
@@ -64,7 +64,7 @@ config = {
             'model_params': {},
             'classifiers': [
                 f'T-{clf}_{task}_{time}_{seed}'
-                for clf in tpot_classifiers_no_svm
+                for clf in tpot_classifiers_modified
             ]
         }
         for time, task
@@ -80,7 +80,7 @@ config = {
             'model_params': {},
             'classifiers': [
                 f'T-{clf}_{task}_{time}_{seed}'
-                for clf in tpot_classifiers_no_svm
+                for clf in tpot_classifiers_modified
             ]
         }
         for time, task
