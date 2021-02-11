@@ -1,23 +1,26 @@
-from .baselines.autosklearn import AutoSklearnBaselineJob
+from .baseline_job import (
+    BaselineJob, AutoKerasBaselineJob, AutoSklearnBaselineJob, TPOTBaselineJob
+)
 
-from .classifiers.tpot import TPOTClassifierJob
+from .selector_job import (
+    SelectorJob, AutoKerasSelectorJob, AutoSklearnSelectorJob, DESSelectorJob
+)
 
-from .selectors.autosklearn import AutoSklearnSelectorJob
-from .selectors.metades import METADESSelectorJob
-from .benchmarkjob import BenchmarkJob
+from .classifier_job import ClassifierJob, TPOTClassifierJob
+from .benchmark_job import BenchmarkJob
 
 job_types = {
-    'classifier': {
-        clf_cls.algo_type(): clf_cls
-        for clf_cls
-        in [TPOTClassifierJob]
+    'classifier' : {
+        'tpot': TPOTClassifierJob,
     },
     'selector': {
-        selector_cls.algo_type(): selector_cls
-        for selector_cls in [AutoSklearnSelectorJob, METADESSelectorJob]
+        'autokeras': AutoKerasSelectorJob,
+        'autosklearn': AutoSklearnSelectorJob,
+        'metades': DESSelectorJob,
     },
     'baseline': {
-        baseline_cls.algo_type(): baseline_cls
-        for baseline_cls in [AutoSklearnBaselineJob]
-    }
+        'tpot': TPOTBaselineJob,
+        'autosklearn': AutoSklearnBaselineJob,
+        'autokeras': AutoKerasBaselineJob,
+    },
 }

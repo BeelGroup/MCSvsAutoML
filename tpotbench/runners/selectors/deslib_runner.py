@@ -9,18 +9,19 @@ from tpotbench.runners.util import (  # type: ignore[no-name-in-module]
     get_task_split, deslib_competences, deslib_selections
 )
 
-
-def metades_params(seed, model_params):
-    return {
-        'random_state': seed,
-        **model_params
-    }
-
+selector_model_classes = {
+    'autokeras': None,
+    'autosklearn': None,
+    'metades': None,
+}
 
 def run(config_path):
     config = {}
     with open(config_path, 'r') as config_file:
         config = json.load(config_file)
+
+    algo_type = config['algo_type']
+    model_cls = selector_model_classes['algo_type']
 
     files = config['files']
 

@@ -1,0 +1,84 @@
+from typing import Tuple, Dict, Any, Iterable, Type, List
+
+from .benchmark_job import BenchmarkJob
+from .classifier_job import ClassifierJob
+from ..models import Model
+from ..models.selectors import (
+    AutoKerasSelectorModel, AutoSklearnSelectorModel,
+    DESSelectorModel
+)
+
+
+class SelectorJob(BenchmarkJob):
+
+    def __init__(self, name: str, algo_type: str, seed: int, task: int,
+                 time: int, basedir: str, split: Tuple[float, float, float],
+                 memory: int, cpus: int, model_config: Dict[str, Any],
+                 classifier_jobs: Iterable[ClassifierJob]) -> None:
+        super().__init__(name, algo_type, seed, task, time, basedir, split,
+                         memory, cpus, model_config)
+        self.classifier_jobs = classifier_jobs
+
+    @classmethod
+    def job_type(cls) -> str:
+        return 'selector'
+
+    def blocked(self) -> bool:
+        return any(not clf.complete() for clf in self.classifier_jobs)
+
+    def classifier_models(self) -> List[Model]:
+        return [clf.model() for clf in self.classifier_jobs]
+
+    def config(self) -> Dict[str, Any]:
+        return {
+            'name': self.name(),
+            'seed': self.seed,
+            'split': self.split,
+            'task': self.task,
+            'model_path': self.model_path,
+            'algo_type': self.algo_type,
+            'model_params': self.model_params(),
+            'classifiers': {
+                clf.model_cls().__name__: clf.model_path
+                for clf in self.classifier_jobs
+            },
+        }
+
+
+# TODO: For now, most selectors can be fit into a single class but we can
+#       give them their own individual classes for now incase anything needs to
+#       be added
+class AutoSklearnSelectorJob(SelectorJob):
+
+    @classmethod
+    def model_cls(cls) -> Type[AutoSklearnSelectorModel]:
+        return AutoSklearnSelectorModel
+
+    def model_params(self) -> Dict[str, Any]:
+        return {
+            'time_left_for_this_task': self.time * 60,
+            'seed': self.seed,
+            'memory_limit': int(self.memory * 0.75),
+            'n_jobs': self.cpus,
+            **self.model_config
+        }
+
+
+class AutoKerasSelectorJob(SelectorJob):
+
+    @classmethod
+    def model_cls(cls) -> Type[AutoKerasSelectorModel]:
+        return AutoKerasSelectorModel
+
+    def model_params(self) -> Dict[str, Any]:
+        raise NotImplementedError
+
+
+class DESSelectorJob(SelectorJob):
+
+    @classmethod
+    def model_cls(cls) -> Type[DESSelectorModel]:
+        return DESSelectorModel
+
+    def model_params(self) -> Dict[str, Any]:
+        raise NotImplementedError

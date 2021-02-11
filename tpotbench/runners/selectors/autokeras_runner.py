@@ -1,7 +1,7 @@
 """
-This file runs the AutoSklearnSelector job and is completely dependant on
+This file runs the AutoKerasSelector job and is completely dependant on
 the config file it is passed. It also defines the default parameters
-that the model is run off through the function `autosklearn_params`. Users can
+that the model is run off through the function `autokeras_params`. Users can
 overwrite these defaults or any other parameters by providing 'model_params' in
 the config.
 """
@@ -9,23 +9,41 @@ import sys
 import json
 import pickle
 
-import numpy as np
-from autosklearn.classification import AutoSklearnClassifier
+import numpy as np  # type: ignore[no-name-in-module]
+from autokeras import StructuredDataClassifier
 
-from tpotbench.util import (  # type: ignore[no-name-in-module]
+from tpotbench.runners.util import (  # type: ignore[no-name-in-module]
     get_task_split, classifier_predictions_to_selector_labels
 )
 
 
-def autosklearn_params(time, seed, cpus, memory, model_params):
+# TODO: Assuming that nothing needs to be specified for multiclass as it
+#   can be detected from using a classifier on a n-d array of 1/0.
+#   The API lists:
+#       * `num_classes` -- inferred (n_classifiers)
+#       * `multi_label` -- inferred (True?)
+#       * `loss` -- inferred (`categorical_crossentropy`)
+#       * `objective` -- inferred (`val_accuracy`)
+#   https://autokeras.com/structured_data_classifier/
+def autokeras_model_params(seed, memory, directory, model_params):
     params = {
-        'time_left_for_this_task': time * 60,
         'seed': seed,
-        'memory_limit': int(memory * 0.75),
-        'n_jobs': cpus,
+        'max_model_size': int(memory * 0.75),
+        'max_trials': 100,
+        'overwrite': True,
         **model_params
     }
     return params
+
+
+# Autokeras: https://autokeras.com/structured_data_classifier/#fit
+# Basemodel: https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit
+def autokeras_fit_params(cpus):
+    params = {
+        'validation_split': 0.2,
+        'use_multiprocessing': False,
+        'workers': cpus
+    }
 
 
 def run(config_path):
@@ -55,12 +73,12 @@ def run(config_path):
     )
 
     # Create a new automodel that will be trained
-    params = autosklearn_params(time=config['time'],
-                                seed=config['seed'],
-                                cpus=config['cpus'],
-                                memory=config['memory'],
-                                model_params=config['model_params'])
-    automodel = AutoSklearnClassifier(**params)
+    params = autokeras_model_params(seed=config['seed'],
+                                    cpus=config['cpus'],
+                                    memory=config['memory'],
+                                    model_params=config['model_params'])
+    time = config['time']
+    automodel = StructuredDataClassifier(**params)
 
     # Providing the X_test and y_test to allow for overtime
     # predictions

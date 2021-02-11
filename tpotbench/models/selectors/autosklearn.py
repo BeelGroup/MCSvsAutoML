@@ -1,44 +1,40 @@
-from typing import List, Any
+from typing import Any, Dict, cast
+
+import pickle
 
 import numpy as np
+from autosklearn.classification import AutoSklearnClassifier
 
 from .selector_model import SelectorModel
-from ..model import Model
+
 
 class AutoSklearnSelectorModel(SelectorModel):
 
     def __init__(
         self,
         name: str,
-        model: Any,
-        classifiers: List[Model],
-    ):
-        super().__init__()
-        self._name = name
-        self.selector = model
-        self._classifiers = classifiers
+        model_params: Dict[str, Any],
+        classifier_paths: Dict[str, str],
+    ) -> None:
+        super().__init__(name, model_params, classifier_paths)
+        self.selector = AutoSklearnClassifier(**model_params)
 
-    def name(self) -> str:
-        return self._name
-
-    def ensemble_selector(self) -> bool:
-        return False
+    def fit(self, X: np.ndarray, y: np.ndarray) -> None:
+        self.selector.fit(X, y)
 
     def predict(self, X: np.ndarray) -> np.ndarray:
-        selections = self.selections(X)
-        return [
-            self._classifiers[i].predict(instance.reshape(1, -1))
-            for i, instance
-            in zip(selections, X)
-        ]
+        # TODO: Can optimize and make cleaner
+        return np.asarray([
+            self.classifiers[i].predict(instance.reshape(1, -1))
+            for i, instance in self.selections(X)
+        ])
 
     def predict_proba(self, X: np.ndarray) -> np.ndarray:
-        selections = self.selections(X)
-        return [
-            self._classifiers[i].predict_proba(instance.reshape(1, -1))
-            for i, instance
-            in zip(selections, X)
-        ]
+        # TODO: Can optimize and make cleaner
+        return np.asarray([
+            self.classifiers[i].predict_proba(instance.reshape(1, -1))
+            for i, instance in self.selections(X)
+        ])
 
     def selections(self, X: np.ndarray) -> np.ndarray:
         competences = self.competences(X)
@@ -47,5 +43,12 @@ class AutoSklearnSelectorModel(SelectorModel):
     def competences(self, X: np.ndarray) -> np.ndarray:
         return self.selector.predict_proba(X)
 
-    def classifiers(self) -> List[Model]:
-        return self._classifiers
+    def save(self, path: str) -> None:
+        with open(path, 'wb') as f:
+            pickle.dump(self, f)
+
+    @classmethod
+    def load(cls, path: str):
+        # Inherits typing from parent
+        with open(path, 'rb') as file:
+            return cast(AutoSklearnSelectorModel, pickle.load(file))

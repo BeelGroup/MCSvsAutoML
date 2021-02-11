@@ -5,6 +5,7 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import ShuffleSplit
 
+
 def split_data(X, y, split_percentage, seed):
     splitter = ShuffleSplit(1, test_size=split_percentage, random_state=seed)
     split_1_idxs, split_2_idxs = next(splitter.split(X))
@@ -12,6 +13,7 @@ def split_data(X, y, split_percentage, seed):
         'split_1': (X[split_1_idxs], y[split_1_idxs]),
         'split_2': (X[split_2_idxs], y[split_2_idxs])
     }
+
 
 def get_task_split(task, seed, split):
     if not (len(split) == 2 or len(split) == 3):
@@ -49,7 +51,7 @@ def get_task_split(task, seed, split):
         test_split = split[1]
         splits = split_data(X, y, test_split, seed)
         return {
-            'baseline_train' : splits['split_1'],
+            'baseline_train': splits['split_1'],
             'baseline_test': splits['split_2']
         }
     else:
@@ -65,16 +67,18 @@ def get_task_split(task, seed, split):
         selector_relative_split = selector_split / (algo_split + selector_split)
 
         X_train, y_train = train_test_split['split_1']
-        train_splits = split_data(X_train, y_train, selector_relative_split, seed)
+        train_splits = split_data(
+            X_train, y_train, selector_relative_split, seed)
         return {
-            'algo_train' : train_splits['split_1'],
+            'algo_train': train_splits['split_1'],
             'selector_train': train_splits['split_2'],
             'test': train_test_split['split_2']
         }
 
-def classifier_predictions_to_selector_labels(
+
+def predictions_to_selector_labels(
     all_model_classifications,
-    y 
+    y
 ):
     """
     classifiers_classifications: (k, n)
@@ -90,16 +94,25 @@ def classifier_predictions_to_selector_labels(
     ])
     return np.transpose(correct_vectors)
 
-def deslib_competences(des_model, X):
-    distances, neighbors = des_model._get_region_competence(X)
-    classifier_probabilities = des_model._predict_proba_base(X)
 
-    competences = des_model.estimate_competence_from_proba(
-        query=X, neighbors=neighbors, probabilities=classifier_probabilities,
-        distances=distances)
+def deslib_competences(model, X):
+    distances, neighbors = model._get_region_competence(X)
+
+    if hasattr(model, 'estimate_competence_from_proba') and model.needs_proba:
+        classifier_probabilities = model._predict_proba_base(X)
+        competences = model.estimate_competence(
+            query=X, neighbors=neighbors, probabilities=classifier_probabilities,
+            distances=distances)
+    else:
+        classifier_predictions = model._predict_proba_base(X)
+        competences = model.estimate_competence_from_proba(
+            query=X, neighbors=neighbors, predicitons=classifier_predictions,
+            distances=distances)
+
     return competences
 
-def deslib_selections(des_model, X):
-    competences = deslib_competences(des_model, X)
-    selections = des_model.select(competences)
+
+def deslib_selections(model, X):
+    competences = deslib_competences(model, X)
+    selections = model.select(competences)
     return selections

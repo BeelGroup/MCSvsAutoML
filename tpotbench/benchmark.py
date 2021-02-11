@@ -5,13 +5,14 @@ from typing import Dict, Iterable, Optional, List, Tuple, Any
 
 import os
 import json
+from itertools import chain
 
 import numpy as np
 from slurmjobmanager import LocalEnvironment, SlurmEnvironment
 
 from .slurm import slurm_job_options
 from .jobs import job_types, BenchmarkJob
-from .runners.util import get_task_split
+from .util import get_task_split
 
 # TODO
 # Finished writing up the autosklearn selector and classifiers, should
@@ -110,10 +111,17 @@ class Benchmark:
         # failed
         return False
 
-    def jobs(self) -> List[BenchmarkJob]:
-        return list(self._jobs['classifier'].values()) + \
-            list(self._jobs['selector'].values()) + \
-            list(self._jobs['baseline'].values())
+    def jobs(self, filter_by=None) -> List[BenchmarkJob]:
+        jobs = list(chain.from_iterable(self._jobs[job_type].values() for job_type
+                                        in ['classifier', 'baseline', 'selector']))
+
+        if filter_by:
+            jobs = [
+                job for job in jobs
+                if job.job_type() == filter_by or job.algo_type() == filter_by
+            ]
+
+        return jobs
 
     def jobs_and_data_by_task(
         self
@@ -164,7 +172,8 @@ class Benchmark:
             ]
             results['ready'] = [
                 job for job in jobs
-                if job.ready() and job.name() not in info['pending'] and job.name() not in info['running'] and not self.job_failed(job)
+                if job.ready() and job.name() not in info['pending']
+                and job.name() not in info['running'] and not self.job_failed(job)
             ]
         else:
             results['ready'] = [job for job in jobs if job.ready()]
