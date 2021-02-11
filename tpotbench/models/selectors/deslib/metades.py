@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any, Dict, Iterable, Tuple
 
 from deslib.des.meta_des import METADES
 
@@ -10,7 +10,7 @@ class METADESSelectorModel(DESSelectorModel):
         self,
         name: str,
         model_params: Dict[str, Any],
-        classifier_paths: Dict[str, str],
+        classifier_paths: Iterable[Tuple[str, str]],
     ) -> None:
         super().__init__(name, model_params, classifier_paths)
         classifiers = self.classifiers
@@ -19,3 +19,7 @@ class METADESSelectorModel(DESSelectorModel):
     @property
     def selector(self) -> METADES:
         return self._selector
+
+    @classmethod
+    def ensemble_selector(cls) -> bool:
+        return True

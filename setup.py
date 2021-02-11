@@ -17,15 +17,18 @@ setup(name='tpotbench',
           'tpot',
           'pandas',
           'xgboost',
-          'numpy',
+          'numpy<=1.19.2',
           'slurmjobmanager @ git+git://github.com/eddiebergman/slurmjobmanager.git',
-          'auto-sklearn'
+          'auto-sklearn',
+          'autokeras',
+          'deslib'
       ],
       extras_require={
         'dev': [
             'mypy',
             'ipython',
-            'pylint'
+            'pylint',
+            'autopep8'
         ]
       }
 )

@@ -12,8 +12,6 @@ def run(config_path):
 
     print(f'Running\n\nConfig\n------\n{config}')
 
-    files = config['files']
-
     # Create the selector model
     algo_type = config['algo_type']
     baseline_class = baseline_classes[algo_type]
@@ -33,7 +31,7 @@ def run(config_path):
 
     # Fit and save model
     baseline.fit(X, y)
-    baseline.save(files['model'])
+    baseline.save(config['model_path'])
 
 
 if __name__ == "__main__":

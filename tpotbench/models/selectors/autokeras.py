@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any, Dict, Iterable, Tuple
 
 import numpy as np
 
@@ -11,13 +11,14 @@ class AutoKerasSelectorModel(SelectorModel):
         self,
         name: str,
         model_params: Dict[str, Any],
-        classifiers_paths: Dict[str, str],
+        classifier_paths: Iterable[Tuple[str, str]],
     ):
-        super().__init__(name, model_params, classifiers_paths)
-        self.selector = None
+        super().__init__(name, model_params, classifier_paths)
         raise NotImplementedError
+        #self.selector = None
 
-    def ensemble_selector(self) -> bool:
+    @classmethod
+    def ensemble_selector(cls) -> bool:
         return False
 
     def predict(self, X: np.ndarray) -> np.ndarray:
@@ -41,7 +42,8 @@ class AutoKerasSelectorModel(SelectorModel):
         return np.argmax(competences, axis=1)
 
     def competences(self, X: np.ndarray) -> np.ndarray:
-        return self.selector.predict_proba(X)
+        raise NotImplementedError
+        #return self.selector.predict_proba(X)
 
     def fit(self, X: np.ndarray, y: np.ndarray) -> None:
         raise NotImplementedError

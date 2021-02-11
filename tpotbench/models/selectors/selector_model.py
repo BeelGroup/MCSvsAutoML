@@ -1,4 +1,4 @@
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Iterable, Tuple
 from abc import abstractmethod
 
 import os
@@ -6,8 +6,8 @@ import os
 import numpy as np
 from numpy import ndarray
 
-from .. import Model
-from .. import classifier_classes
+from ..model import Model
+from ..classifiers import classifier_classes
 
 
 class SelectorModel(Model):
@@ -16,20 +16,20 @@ class SelectorModel(Model):
         self,
         name: str,
         model_params: Dict[str, Any],
-        classifier_paths: Dict[str, str],
+        classifier_paths: Iterable[Tuple[str, str]],
     ) -> None:
         super().__init__(name, model_params)
 
         self._classifiers: List[Model] = []
 
-        for clf_type, clf_path in classifier_paths.items():
+        for clf_type, clf_path in classifier_paths:
             if not os.path.exists(clf_path):
                 raise RuntimeError(f'No {clf_type} classifier at {clf_path}'
-                                   + f'for selector {self.name()}')
+                                   + f'for selector {self.name}')
 
             clf_class = classifier_classes[clf_type]
             clf_model = clf_class.load(clf_path)
-            self.classifiers.append(clf_model)
+            self._classifiers.append(clf_model)
 
     @property
     def classifiers(self) -> List[Model]:

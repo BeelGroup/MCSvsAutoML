@@ -9,6 +9,7 @@ from slurmjobmanager import Job
 
 from ..runners import runners
 from ..models import Model
+from ..custom_json_encoder import CustomEncoder
 
 T = TypeVar('T', bound='BenchmarkJob')
 
@@ -20,8 +21,11 @@ class BenchmarkJob(Job, ABC):
                  memory: int, cpus: int, model_config: Dict[str, Any],
                  *args, **kwargs) -> None:
         super().__init__()
+        if algo_type != self.algo_type():
+            raise ValueError(f'Can not construct {self.__class__.__name__}'
+                            + f' with {algo_type}')
+
         self._name = name
-        self._algo_type = algo_type
         self.seed = seed
         self.task = task
         self.time = time
@@ -31,9 +35,10 @@ class BenchmarkJob(Job, ABC):
         self.cpus = cpus
         self.model_config = model_config
 
-    @property
-    def algo_type(self) -> str:
-        return self._algo_type
+    @classmethod
+    @abstractmethod
+    def algo_type(cls) -> str:
+        raise NotImplementedError
 
     @property
     def config_path(self) -> str:
@@ -62,7 +67,8 @@ class BenchmarkJob(Job, ABC):
         if not os.path.exists(self.config_path):
             job_config = self.config()
             with open(self.config_path, 'w') as f:
-                json.dump(job_config, f, indent=2)
+                # CustomEncoder is required for ranges
+                json.dump(job_config, f, cls=CustomEncoder, indent=2)
 
     def reset(self) -> None:
         rmtree(self.basedir)
@@ -82,7 +88,7 @@ class BenchmarkJob(Job, ABC):
     @classmethod
     def from_config(cls: Type[T], cfg: Dict[str, Any], basedir: str) -> T:
         # pylint: disable-msg=comparison-with-callable
-        if cfg['algo_type'] != cls.algo_type:
+        if cfg['algo_type'] != cls.algo_type():
             raise ValueError(f'Config object not a {cls.algo_type}\n{cfg=}')
 
         # TODO this will raise mypy errors, need to fix this up

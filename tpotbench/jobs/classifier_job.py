@@ -22,7 +22,7 @@ class ClassifierJob(BenchmarkJob):
             'split': self.split,
             'task': self.task,
             'model_path': self.model_path,
-            'algo_type': self.algo_type,
+            'algo_type': self.algo_type(),
             'model_params': self.model_params(),
         }
 
@@ -79,10 +79,15 @@ class TPOTClassifierJob(ClassifierJob):
             'max_time_mins': self.time,
             'random_state': self.seed,
             'config_dict': {
-                algorithm: classifier_config_dict[self.algo_type]
+                algorithm: classifier_config_dict[algorithm]
                 for algorithm in algorithms
             },
             'periodic_checkpoint_folder': os.path.join(self.basedir, 'checkpoints'),
             'log_file': os.path.join(self.basedir, 'tpot.log')
         }
         return params
+
+    @classmethod
+    def algo_type(cls):
+        return 'tpot'
+

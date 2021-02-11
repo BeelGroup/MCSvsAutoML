@@ -6,8 +6,8 @@ benchmark_name = 'local_test'
 current_dir = os.path.dirname(os.path.abspath(__file__))
 config_path = os.path.join(current_dir, f'{benchmark_name}.json')
 
-tasks = [3, 6, 11]
-times_in_mins = [5]
+tasks = [3]
+times_in_mins = [1]
 seed = 5
 split = [0.5, 0.3, 0.2]
 cpus = 4
@@ -31,7 +31,7 @@ config = {
             'task': task,
             'cpus': cpus,
             'memory': memory_classifiers,
-            'model_params': {
+            'model_config': {
                 'algorithm_family': clf
             }
         }
@@ -46,7 +46,7 @@ config = {
             'task': task,
             'cpus': cpus,
             'memory': memory_selectors,
-            'model_params': {},
+            'model_config': {},
             'classifiers': [
                 f'T-{clf}_{task}_{time}_{seed}'
                 for clf in tpot_classifiers
@@ -62,7 +62,7 @@ config = {
             'task': task,
             'cpus': cpus,
             'memory': memory_selectors,
-            'model_params': {},
+            'model_config': {},
             'classifiers': [
                 f'T-{clf}_{task}_{time}_{seed}'
                 for clf in tpot_classifiers
@@ -79,7 +79,7 @@ config = {
             'task': task,
             'cpus': cpus,
             'memory': memory_selectors,
-            'model_params': {},
+            'model_config': {},
         }
         for time, task
         in product(times_in_mins, tasks)

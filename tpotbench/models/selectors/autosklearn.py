@@ -1,4 +1,4 @@
-from typing import Any, Dict, cast
+from typing import Any, Dict, cast, Iterable, Tuple
 
 import pickle
 
@@ -14,7 +14,7 @@ class AutoSklearnSelectorModel(SelectorModel):
         self,
         name: str,
         model_params: Dict[str, Any],
-        classifier_paths: Dict[str, str],
+        classifier_paths: Iterable[Tuple[str, str]],
     ) -> None:
         super().__init__(name, model_params, classifier_paths)
         self.selector = AutoSklearnClassifier(**model_params)
@@ -26,14 +26,14 @@ class AutoSklearnSelectorModel(SelectorModel):
         # TODO: Can optimize and make cleaner
         return np.asarray([
             self.classifiers[i].predict(instance.reshape(1, -1))
-            for i, instance in self.selections(X)
+            for i, instance in zip(self.selections(X), X)
         ])
 
     def predict_proba(self, X: np.ndarray) -> np.ndarray:
         # TODO: Can optimize and make cleaner
         return np.asarray([
             self.classifiers[i].predict_proba(instance.reshape(1, -1))
-            for i, instance in self.selections(X)
+            for i, instance in zip(self.selections(X), X)
         ])
 
     def selections(self, X: np.ndarray) -> np.ndarray:
@@ -46,6 +46,10 @@ class AutoSklearnSelectorModel(SelectorModel):
     def save(self, path: str) -> None:
         with open(path, 'wb') as f:
             pickle.dump(self, f)
+
+    @classmethod
+    def ensemble_selector(cls) -> bool:
+        return False
 
     @classmethod
     def load(cls, path: str):

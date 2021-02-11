@@ -3,7 +3,7 @@ from .autosklearn import AutoSklearnSelectorModel
 from .autokeras import AutoKerasSelectorModel
 
 selector_classes = {
-    'autosklearn': AutoKerasSelectorModel,
+    'autosklearn': AutoSklearnSelectorModel,
     'autokeras': AutoKerasSelectorModel,
     ** deslib_models
 }

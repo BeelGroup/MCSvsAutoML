@@ -14,20 +14,20 @@ class SelectorJob(BenchmarkJob):
     def __init__(self, name: str, algo_type: str, seed: int, task: int,
                  time: int, basedir: str, split: Tuple[float, float, float],
                  memory: int, cpus: int, model_config: Dict[str, Any],
-                 classifier_jobs: Iterable[ClassifierJob]) -> None:
+                 classifiers: Iterable[ClassifierJob]) -> None:
         super().__init__(name, algo_type, seed, task, time, basedir, split,
                          memory, cpus, model_config)
-        self.classifier_jobs = classifier_jobs
+        self.classifiers = classifiers
 
     @classmethod
     def job_type(cls) -> str:
         return 'selector'
 
     def blocked(self) -> bool:
-        return any(not clf.complete() for clf in self.classifier_jobs)
+        return any(not clf.complete() for clf in self.classifiers)
 
     def classifier_models(self) -> List[Model]:
-        return [clf.model() for clf in self.classifier_jobs]
+        return [clf.model() for clf in self.classifiers]
 
     def config(self) -> Dict[str, Any]:
         return {
@@ -36,12 +36,12 @@ class SelectorJob(BenchmarkJob):
             'split': self.split,
             'task': self.task,
             'model_path': self.model_path,
-            'algo_type': self.algo_type,
+            'algo_type': self.algo_type(),
             'model_params': self.model_params(),
-            'classifiers': {
-                clf.model_cls().__name__: clf.model_path
-                for clf in self.classifier_jobs
-            },
+            'classifiers': [
+                (clf.algo_type(), clf.model_path)
+                for clf in self.classifiers
+            ],
         }
 
 
@@ -49,6 +49,10 @@ class SelectorJob(BenchmarkJob):
 #       give them their own individual classes for now incase anything needs to
 #       be added
 class AutoSklearnSelectorJob(SelectorJob):
+
+    @classmethod
+    def algo_type(cls):
+        return 'autosklearn'
 
     @classmethod
     def model_cls(cls) -> Type[AutoSklearnSelectorModel]:
@@ -67,6 +71,10 @@ class AutoSklearnSelectorJob(SelectorJob):
 class AutoKerasSelectorJob(SelectorJob):
 
     @classmethod
+    def algo_type(cls):
+        return 'autokeras'
+
+    @classmethod
     def model_cls(cls) -> Type[AutoKerasSelectorModel]:
         return AutoKerasSelectorModel
 
@@ -74,6 +82,7 @@ class AutoKerasSelectorJob(SelectorJob):
         raise NotImplementedError
 
 
+# TODO: Should probably start seperating out into seperate files
 class DESSelectorJob(SelectorJob):
 
     @classmethod
@@ -81,4 +90,11 @@ class DESSelectorJob(SelectorJob):
         return DESSelectorModel
 
     def model_params(self) -> Dict[str, Any]:
-        raise NotImplementedError
+        return {}
+
+
+class METADESSelectorJob(DESSelectorJob):
+
+    @classmethod
+    def algo_type(cls):
+        return 'metades'

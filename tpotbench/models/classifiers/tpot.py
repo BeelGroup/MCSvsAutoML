@@ -8,6 +8,22 @@ from tpot import TPOTClassifier
 from ..model import Model
 
 
+# TODO: Can't pickle the full TPOT model
+#       https://github.com/EpistasisLab/tpot/issues/781
+#
+#       The work around is to only pickle the fitted pipeline accessible at
+#       `tpot.fitted_pipeline_`. However this means the model loaded back
+#       in is not exactly the same as the TPOT automodel.
+#
+#       Before saving the model:
+#           isinstance(self._model, TPOTClassifier)
+#
+#       After loading the model:
+#           not isinstance(self._model, TPOTClassifier)
+#           isinstance(self._model, sklearn.pipeline.Pipeline,)
+#
+#       Practically for our uses this was not an issue but could be important
+#       to anyone who's managed to find this message
 class TPOTClassifierModel(Model):
 
     def __init__(
@@ -18,10 +34,21 @@ class TPOTClassifierModel(Model):
         super().__init__(name, model_params)
         self._model = TPOTClassifier(**model_params)
 
+
     def fit(self, X: np.ndarray, y: np.ndarray) -> None:
         self._model.fit(X, y)
 
+        # TODO: This is required by DESlib which is kind of annoying.
+        #       They call check_if_fitted(model, 'classes_'), meaning these have
+        #       to act more like general sklearn models
+        self.classes_ = self._model.fitted_pipeline_.classes_
+
     def save(self, path: str) -> None:
+
+        # See comment above class
+        if isinstance(self._model, TPOTClassifier):
+            self._model = self._model.fitted_pipeline_
+
         with open(path, 'wb') as file:
             pickle.dump(self, file)
 

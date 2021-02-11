@@ -3,6 +3,7 @@ import json
 
 from tpotbench.models import selector_classes
 from tpotbench.util import get_task_split, predictions_to_selector_labels
+from tpotbench.models.selectors import DESSelectorModel
 
 
 def run(config_path):
@@ -17,18 +18,27 @@ def run(config_path):
     selector_class = selector_classes[algo_type]
 
     selector = selector_class(name=config['name'],
-                              classifiers=config['classifiers'],
-                              model_params=config['model_params'])
+                              model_params=config['model_params'],
+                              classifier_paths=config['classifiers'])
 
     data_split = get_task_split(task=config['task'],
                                 seed=config['seed'],
                                 split=config['split'])
 
     X, y = data_split['selector_train']
-    classifier_predictions = selector.classifier_predictions(X)
-    labels = predictions_to_selector_labels(classifier_predictions, y)
+    classifiers = selector.classifiers
+    print(classifiers)
+
+    # The DESlib models will perform this step themselves
+    if not isinstance(selector, DESSelectorModel):
+        classifier_predictions = selector.classifier_predictions(X)
+        labels = predictions_to_selector_labels(classifier_predictions, y)
+    else:
+        labels = y
 
     # Fit and then save model
+    print(f'{labels.shape=}')
+    print(f'{X.shape=}')
     selector.fit(X, labels)
     selector.save(path=config['model_path'])
 

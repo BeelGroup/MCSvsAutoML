@@ -12,8 +12,6 @@ def run(config_path):
 
     print(f'Running\n\nConfig\n------\n{config}')
 
-    files = config['files']
-
     # Create the selector model
     algo_type = config['algo_type']
     classifier_class = classifier_classes[algo_type]
@@ -29,7 +27,7 @@ def run(config_path):
 
     # Fit and save model
     classifier.fit(X, y)
-    classifier.save(files['model'])
+    classifier.save(config['model_path'])
 
 
 if __name__ == "__main__":

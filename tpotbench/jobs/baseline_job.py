@@ -22,6 +22,7 @@ class BaselineJob(BenchmarkJob):
     def config(self) -> Dict[str, Any]:
         return {
             'name': self.name(),
+            'algo_type': self.algo_type(),
             'seed': self.seed,
             'split': self.split,
             'task': self.task,
@@ -37,8 +38,17 @@ class AutoSklearnBaselineJob(BaselineJob):
         return AutoSklearnBaselineModel
 
     def model_params(self) -> Dict[str, Any]:
-        raise NotImplementedError
+        return {
+            'time_left_for_this_task': self.time * 60,
+            'seed': self.seed,
+            'memory_limit': int(self.memory * 0.75),
+            'n_jobs': self.cpus,
+            **self.model_config
+        }
 
+    @classmethod
+    def algo_type(cls):
+        return 'autosklearn'
 
 class AutoKerasBaselineJob(BaselineJob):
 
@@ -49,6 +59,9 @@ class AutoKerasBaselineJob(BaselineJob):
     def model_params(self) -> Dict[str, Any]:
         raise NotImplementedError
 
+    @classmethod
+    def algo_type(cls):
+        return 'autokeras'
 
 class TPOTBaselineJob(BaselineJob):
 
@@ -58,3 +71,7 @@ class TPOTBaselineJob(BaselineJob):
 
     def model_params(self) -> Dict[str, Any]:
         raise NotImplementedError
+
+    @classmethod
+    def algo_type(cls):
+        return 'tpot'

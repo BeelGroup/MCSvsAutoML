@@ -75,8 +75,7 @@ class Benchmark:
                 if model_type == 'selector':
                     model_cfg['classifiers'] = [
                         self._jobs['classifier'][clf_name]
-                        for clf_name
-                        in model_cfg['classifiers']
+                        for clf_name in model_cfg['classifiers']
                     ]
 
                 job_class = job_types[model_type][algo_type]
