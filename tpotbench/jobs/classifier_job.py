@@ -34,7 +34,7 @@ class ClassifierJob(BenchmarkJob):
 class TPOTClassifierJob(ClassifierJob):
 
     _default_params = {
-        'generations': None,
+        'generations': 9999,
         'population_size': 100,
         'offspring_size': None,
         'mutation_rate': 0.9,
@@ -47,7 +47,7 @@ class TPOTClassifierJob(ClassifierJob):
         'warm_start': True,
         'memory': 'auto',
         'use_dask': False,
-        'early_stop': None,
+        'early_stop': 15,
         'verbosity': 3,
         'disable_update_check': False,
     }
@@ -85,7 +85,7 @@ class TPOTClassifierJob(ClassifierJob):
             'periodic_checkpoint_folder': os.path.join(self.basedir, 'checkpoints'),
             'log_file': os.path.join(self.basedir, 'tpot.log')
         }
-        return params
+        return {**self._default_params, **params}
 
     @classmethod
     def algo_type(cls):

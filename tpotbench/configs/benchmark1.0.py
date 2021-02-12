@@ -46,12 +46,12 @@ config = {
             'task': task,
             'cpus': cpus,
             'memory': memory_classifiers,
-            'model_params': {
+            'model_config': {
                 'algorithm_family': clf,
             }
         }
         for time, task, clf
-        in product(times_in_mins, tasks[0:20], tpot_classifiers_modified)
+        in product(times_in_mins, all_tasks[0:40], tpot_classifiers_modified)
     ],
     'selector': [
         {
@@ -61,7 +61,7 @@ config = {
             'task': task,
             'cpus': cpus,
             'memory': memory_selectors,
-            'model_params': {},
+            'model_config': {},
             'classifiers': [
                 f'T-{clf}_{task}_{time}_{seed}'
                 for clf in tpot_classifiers_modified
@@ -77,7 +77,7 @@ config = {
             'task': task,
             'cpus': cpus,
             'memory': memory_selectors,
-            'model_params': {},
+            'model_config': {},
             'classifiers': [
                 f'T-{clf}_{task}_{time}_{seed}'
                 for clf in tpot_classifiers_modified
@@ -94,7 +94,7 @@ config = {
             'task': task,
             'cpus': cpus,
             'memory': memory_selectors,
-            'model_params': {},
+            'model_config': {},
         }
         for time, task
         in product(times_in_mins, tasks[0:20])

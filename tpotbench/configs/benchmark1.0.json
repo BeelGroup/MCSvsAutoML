@@ -41,7 +41,7 @@
       "task": 3,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -52,7 +52,7 @@
       "task": 3,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -63,7 +63,7 @@
       "task": 3,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -74,7 +74,7 @@
       "task": 3,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -85,7 +85,7 @@
       "task": 3,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -96,7 +96,7 @@
       "task": 3,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -107,7 +107,7 @@
       "task": 6,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -118,7 +118,7 @@
       "task": 6,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -129,7 +129,7 @@
       "task": 6,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -140,7 +140,7 @@
       "task": 6,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -151,7 +151,7 @@
       "task": 6,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -162,7 +162,7 @@
       "task": 6,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -173,7 +173,7 @@
       "task": 11,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -184,7 +184,7 @@
       "task": 11,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -195,7 +195,7 @@
       "task": 11,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -206,7 +206,7 @@
       "task": 11,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -217,7 +217,7 @@
       "task": 11,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -228,7 +228,7 @@
       "task": 11,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -239,7 +239,7 @@
       "task": 12,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -250,7 +250,7 @@
       "task": 12,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -261,7 +261,7 @@
       "task": 12,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -272,7 +272,7 @@
       "task": 12,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -283,7 +283,7 @@
       "task": 12,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -294,7 +294,7 @@
       "task": 12,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -305,7 +305,7 @@
       "task": 14,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -316,7 +316,7 @@
       "task": 14,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -327,7 +327,7 @@
       "task": 14,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -338,7 +338,7 @@
       "task": 14,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -349,7 +349,7 @@
       "task": 14,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -360,7 +360,7 @@
       "task": 14,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -371,7 +371,7 @@
       "task": 15,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -382,7 +382,7 @@
       "task": 15,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -393,7 +393,7 @@
       "task": 15,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -404,7 +404,7 @@
       "task": 15,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -415,7 +415,7 @@
       "task": 15,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -426,7 +426,7 @@
       "task": 15,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -437,7 +437,7 @@
       "task": 16,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -448,7 +448,7 @@
       "task": 16,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -459,7 +459,7 @@
       "task": 16,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -470,7 +470,7 @@
       "task": 16,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -481,7 +481,7 @@
       "task": 16,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -492,7 +492,7 @@
       "task": 16,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -503,7 +503,7 @@
       "task": 18,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -514,7 +514,7 @@
       "task": 18,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -525,7 +525,7 @@
       "task": 18,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -536,7 +536,7 @@
       "task": 18,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -547,7 +547,7 @@
       "task": 18,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -558,7 +558,7 @@
       "task": 18,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -569,7 +569,7 @@
       "task": 22,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -580,7 +580,7 @@
       "task": 22,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -591,7 +591,7 @@
       "task": 22,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -602,7 +602,7 @@
       "task": 22,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -613,7 +613,7 @@
       "task": 22,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -624,7 +624,7 @@
       "task": 22,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -635,7 +635,7 @@
       "task": 23,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -646,7 +646,7 @@
       "task": 23,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -657,7 +657,7 @@
       "task": 23,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -668,7 +668,7 @@
       "task": 23,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -679,7 +679,7 @@
       "task": 23,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -690,7 +690,7 @@
       "task": 23,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -701,7 +701,7 @@
       "task": 28,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -712,7 +712,7 @@
       "task": 28,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -723,7 +723,7 @@
       "task": 28,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -734,7 +734,7 @@
       "task": 28,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -745,7 +745,7 @@
       "task": 28,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -756,7 +756,7 @@
       "task": 28,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -767,7 +767,7 @@
       "task": 29,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -778,7 +778,7 @@
       "task": 29,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -789,7 +789,7 @@
       "task": 29,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -800,7 +800,7 @@
       "task": 29,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -811,7 +811,7 @@
       "task": 29,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -822,7 +822,7 @@
       "task": 29,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -833,7 +833,7 @@
       "task": 31,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -844,7 +844,7 @@
       "task": 31,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -855,7 +855,7 @@
       "task": 31,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -866,7 +866,7 @@
       "task": 31,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -877,7 +877,7 @@
       "task": 31,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -888,7 +888,7 @@
       "task": 31,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -899,7 +899,7 @@
       "task": 32,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -910,7 +910,7 @@
       "task": 32,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -921,7 +921,7 @@
       "task": 32,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -932,7 +932,7 @@
       "task": 32,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -943,7 +943,7 @@
       "task": 32,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -954,7 +954,7 @@
       "task": 32,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -965,7 +965,7 @@
       "task": 37,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -976,7 +976,7 @@
       "task": 37,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -987,7 +987,7 @@
       "task": 37,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -998,7 +998,7 @@
       "task": 37,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -1009,7 +1009,7 @@
       "task": 37,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -1020,7 +1020,7 @@
       "task": 37,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -1031,7 +1031,7 @@
       "task": 43,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -1042,7 +1042,7 @@
       "task": 43,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -1053,7 +1053,7 @@
       "task": 43,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -1064,7 +1064,7 @@
       "task": 43,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -1075,7 +1075,7 @@
       "task": 43,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -1086,7 +1086,7 @@
       "task": 43,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -1097,7 +1097,7 @@
       "task": 45,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -1108,7 +1108,7 @@
       "task": 45,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -1119,7 +1119,7 @@
       "task": 45,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -1130,7 +1130,7 @@
       "task": 45,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -1141,7 +1141,7 @@
       "task": 45,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -1152,7 +1152,7 @@
       "task": 45,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -1163,7 +1163,7 @@
       "task": 49,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -1174,7 +1174,7 @@
       "task": 49,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -1185,7 +1185,7 @@
       "task": 49,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -1196,7 +1196,7 @@
       "task": 49,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -1207,7 +1207,7 @@
       "task": 49,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -1218,7 +1218,7 @@
       "task": 49,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -1229,7 +1229,7 @@
       "task": 53,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -1240,7 +1240,7 @@
       "task": 53,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -1251,7 +1251,7 @@
       "task": 53,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -1262,7 +1262,7 @@
       "task": 53,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -1273,7 +1273,7 @@
       "task": 53,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -1284,7 +1284,7 @@
       "task": 53,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "XGB"
       }
     },
@@ -1295,7 +1295,7 @@
       "task": 219,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "NB"
       }
     },
@@ -1306,7 +1306,7 @@
       "task": 219,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "TR"
       }
     },
@@ -1317,7 +1317,7 @@
       "task": 219,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "KNN"
       }
     },
@@ -1328,7 +1328,7 @@
       "task": 219,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "MLP"
       }
     },
@@ -1339,7 +1339,7 @@
       "task": 219,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
         "algorithm_family": "LR"
       }
     },
@@ -1350,7 +1350,1327 @@
       "task": 219,
       "cpus": 4,
       "memory": 12000,
-      "model_params": {
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_2074_120_5",
+      "time": 120,
+      "task": 2074,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_2074_120_5",
+      "time": 120,
+      "task": 2074,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_2074_120_5",
+      "time": 120,
+      "task": 2074,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_2074_120_5",
+      "time": 120,
+      "task": 2074,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_2074_120_5",
+      "time": 120,
+      "task": 2074,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_2074_120_5",
+      "time": 120,
+      "task": 2074,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_2079_120_5",
+      "time": 120,
+      "task": 2079,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_2079_120_5",
+      "time": 120,
+      "task": 2079,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_2079_120_5",
+      "time": 120,
+      "task": 2079,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_2079_120_5",
+      "time": 120,
+      "task": 2079,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_2079_120_5",
+      "time": 120,
+      "task": 2079,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_2079_120_5",
+      "time": 120,
+      "task": 2079,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3021_120_5",
+      "time": 120,
+      "task": 3021,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3021_120_5",
+      "time": 120,
+      "task": 3021,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3021_120_5",
+      "time": 120,
+      "task": 3021,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3021_120_5",
+      "time": 120,
+      "task": 3021,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3021_120_5",
+      "time": 120,
+      "task": 3021,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3021_120_5",
+      "time": 120,
+      "task": 3021,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3022_120_5",
+      "time": 120,
+      "task": 3022,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3022_120_5",
+      "time": 120,
+      "task": 3022,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3022_120_5",
+      "time": 120,
+      "task": 3022,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3022_120_5",
+      "time": 120,
+      "task": 3022,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3022_120_5",
+      "time": 120,
+      "task": 3022,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3022_120_5",
+      "time": 120,
+      "task": 3022,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3481_120_5",
+      "time": 120,
+      "task": 3481,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3481_120_5",
+      "time": 120,
+      "task": 3481,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3481_120_5",
+      "time": 120,
+      "task": 3481,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3481_120_5",
+      "time": 120,
+      "task": 3481,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3481_120_5",
+      "time": 120,
+      "task": 3481,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3481_120_5",
+      "time": 120,
+      "task": 3481,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3549_120_5",
+      "time": 120,
+      "task": 3549,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3549_120_5",
+      "time": 120,
+      "task": 3549,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3549_120_5",
+      "time": 120,
+      "task": 3549,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3549_120_5",
+      "time": 120,
+      "task": 3549,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3549_120_5",
+      "time": 120,
+      "task": 3549,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3549_120_5",
+      "time": 120,
+      "task": 3549,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3560_120_5",
+      "time": 120,
+      "task": 3560,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3560_120_5",
+      "time": 120,
+      "task": 3560,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3560_120_5",
+      "time": 120,
+      "task": 3560,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3560_120_5",
+      "time": 120,
+      "task": 3560,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3560_120_5",
+      "time": 120,
+      "task": 3560,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3560_120_5",
+      "time": 120,
+      "task": 3560,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3573_120_5",
+      "time": 120,
+      "task": 3573,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3573_120_5",
+      "time": 120,
+      "task": 3573,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3573_120_5",
+      "time": 120,
+      "task": 3573,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3573_120_5",
+      "time": 120,
+      "task": 3573,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3573_120_5",
+      "time": 120,
+      "task": 3573,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3573_120_5",
+      "time": 120,
+      "task": 3573,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3902_120_5",
+      "time": 120,
+      "task": 3902,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3902_120_5",
+      "time": 120,
+      "task": 3902,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3902_120_5",
+      "time": 120,
+      "task": 3902,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3902_120_5",
+      "time": 120,
+      "task": 3902,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3902_120_5",
+      "time": 120,
+      "task": 3902,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3902_120_5",
+      "time": 120,
+      "task": 3902,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3903_120_5",
+      "time": 120,
+      "task": 3903,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3903_120_5",
+      "time": 120,
+      "task": 3903,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3903_120_5",
+      "time": 120,
+      "task": 3903,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3903_120_5",
+      "time": 120,
+      "task": 3903,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3903_120_5",
+      "time": 120,
+      "task": 3903,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3903_120_5",
+      "time": 120,
+      "task": 3903,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3904_120_5",
+      "time": 120,
+      "task": 3904,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3904_120_5",
+      "time": 120,
+      "task": 3904,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3904_120_5",
+      "time": 120,
+      "task": 3904,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3904_120_5",
+      "time": 120,
+      "task": 3904,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3904_120_5",
+      "time": 120,
+      "task": 3904,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3904_120_5",
+      "time": 120,
+      "task": 3904,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3913_120_5",
+      "time": 120,
+      "task": 3913,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3913_120_5",
+      "time": 120,
+      "task": 3913,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3913_120_5",
+      "time": 120,
+      "task": 3913,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3913_120_5",
+      "time": 120,
+      "task": 3913,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3913_120_5",
+      "time": 120,
+      "task": 3913,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3913_120_5",
+      "time": 120,
+      "task": 3913,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3917_120_5",
+      "time": 120,
+      "task": 3917,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3917_120_5",
+      "time": 120,
+      "task": 3917,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3917_120_5",
+      "time": 120,
+      "task": 3917,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3917_120_5",
+      "time": 120,
+      "task": 3917,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3917_120_5",
+      "time": 120,
+      "task": 3917,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3917_120_5",
+      "time": 120,
+      "task": 3917,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_3918_120_5",
+      "time": 120,
+      "task": 3918,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_3918_120_5",
+      "time": 120,
+      "task": 3918,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_3918_120_5",
+      "time": 120,
+      "task": 3918,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_3918_120_5",
+      "time": 120,
+      "task": 3918,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_3918_120_5",
+      "time": 120,
+      "task": 3918,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_3918_120_5",
+      "time": 120,
+      "task": 3918,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_7592_120_5",
+      "time": 120,
+      "task": 7592,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_7592_120_5",
+      "time": 120,
+      "task": 7592,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_7592_120_5",
+      "time": 120,
+      "task": 7592,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_7592_120_5",
+      "time": 120,
+      "task": 7592,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_7592_120_5",
+      "time": 120,
+      "task": 7592,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_7592_120_5",
+      "time": 120,
+      "task": 7592,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_9910_120_5",
+      "time": 120,
+      "task": 9910,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_9910_120_5",
+      "time": 120,
+      "task": 9910,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_9910_120_5",
+      "time": 120,
+      "task": 9910,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_9910_120_5",
+      "time": 120,
+      "task": 9910,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_9910_120_5",
+      "time": 120,
+      "task": 9910,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_9910_120_5",
+      "time": 120,
+      "task": 9910,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_9946_120_5",
+      "time": 120,
+      "task": 9946,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_9946_120_5",
+      "time": 120,
+      "task": 9946,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_9946_120_5",
+      "time": 120,
+      "task": 9946,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_9946_120_5",
+      "time": 120,
+      "task": 9946,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_9946_120_5",
+      "time": 120,
+      "task": 9946,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_9946_120_5",
+      "time": 120,
+      "task": 9946,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_9952_120_5",
+      "time": 120,
+      "task": 9952,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_9952_120_5",
+      "time": 120,
+      "task": 9952,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_9952_120_5",
+      "time": 120,
+      "task": 9952,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_9952_120_5",
+      "time": 120,
+      "task": 9952,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_9952_120_5",
+      "time": 120,
+      "task": 9952,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_9952_120_5",
+      "time": 120,
+      "task": 9952,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_9957_120_5",
+      "time": 120,
+      "task": 9957,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_9957_120_5",
+      "time": 120,
+      "task": 9957,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_9957_120_5",
+      "time": 120,
+      "task": 9957,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_9957_120_5",
+      "time": 120,
+      "task": 9957,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_9957_120_5",
+      "time": 120,
+      "task": 9957,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_9957_120_5",
+      "time": 120,
+      "task": 9957,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "XGB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_9960_120_5",
+      "time": 120,
+      "task": 9960,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_9960_120_5",
+      "time": 120,
+      "task": 9960,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-KNN_9960_120_5",
+      "time": 120,
+      "task": 9960,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "KNN"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-MLP_9960_120_5",
+      "time": 120,
+      "task": 9960,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "MLP"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_9960_120_5",
+      "time": 120,
+      "task": 9960,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-XGB_9960_120_5",
+      "time": 120,
+      "task": 9960,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
         "algorithm_family": "XGB"
       }
     }
@@ -1363,7 +2683,7 @@
       "task": 3,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_3_120_5",
         "T-TR_3_120_5",
@@ -1380,7 +2700,7 @@
       "task": 6,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_6_120_5",
         "T-TR_6_120_5",
@@ -1397,7 +2717,7 @@
       "task": 11,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_11_120_5",
         "T-TR_11_120_5",
@@ -1414,7 +2734,7 @@
       "task": 12,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_12_120_5",
         "T-TR_12_120_5",
@@ -1431,7 +2751,7 @@
       "task": 14,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_14_120_5",
         "T-TR_14_120_5",
@@ -1448,7 +2768,7 @@
       "task": 15,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_15_120_5",
         "T-TR_15_120_5",
@@ -1465,7 +2785,7 @@
       "task": 16,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_16_120_5",
         "T-TR_16_120_5",
@@ -1482,7 +2802,7 @@
       "task": 18,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_18_120_5",
         "T-TR_18_120_5",
@@ -1499,7 +2819,7 @@
       "task": 22,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_22_120_5",
         "T-TR_22_120_5",
@@ -1516,7 +2836,7 @@
       "task": 23,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_23_120_5",
         "T-TR_23_120_5",
@@ -1533,7 +2853,7 @@
       "task": 28,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_28_120_5",
         "T-TR_28_120_5",
@@ -1550,7 +2870,7 @@
       "task": 29,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_29_120_5",
         "T-TR_29_120_5",
@@ -1567,7 +2887,7 @@
       "task": 31,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_31_120_5",
         "T-TR_31_120_5",
@@ -1584,7 +2904,7 @@
       "task": 32,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_32_120_5",
         "T-TR_32_120_5",
@@ -1601,7 +2921,7 @@
       "task": 37,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_37_120_5",
         "T-TR_37_120_5",
@@ -1618,7 +2938,7 @@
       "task": 43,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_43_120_5",
         "T-TR_43_120_5",
@@ -1635,7 +2955,7 @@
       "task": 45,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_45_120_5",
         "T-TR_45_120_5",
@@ -1652,7 +2972,7 @@
       "task": 49,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_49_120_5",
         "T-TR_49_120_5",
@@ -1669,7 +2989,7 @@
       "task": 53,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_53_120_5",
         "T-TR_53_120_5",
@@ -1686,7 +3006,7 @@
       "task": 219,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_219_120_5",
         "T-TR_219_120_5",
@@ -1703,7 +3023,7 @@
       "task": 3,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_3_120_5",
         "T-TR_3_120_5",
@@ -1720,7 +3040,7 @@
       "task": 6,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_6_120_5",
         "T-TR_6_120_5",
@@ -1737,7 +3057,7 @@
       "task": 11,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_11_120_5",
         "T-TR_11_120_5",
@@ -1754,7 +3074,7 @@
       "task": 12,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_12_120_5",
         "T-TR_12_120_5",
@@ -1771,7 +3091,7 @@
       "task": 14,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_14_120_5",
         "T-TR_14_120_5",
@@ -1788,7 +3108,7 @@
       "task": 15,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_15_120_5",
         "T-TR_15_120_5",
@@ -1805,7 +3125,7 @@
       "task": 16,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_16_120_5",
         "T-TR_16_120_5",
@@ -1822,7 +3142,7 @@
       "task": 18,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_18_120_5",
         "T-TR_18_120_5",
@@ -1839,7 +3159,7 @@
       "task": 22,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_22_120_5",
         "T-TR_22_120_5",
@@ -1856,7 +3176,7 @@
       "task": 23,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_23_120_5",
         "T-TR_23_120_5",
@@ -1873,7 +3193,7 @@
       "task": 28,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_28_120_5",
         "T-TR_28_120_5",
@@ -1890,7 +3210,7 @@
       "task": 29,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_29_120_5",
         "T-TR_29_120_5",
@@ -1907,7 +3227,7 @@
       "task": 31,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_31_120_5",
         "T-TR_31_120_5",
@@ -1924,7 +3244,7 @@
       "task": 32,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_32_120_5",
         "T-TR_32_120_5",
@@ -1941,7 +3261,7 @@
       "task": 37,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_37_120_5",
         "T-TR_37_120_5",
@@ -1958,7 +3278,7 @@
       "task": 43,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_43_120_5",
         "T-TR_43_120_5",
@@ -1975,7 +3295,7 @@
       "task": 45,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_45_120_5",
         "T-TR_45_120_5",
@@ -1992,7 +3312,7 @@
       "task": 49,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_49_120_5",
         "T-TR_49_120_5",
@@ -2009,7 +3329,7 @@
       "task": 53,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_53_120_5",
         "T-TR_53_120_5",
@@ -2026,7 +3346,7 @@
       "task": 219,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {},
+      "model_config": {},
       "classifiers": [
         "T-NB_219_120_5",
         "T-TR_219_120_5",
@@ -2045,7 +3365,7 @@
       "task": 3,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2054,7 +3374,7 @@
       "task": 6,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2063,7 +3383,7 @@
       "task": 11,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2072,7 +3392,7 @@
       "task": 12,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2081,7 +3401,7 @@
       "task": 14,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2090,7 +3410,7 @@
       "task": 15,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2099,7 +3419,7 @@
       "task": 16,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2108,7 +3428,7 @@
       "task": 18,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2117,7 +3437,7 @@
       "task": 22,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2126,7 +3446,7 @@
       "task": 23,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2135,7 +3455,7 @@
       "task": 28,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2144,7 +3464,7 @@
       "task": 29,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2153,7 +3473,7 @@
       "task": 31,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2162,7 +3482,7 @@
       "task": 32,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2171,7 +3491,7 @@
       "task": 37,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2180,7 +3500,7 @@
       "task": 43,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2189,7 +3509,7 @@
       "task": 45,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2198,7 +3518,7 @@
       "task": 49,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2207,7 +3527,7 @@
       "task": 53,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     },
     {
       "algo_type": "autosklearn",
@@ -2216,7 +3536,7 @@
       "task": 219,
       "cpus": 4,
       "memory": 24000,
-      "model_params": {}
+      "model_config": {}
     }
   ]
 }
