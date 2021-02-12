@@ -26,6 +26,7 @@ google-auth==1.26.1
 google-auth-oauthlib==0.4.2
 google-pasta==0.2.0
 grpcio==1.32.0
+h2o==3.32.0.4
 h5py==2.10.0
 HeapDict==1.0.1
 idna==2.10
@@ -59,6 +60,7 @@ psutil==5.8.0
 ptyprocess==0.7.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
+pyautoweka==1.1
 pycodestyle==2.6.0
 Pygments==2.7.4
 pylint==2.6.0
@@ -91,7 +93,7 @@ toml==0.10.2
 toolz==0.11.1
 tornado==6.1
 TPOT==0.11.7
--e git+https://github.com/eddiebergman/tpotbench@f3fb695778576835c47c290f21eb4a476b372d69#egg=tpotbench
+-e git+https://github.com/eddiebergman/tpotbench@f89c3455f09ff60eafe43976936bec5d5357ae5b#egg=tpotbench
 tqdm==4.56.2
 traitlets==5.0.5
 typed-ast==1.4.2
