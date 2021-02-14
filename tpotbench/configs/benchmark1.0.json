@@ -4629,7 +4629,7 @@
       "time": 120,
       "task": 12,
       "cpus": 4,
-      "memory": "48000",
+      "memory": 48000,
       "model_config": {},
       "classifiers": [
         "T-NB_12_120_5",
@@ -5139,7 +5139,7 @@
       "time": 120,
       "task": 9910,
       "cpus": 4,
-      "memory": "48000",
+      "memory": 48000,
       "model_config": {},
       "classifiers": [
         "T-NB_9910_120_5",
@@ -5224,7 +5224,7 @@
       "time": 120,
       "task": 9964,
       "cpus": 4,
-      "memory": "48000",
+      "memory": 48000,
       "model_config": {},
       "classifiers": [
         "T-NB_9964_120_5",
@@ -5309,7 +5309,7 @@
       "time": 120,
       "task": 9981,
       "cpus": 4,
-      "memory": "48000",
+      "memory": 48000,
       "model_config": {},
       "classifiers": [
         "T-NB_9981_120_5",
@@ -5615,7 +5615,7 @@
       "time": 120,
       "task": 146824,
       "cpus": 4,
-      "memory": "48000",
+      "memory": 48000,
       "model_config": {},
       "classifiers": [
         "T-NB_146824_120_5",
@@ -5785,7 +5785,7 @@
       "time": 120,
       "task": 12,
       "cpus": 4,
-      "memory": "48000",
+      "memory": 48000,
       "model_config": {},
       "classifiers": [
         "T-NB_12_120_5",
@@ -6295,7 +6295,7 @@
       "time": 120,
       "task": 9910,
       "cpus": 4,
-      "memory": "48000",
+      "memory": 48000,
       "model_config": {},
       "classifiers": [
         "T-NB_9910_120_5",
@@ -6380,7 +6380,7 @@
       "time": 120,
       "task": 9964,
       "cpus": 4,
-      "memory": "48000",
+      "memory": 48000,
       "model_config": {},
       "classifiers": [
         "T-NB_9964_120_5",
@@ -6465,7 +6465,7 @@
       "time": 120,
       "task": 9981,
       "cpus": 4,
-      "memory": "48000",
+      "memory": 48000,
       "model_config": {},
       "classifiers": [
         "T-NB_9981_120_5",
@@ -6771,7 +6771,7 @@
       "time": 120,
       "task": 146824,
       "cpus": 4,
-      "memory": "48000",
+      "memory": 48000,
       "model_config": {},
       "classifiers": [
         "T-NB_146824_120_5",

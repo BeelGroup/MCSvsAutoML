@@ -128,7 +128,7 @@ config = {
 out_of_mem_tasks = [12, 9910, 9964, 9981, 146824]
 for cfg in config['selector']:
     if cfg['task'] in out_of_mem_tasks:
-        cfg['memory'] = '48000'
+        cfg['memory'] = 48000
 
 
 with open(config_path, 'w') as f:
