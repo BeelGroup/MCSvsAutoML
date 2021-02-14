@@ -206,8 +206,9 @@ class Benchmark:
                         time_buffer = 1.0
 
                     if not job.name() in in_progress:
-                        self.env.run(job, slurm_job_options(job,
-                                                            buffer=time_buffer))
+                        slurm_opts = slurm_job_options(job,
+                                                       time_buffer=time_buffer)
+                        self.env.run(job, slurm_opts)
                 else:
                     print(f'running {job.name()}')
                     self.env.run(job, {})
