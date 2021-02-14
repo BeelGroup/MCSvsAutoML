@@ -122,7 +122,7 @@ class Benchmark:
 
         return jobs
 
-    def jobs_and_data_by_task(
+    def task_jobs_data_iter(
         self
     ) -> Iterable[Tuple[int, Dict[str, Any], np.ndarray, np.ndarray]]:
         for task in self.tasks:
@@ -144,8 +144,7 @@ class Benchmark:
                 }
             }
             data = get_task_split(task, self.seed, self.split)
-            X_test, y_test = data['test']
-            yield task, jobs, X_test, y_test
+            yield task, jobs, data
 
     def status(
         self,

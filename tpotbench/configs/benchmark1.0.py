@@ -14,7 +14,7 @@ all_tasks = [3, 6, 11, 12, 14, 15, 16, 18, 22, 23, 28, 29, 31, 32, 37, 43, 45, 4
          14970, 125920, 125922, 146195, 146800, 146817, 146819, 146820, 146821,
          146822, 146824, 146825, 167119, 167120, 167121, 167124, 167125, 167140, 
          167141]
-tasks = all_tasks[0:20]
+tasks = all_tasks
 times_in_mins = [120]
 seed = 5
 split = [0.5, 0.3, 0.2]
@@ -51,7 +51,7 @@ config = {
             }
         }
         for time, task, clf
-        in product(times_in_mins, all_tasks[0:40], tpot_classifiers_modified)
+        in product(times_in_mins, tasks, tpot_classifiers_modified)
     ],
     'selector': [
         {
@@ -68,7 +68,7 @@ config = {
             ]
         }
         for time, task
-        in product(times_in_mins, tasks[0:20])
+        in product(times_in_mins, tasks)
     ] + [
         {
             'algo_type': 'metades',
@@ -84,7 +84,7 @@ config = {
             ]
         }
         for time, task
-        in product(times_in_mins, tasks[0:20])
+        in product(times_in_mins, tasks)
     ],
     'baseline': [
         {
@@ -97,7 +97,20 @@ config = {
             'model_config': {},
         }
         for time, task
-        in product(times_in_mins, tasks[0:20])
+        in product(times_in_mins, tasks)
+    ] + [
+        {
+            'algo_type': 'tpot'
+            'name': f'bTPOT-{task}_{time}_{seed}',
+            'time': time,  # time should be for 8 single classifiers and selector
+            'task': task,
+            'cpus': cpus,
+            'memory': memory_selectors,
+            'model_config': {},
+        }
+        for time, task
+        in product(times_in_mins, tasks)
+        }
     ]
 }
 

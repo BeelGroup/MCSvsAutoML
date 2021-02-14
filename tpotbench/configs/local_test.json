@@ -11,7 +11,9 @@
   ],
   "seed": 5,
   "tasks": [
-    3
+    3,
+    6,
+    11
   ],
   "classifier": [
     {
@@ -19,6 +21,28 @@
       "name": "T-NB_3_1_5",
       "time": 1,
       "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_6_1_5",
+      "time": 1,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-NB_11_1_5",
+      "time": 1,
+      "task": 11,
       "cpus": 4,
       "memory": 12000,
       "model_config": {
@@ -38,9 +62,53 @@
     },
     {
       "algo_type": "tpot",
+      "name": "T-TR_6_1_5",
+      "time": 1,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_11_1_5",
+      "time": 1,
+      "task": 11,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
       "name": "T-LR_3_1_5",
       "time": 1,
       "task": 3,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_6_1_5",
+      "time": 1,
+      "task": 6,
+      "cpus": 4,
+      "memory": 12000,
+      "model_config": {
+        "algorithm_family": "LR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-LR_11_1_5",
+      "time": 1,
+      "task": 11,
       "cpus": 4,
       "memory": 12000,
       "model_config": {
@@ -64,6 +132,34 @@
       ]
     },
     {
+      "algo_type": "autosklearn",
+      "name": "ASK-6_1_5",
+      "time": 1,
+      "task": 6,
+      "cpus": 4,
+      "memory": 20000,
+      "model_config": {},
+      "classifiers": [
+        "T-NB_6_1_5",
+        "T-TR_6_1_5",
+        "T-LR_6_1_5"
+      ]
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "ASK-11_1_5",
+      "time": 1,
+      "task": 11,
+      "cpus": 4,
+      "memory": 20000,
+      "model_config": {},
+      "classifiers": [
+        "T-NB_11_1_5",
+        "T-TR_11_1_5",
+        "T-LR_11_1_5"
+      ]
+    },
+    {
       "algo_type": "metades",
       "name": "MDES-3_1_5",
       "time": 1,
@@ -76,6 +172,34 @@
         "T-TR_3_1_5",
         "T-LR_3_1_5"
       ]
+    },
+    {
+      "algo_type": "metades",
+      "name": "MDES-6_1_5",
+      "time": 1,
+      "task": 6,
+      "cpus": 4,
+      "memory": 20000,
+      "model_config": {},
+      "classifiers": [
+        "T-NB_6_1_5",
+        "T-TR_6_1_5",
+        "T-LR_6_1_5"
+      ]
+    },
+    {
+      "algo_type": "metades",
+      "name": "MDES-11_1_5",
+      "time": 1,
+      "task": 11,
+      "cpus": 4,
+      "memory": 20000,
+      "model_config": {},
+      "classifiers": [
+        "T-NB_11_1_5",
+        "T-TR_11_1_5",
+        "T-LR_11_1_5"
+      ]
     }
   ],
   "baseline": [
@@ -84,6 +208,51 @@
       "name": "bASK-3_1_5",
       "time": 1,
       "task": 3,
+      "cpus": 4,
+      "memory": 20000,
+      "model_config": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-6_1_5",
+      "time": 1,
+      "task": 6,
+      "cpus": 4,
+      "memory": 20000,
+      "model_config": {}
+    },
+    {
+      "algo_type": "autosklearn",
+      "name": "bASK-11_1_5",
+      "time": 1,
+      "task": 11,
+      "cpus": 4,
+      "memory": 20000,
+      "model_config": {}
+    },
+    {
+      "algo_type": "tpot",
+      "name": "bTPOT-3_1_5",
+      "time": 1,
+      "task": 3,
+      "cpus": 4,
+      "memory": 20000,
+      "model_config": {}
+    },
+    {
+      "algo_type": "tpot",
+      "name": "bTPOT-6_1_5",
+      "time": 1,
+      "task": 6,
+      "cpus": 4,
+      "memory": 20000,
+      "model_config": {}
+    },
+    {
+      "algo_type": "tpot",
+      "name": "bTPOT-11_1_5",
+      "time": 1,
+      "task": 11,
       "cpus": 4,
       "memory": 20000,
       "model_config": {}

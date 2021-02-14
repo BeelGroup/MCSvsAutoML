@@ -6,7 +6,7 @@ benchmark_name = 'local_test'
 current_dir = os.path.dirname(os.path.abspath(__file__))
 config_path = os.path.join(current_dir, f'{benchmark_name}.json')
 
-tasks = [3]
+tasks = [3, 6, 11]
 times_in_mins = [1]
 seed = 5
 split = [0.5, 0.3, 0.2]
@@ -15,6 +15,7 @@ memory_classifiers = 12000
 memory_selectors = 20000
 tpot_classifiers = ['NB', 'TR', 'LR']
 selectors = ['autosklearn', 'metades']
+baselines = ['autosklearn', 'tpot', 'autokeras']
 
 config = {
     'id': f'{benchmark_name}',
@@ -83,8 +84,35 @@ config = {
         }
         for time, task
         in product(times_in_mins, tasks)
+    ] + [
+        {
+            'algo_type': 'tpot',
+            'name': f'bTPOT-{task}_{time}_{seed}',
+            'time': time,  # time should be for 8 single classifiers and selector
+            'task': task,
+            'cpus': cpus,
+            'memory': memory_selectors,
+            'model_config': {},
+        }
+        for time, task
+        in product(times_in_mins, tasks)
     ]
 }
 
+"""
++ [
+    {
+        'algo_type': 'autokeras',
+        'name': f'bAUK-{task}_{time}_{seed}',
+        'time': time,  # time should be for 8 single classifiers and selector
+        'task': task,
+        'cpus': cpus,
+        'memory': memory_selectors,
+        'model_config': {},
+    }
+    for time, task
+    in product(times_in_mins, tasks)
+]
+"""
 with open(config_path, 'w') as f:
     json.dump(config, f, indent=2)
