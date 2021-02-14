@@ -1,9 +1,10 @@
+# TODO: Autokeras removed due to issues on server
 from .baseline_job import (
-    BaselineJob, AutoKerasBaselineJob, AutoSklearnBaselineJob, TPOTBaselineJob
+    BaselineJob, AutoSklearnBaselineJob, TPOTBaselineJob
 )
 
 from .selector_job import (
-    SelectorJob, AutoKerasSelectorJob, AutoSklearnSelectorJob, DESSelectorJob,
+    SelectorJob, AutoSklearnSelectorJob, DESSelectorJob,
     METADESSelectorJob
 )
 
@@ -15,13 +16,13 @@ job_types = {
         'tpot': TPOTClassifierJob,
     },
     'selector': {
-        'autokeras': AutoKerasSelectorJob,
+        #'autokeras': AutoKerasSelectorJob,
         'autosklearn': AutoSklearnSelectorJob,
         'metades': METADESSelectorJob,
     },
     'baseline': {
         'tpot': TPOTBaselineJob,
         'autosklearn': AutoSklearnBaselineJob,
-        'autokeras': AutoKerasBaselineJob,
+        #'autokeras': AutoKerasBaselineJob,
     },
 }

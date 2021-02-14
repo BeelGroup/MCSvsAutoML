@@ -1,10 +1,11 @@
+# TODO: Autokeras removed
 from typing import Tuple, Dict, Any, Iterable, Type, List
 
 from .benchmark_job import BenchmarkJob
 from .classifier_job import ClassifierJob
 from ..models import Model
 from ..models.selectors import (
-    AutoKerasSelectorModel, AutoSklearnSelectorModel,
+    AutoSklearnSelectorModel,
     DESSelectorModel
 )
 
@@ -67,7 +68,7 @@ class AutoSklearnSelectorJob(SelectorJob):
             **self.model_config
         }
 
-
+"""
 class AutoKerasSelectorJob(SelectorJob):
 
     @classmethod
@@ -80,6 +81,7 @@ class AutoKerasSelectorJob(SelectorJob):
 
     def model_params(self) -> Dict[str, Any]:
         raise NotImplementedError
+"""
 
 
 # TODO: Should probably start seperating out into seperate files
