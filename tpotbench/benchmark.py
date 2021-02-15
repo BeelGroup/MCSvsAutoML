@@ -207,8 +207,16 @@ class Benchmark:
                     self.env.refresh_info()
                     info = self.env.info()
                     in_progress = info['pending'] + info['running']
+
+                    time_buffer = 0.5
+                    # Selector jobs need a long buffer
+                    if job.job_type() == 'selector':
+                        time_buffer = 1.0
+
                     if not job.name() in in_progress:
-                        self.env.run(job, slurm_job_options(job))
+                        slurm_opts = slurm_job_options(job,
+                                                       time_buffer=time_buffer)
+                        self.env.run(job, slurm_opts)
                 else:
                     print(f'running {job.name()}')
                     self.env.run(job, {})

@@ -5,7 +5,7 @@ import os
 from .benchmark_job import BenchmarkJob
 from ..models.baselines import (
     AutoSklearnBaselineModel,
-    AutoKerasBaselineModel,
+    #AutoKerasBaselineModel,
     TPOTBaselineModel
 )
 
@@ -52,6 +52,7 @@ class AutoSklearnBaselineJob(BaselineJob):
     def algo_type(cls):
         return 'autosklearn'
 
+"""
 class AutoKerasBaselineJob(BaselineJob):
 
     @classmethod
@@ -80,6 +81,7 @@ class AutoKerasBaselineJob(BaselineJob):
     @classmethod
     def algo_type(cls):
         return 'autokeras'
+"""
 
 class TPOTBaselineJob(BaselineJob):
 

@@ -12,8 +12,19 @@ all_tasks = [3, 6, 11, 12, 14, 15, 16, 18, 22, 23, 28, 29, 31, 32, 37, 43, 45, 4
          3904, 3913, 3917, 3918, 7592, 9910, 9946, 9952, 9957, 9960, 9964, 9971,
          9976, 9977, 9978, 9981, 9985, 10093, 10101, 14952, 14954, 14965, 14969,
          14970, 125920, 125922, 146195, 146800, 146817, 146819, 146820, 146821,
-         146822, 146824, 146825, 167119, 167120, 167121, 167124, 167125, 167140, 
+         146822, 146824, 146825, 167119, 167120, 167121, 167124, 167125, 167140,
          167141]
+
+# Mode error
+all_tasks.remove(3021)
+
+# n_splits, members in each class error
+all_tasks.remove(167121)
+
+# TPOT XGB errors, data format
+all_tasks.remove(3573)
+all_tasks.remove(146825)
+
 tasks = all_tasks
 times_in_mins = [120]
 seed = 5
@@ -100,7 +111,7 @@ config = {
         in product(times_in_mins, tasks)
     ] + [
         {
-            'algo_type': 'tpot'
+            'algo_type': 'tpot',
             'name': f'bTPOT-{task}_{time}_{seed}',
             'time': time,  # time should be for 8 single classifiers and selector
             'task': task,
@@ -110,9 +121,15 @@ config = {
         }
         for time, task
         in product(times_in_mins, tasks)
-        }
     ]
 }
+
+# Modifying memouts
+out_of_mem_tasks = [12, 9910, 9964, 9981, 146824]
+for cfg in config['selector']:
+    if cfg['task'] in out_of_mem_tasks:
+        cfg['memory'] = 48000
+
 
 with open(config_path, 'w') as f:
     json.dump(config, f, indent=2)
