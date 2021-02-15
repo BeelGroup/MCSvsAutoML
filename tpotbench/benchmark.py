@@ -83,6 +83,25 @@ class Benchmark:
 
                 self._jobs[model_type][name] = job
 
+        self._jobs_by_task = {}
+        for task in self.tasks:
+            jobs = {
+                'classifiers': {
+                    clf for clf in self._jobs['classifier'].values()
+                    if clf.task == task
+                },
+                'selectors': {
+                    sel for sel in self._jobs['selector'].values()
+                    if sel.task == task
+                },
+                'baselines': {
+                    baseline for baseline in self._jobs['baseline'].values()
+                    if baseline.task == task
+                }
+            }
+            self._jobs_by_task[task] = jobs
+
+
     def job_failed(self, job: BenchmarkJob) -> bool:
         if job.complete():
             return False
@@ -124,27 +143,16 @@ class Benchmark:
 
     def task_jobs_data_iter(
         self
-    ) -> Iterable[Tuple[int, Dict[str, Any], np.ndarray, np.ndarray]]:
-        for task in self.tasks:
-            jobs = {
-                'classifiers': {
-                    name: clf
-                    for name, clf in self._jobs['classifier'].items()
-                    if clf.task == task
-                },
-                'selectors': {
-                    name: sel
-                    for name, sel in self._jobs['selector'].items()
-                    if sel.task == task
-                },
-                'baselines': {
-                    name: baseline
-                    for name, baseline in self._jobs['baseline'].items()
-                    if baseline.task == task
-                }
-            }
-            data = get_task_split(task, self.seed, self.split)
-            yield task, jobs, data
+    ) -> Iterable[Tuple[int, Dict[str, Any], Dict[str, Any]]]:
+        return iter(jobs_and_data_by_task(task) for task in self.tasks)
+
+    def jobs_and_data_by_task(
+        self,
+        task: int,
+    ) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+        data = get_task_split(task, self.seed, self.split)
+        jobs = self._jobs_by_task[task]
+        return jobs, data
 
     def status(
         self,

@@ -15,7 +15,7 @@ memory_classifiers = 12000
 memory_selectors = 20000
 tpot_classifiers = ['NB', 'TR', 'LR']
 selectors = ['autosklearn', 'metades']
-baselines = ['autosklearn', 'tpot', 'autokeras']
+baselines = ['autosklearn', 'tpot']
 
 config = {
     'id': f'{benchmark_name}',
