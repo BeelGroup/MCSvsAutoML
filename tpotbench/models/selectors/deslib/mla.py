@@ -1,10 +1,10 @@
 from typing import Any, Dict, Iterable, Tuple
 
-from deslib.des.meta_des import METADES
+from deslib.dcs.mla import MLA
 
 from .base import DESSelectorModel
 
-class METADESSelectorModel(DESSelectorModel):
+class MLASelectorModel(DESSelectorModel):
 
     def __init__(
         self,
@@ -13,12 +13,12 @@ class METADESSelectorModel(DESSelectorModel):
         classifier_paths: Iterable[Tuple[str, str]],
     ) -> None:
         super().__init__(name, model_params, classifier_paths)
-        self._selector = METADES(self.classifiers, **model_params)
+        self._selector = MLA(self.classifiers, **model_params)
 
     @property
-    def selector(self) -> METADES:
+    def selector(self) -> MLA:
         return self._selector
 
     @classmethod
     def ensemble_selector(cls) -> bool:
-        return True
+        return False

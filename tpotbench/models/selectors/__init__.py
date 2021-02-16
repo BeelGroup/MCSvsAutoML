@@ -1,9 +1,13 @@
-from .deslib import deslib_models, DESSelectorModel
+from .deslib import (
+    deslib_models, DESSelectorModel, METADESSelectorModel,
+    DESRRCSelectorModel, DESKNORAUSelectorModel, LCASelectorModel,
+    MLASelectorModel
+)
 from .autosklearn import AutoSklearnSelectorModel
-from .autokeras import AutoKerasSelectorModel
+#from .autokeras import AutoKerasSelectorModel
 
 selector_classes = {
     'autosklearn': AutoSklearnSelectorModel,
-    'autokeras': AutoKerasSelectorModel,
+#    'autokeras': AutoKerasSelectorModel,
     ** deslib_models
 }

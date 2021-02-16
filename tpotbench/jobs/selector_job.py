@@ -6,7 +6,8 @@ from .classifier_job import ClassifierJob
 from ..models import Model
 from ..models.selectors import (
     AutoSklearnSelectorModel,
-    DESSelectorModel
+    DESSelectorModel, METADESSelectorModel, DESRRCSelectorModel,
+    DESKNORAUSelectorModel, MLASelectorModel, LCASelectorModel
 )
 
 
@@ -87,16 +88,55 @@ class AutoKerasSelectorJob(SelectorJob):
 # TODO: Should probably start seperating out into seperate files
 class DESSelectorJob(SelectorJob):
 
-    @classmethod
-    def model_cls(cls) -> Type[DESSelectorModel]:
-        return DESSelectorModel
-
     def model_params(self) -> Dict[str, Any]:
         return {}
-
 
 class METADESSelectorJob(DESSelectorJob):
 
     @classmethod
+    def model_cls(cls) -> Type[METADESSelectorModel]:
+        return METADESSelectorModel
+
+    @classmethod
     def algo_type(cls):
         return 'metades'
+
+class DESRRCSelectorJob(DESSelectorJob):
+
+    @classmethod
+    def model_cls(cls) -> Type[DESRRCSelectorModel]:
+        return DESRRCSelectorModel
+
+    @classmethod
+    def algo_type(cls):
+        return 'desrrc'
+
+class DESKNORAUSelectorJob(DESSelectorJob):
+
+    @classmethod
+    def model_cls(cls) -> Type[DESKNORAUSelectorModel]:
+        return DESKNORAUSelectorModel
+
+    @classmethod
+    def algo_type(cls):
+        return 'desknorau'
+
+class MLASelectorJob(DESSelectorJob):
+
+    @classmethod
+    def model_cls(cls) -> Type[MLASelectorModel]:
+        return MLASelectorModel
+
+    @classmethod
+    def algo_type(cls):
+        return 'mla'
+
+class LCASelectorJob(DESSelectorJob):
+
+    @classmethod
+    def model_cls(cls) -> Type[LCASelectorModel]:
+        return LCASelectorModel
+
+    @classmethod
+    def algo_type(cls):
+        return 'lca'

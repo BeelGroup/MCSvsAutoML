@@ -5,7 +5,8 @@ from .baseline_job import (
 
 from .selector_job import (
     SelectorJob, AutoSklearnSelectorJob, DESSelectorJob,
-    METADESSelectorJob
+    METADESSelectorJob, DESRRCSelectorJob, DESKNORAUSelectorJob,
+    LCASelectorJob, MLASelectorJob
 )
 
 from .classifier_job import ClassifierJob, TPOTClassifierJob
@@ -19,6 +20,10 @@ job_types = {
         #'autokeras': AutoKerasSelectorJob,
         'autosklearn': AutoSklearnSelectorJob,
         'metades': METADESSelectorJob,
+        'desrrc': DESRRCSelectorJob,
+        'desknorau': DESKNORAUSelectorJob,
+        'lca': LCASelectorJob,
+        'mla': MLASelectorJob,
     },
     'baseline': {
         'tpot': TPOTBaselineJob,
