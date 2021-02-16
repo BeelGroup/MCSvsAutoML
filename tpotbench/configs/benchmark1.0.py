@@ -37,8 +37,6 @@ tpot_classifiers = ['NB', 'TR', 'KNN', 'MLP', 'LR', 'XGB', 'SVM', 'SGD']
 # https://github.com/EpistasisLab/tpot/issues/1170
 tpot_classifiers_modified = ['NB', 'TR', 'KNN', 'MLP', 'LR', 'XGB']
 
-selectors = ['autosklearn', 'metades']
-
 config = {
     'id': f'{benchmark_name}',
     'path': f'./{benchmark_name}',
@@ -84,6 +82,70 @@ config = {
         {
             'algo_type': 'metades',
             'name': f'MDES-{task}_{time}_{seed}',
+            'time': time,
+            'task': task,
+            'cpus': cpus,
+            'memory': memory_selectors,
+            'model_config': {},
+            'classifiers': [
+                f'T-{clf}_{task}_{time}_{seed}'
+                for clf in tpot_classifiers_modified
+            ]
+        }
+        for time, task
+        in product(times_in_mins, tasks)
+    ] + [
+        {
+            'algo_type': 'desrrc',
+            'name': f'DESRRC-{task}_{time}_{seed}',
+            'time': time,
+            'task': task,
+            'cpus': cpus,
+            'memory': memory_selectors,
+            'model_config': {},
+            'classifiers': [
+                f'T-{clf}_{task}_{time}_{seed}'
+                for clf in tpot_classifiers_modified
+            ]
+        }
+        for time, task
+        in product(times_in_mins, tasks)
+    ] + [
+        {
+            'algo_type': 'desknorau',
+            'name': f'KNORAU-{task}_{time}_{seed}',
+            'time': time,
+            'task': task,
+            'cpus': cpus,
+            'memory': memory_selectors,
+            'model_config': {},
+            'classifiers': [
+                f'T-{clf}_{task}_{time}_{seed}'
+                for clf in tpot_classifiers_modified
+            ]
+        }
+        for time, task
+        in product(times_in_mins, tasks)
+    ] + [
+        {
+            'algo_type': 'lca',
+            'name': f'LCA-{task}_{time}_{seed}',
+            'time': time,
+            'task': task,
+            'cpus': cpus,
+            'memory': memory_selectors,
+            'model_config': {},
+            'classifiers': [
+                f'T-{clf}_{task}_{time}_{seed}'
+                for clf in tpot_classifiers_modified
+            ]
+        }
+        for time, task
+        in product(times_in_mins, tasks)
+    ] + [
+        {
+            'algo_type': 'mla',
+            'name': f'MLA-{task}_{time}_{seed}',
             'time': time,
             'task': task,
             'cpus': cpus,
