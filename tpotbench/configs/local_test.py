@@ -71,6 +71,70 @@ config = {
         }
         for time, task
         in product(times_in_mins, tasks)
+    ] + [
+        {
+            'algo_type': 'desrrc',
+            'name': f'DESRRC-{task}_{time}_{seed}',
+            'time': time,
+            'task': task,
+            'cpus': cpus,
+            'memory': memory_selectors,
+            'model_config': {},
+            'classifiers': [
+                f'T-{clf}_{task}_{time}_{seed}'
+                for clf in tpot_classifiers
+            ]
+        }
+        for time, task
+        in product(times_in_mins, tasks)
+    ] + [
+        {
+            'algo_type': 'desknorau',
+            'name': f'KNORAU-{task}_{time}_{seed}',
+            'time': time,
+            'task': task,
+            'cpus': cpus,
+            'memory': memory_selectors,
+            'model_config': {},
+            'classifiers': [
+                f'T-{clf}_{task}_{time}_{seed}'
+                for clf in tpot_classifiers
+            ]
+        }
+        for time, task
+        in product(times_in_mins, tasks)
+    ] + [
+        {
+            'algo_type': 'lca',
+            'name': f'LCA-{task}_{time}_{seed}',
+            'time': time,
+            'task': task,
+            'cpus': cpus,
+            'memory': memory_selectors,
+            'model_config': {},
+            'classifiers': [
+                f'T-{clf}_{task}_{time}_{seed}'
+                for clf in tpot_classifiers
+            ]
+        }
+        for time, task
+        in product(times_in_mins, tasks)
+    ] + [
+        {
+            'algo_type': 'mla',
+            'name': f'MLA-{task}_{time}_{seed}',
+            'time': time,
+            'task': task,
+            'cpus': cpus,
+            'memory': memory_selectors,
+            'model_config': {},
+            'classifiers': [
+                f'T-{clf}_{task}_{time}_{seed}'
+                for clf in tpot_classifiers
+            ]
+        }
+        for time, task
+        in product(times_in_mins, tasks)
     ],
     'baseline': [
         {
