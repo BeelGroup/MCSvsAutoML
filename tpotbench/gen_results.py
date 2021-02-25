@@ -58,7 +58,7 @@ def run(config_path):
             #       classified by any algorithm, the oracle's accuracy is the
             #       the same as the single best. In this case, we simply give
             #       an algorithm a score of 1.
-            if oracle_acc == single_best:
+            if oracle_acc == single_best_acc:
                 return 1
             else:
                 return (acc - single_best_acc) / (oracle_acc - single_best_acc)
