@@ -1,6 +1,3 @@
-**Note to Reviewer**: This is kept anonymized as best as possible by double blind submission regulations of the ICLR 2021. 
-There will be some small updates in the official repository, notably code documentation, documentation on extension and a command line interface for easier running.
-
 # Per Instance Algorithm Selection Benchmark
 This benchmark currently uses two AutoML tools, [autosklearn](https://automl.github.io/auto-sklearn/master/) and [TPOT](http://epistasislab.github.io/tpot/)
 and compares them with the state of the art algorithm _Multi-Classifier Systems_ available from [DESLib](https://github.com/scikit-learn-contrib/DESlib).
