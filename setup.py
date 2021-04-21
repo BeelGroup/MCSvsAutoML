@@ -14,13 +14,12 @@ if os.path.isfile(requirements_path):
     with open(requirements_path, 'r') as f:
         install_requires = f.read().splitlines()
 
-setup(name='tpotbench',
+setup(name='PerInstanceAlgorithmSelectionBenchmark',
       version='0.1.0',
-      description='per instance algorithm bench with tpot',
-      author='Eddie Bergman',
-      author_email='eddiebergmanhs@gmail.com',
-      url='https://github.com/eddiebergman/tpotbench',
-      packages=['tpotbench'],
+      description='A benchmark for comparing between AutoML tools and MCS tools for per instance algorithm selection',
+      author='Jonathan Doe',
+      url='https://github.com/jonathandoe-submission/PerInstanceAlgorithmSelectionBenchmark',
+      packages=['src'],
       python_requires='>=3.8',
       install_requires=install_requires,
       extras_require={
@@ -32,5 +31,3 @@ setup(name='tpotbench',
         ]
       }
 )
-
-#slurmjobmanager @ git+git://github.com/eddiebergman/slurmjobmanager.git'
