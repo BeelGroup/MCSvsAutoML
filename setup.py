@@ -19,7 +19,7 @@ setup(name='PerInstanceAlgorithmSelectionBenchmark',
       description='A benchmark for comparing between AutoML tools and MCS tools for per instance algorithm selection',
       author='Jonathan Doe',
       url='https://github.com/jonathandoe-submission/PerInstanceAlgorithmSelectionBenchmark',
-      packages=['src'],
+      packages=['piasbenchmark'],
       python_requires='>=3.8',
       install_requires=install_requires,
       extras_require={

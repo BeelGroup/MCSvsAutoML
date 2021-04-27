@@ -43,7 +43,6 @@ class Benchmark:
         }
 
         self.benchmark_path = os.path.abspath(cfg['path'])
-        self.results_path = os.path.join(self.benchmark_path, 'results.json')
 
         # Setup environment
         self.env = None
@@ -101,7 +100,6 @@ class Benchmark:
             }
             self._jobs_by_task[task] = jobs
 
-
     def job_failed(self, job: BenchmarkJob) -> bool:
         if job.complete():
             return False
@@ -144,7 +142,7 @@ class Benchmark:
     def task_jobs_data_iter(
         self
     ) -> Iterable[Tuple[int, Dict[str, Any], Dict[str, Any]]]:
-        return iter(jobs_and_data_by_task(task) for task in self.tasks)
+        return iter(self.jobs_and_data_by_task(task) for task in self.tasks)
 
     def jobs_and_data_by_task(
         self,
