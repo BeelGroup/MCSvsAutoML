@@ -17,7 +17,6 @@ Generates the results of a benchmark.
 from typing import Dict, Any, Tuple
 
 import os
-import sys
 import json
 import argparse
 from itertools import chain
@@ -29,7 +28,6 @@ from deslib.static.single_best import SingleBest
 from deslib.static.oracle import Oracle
 from deslib.static.stacked import StackedClassifier
 
-import benchmark
 from piasbenchmark import Benchmark
 from piasbenchmark.custom_json_encoder import CustomEncoder
 
@@ -305,21 +303,18 @@ def generate_results_dataframes(results: Dict[str, Any]) -> Tuple[pd.DataFrame, 
     df_normscores = pd.DataFrame.from_dict(normscores, orient='index',
                                            columns=column_headers)
 
+    # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.from_dict.html
+    # Not getting desired behaviour as listed, have to manually set the index
+    unnamed = 'Unnamed:0'
+    if unnamed in df_accuracies.columns:
+        df_accuracies.set_index(unnamed, inplace=True)
+        df_accuracies.index.rename('algo', inplace=True)
+
+    if unnamed in df_normscores.columns:
+        df_normscores.set_index(unnamed, inplace=True)
+        df_normscores.index.rename('algo', inplace=True)
+
     return df_accuracies, df_normscores
-
-    """ Creates the results by loading in the train models and evaluating them.
-
-    The results are json formatted at the `{ "path": ... }` set in
-    `config_path`. Optionally, can create a csv of accuracy and normalized
-    scores at the same path.
-
-
-    Args:
-        config_path: The path/to/config
-        overwrite: Whether to overwrite previous results
-        create_csv: Whether to create a csv of accuracy and normalized scores
-            as well
-    """
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generates results for a benchmark")

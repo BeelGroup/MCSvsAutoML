@@ -1,9 +1,7 @@
 import os
-import sys
-from distutils.core import setup
 
-if sys.version_info < (3, 8):
-    raise ValueError('Requires Python 3.8 or higher')
+from setuptools import find_packages
+from distutils.core import setup
 
 # Load requirements from requirements.txt
 current_dir = os.path.dirname(os.path.realpath(__file__))
@@ -19,7 +17,7 @@ setup(name='PerInstanceAlgorithmSelectionBenchmark',
       description='A benchmark for comparing between AutoML tools and MCS tools for per instance algorithm selection',
       author='Jonathan Doe',
       url='https://github.com/jonathandoe-submission/PerInstanceAlgorithmSelectionBenchmark',
-      packages=['piasbenchmark'],
+      packages=find_packages(),
       python_requires='>=3.8',
       install_requires=install_requires,
       extras_require={
