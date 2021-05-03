@@ -16,6 +16,8 @@ pip install -r requirements.txt
 This was tested with `Python 3.8.6`, for full compatibility, we recommend [pyenv](https://github.com/pyenv/pyenv) or [conda](https://docs.conda.io/en/latest/)
 managing different Python versions.
 
+For installation issues we are aware of, please see [Issues](#Issues)
+
 ## Configs
 The full benchmark configuration can be found at `src/configs/benchmark1.0.json` but as this is impractical to run on a local machine, we have also provided
 a config for running on a single dataset `src/configs/local_bench.json`.
@@ -80,3 +82,14 @@ benchmark_config = {
 ```
 
 As every slurm configuration will be different, please see `src/slurm.py` for slurm parameters for your own slurm HPC.
+
+# Issues
+
+---
+Pip didn't install [smac's](https://github.com/automl/SMAC3) extra requires.
+```
+ImportError: smac attempted to use a functionality that requires module pyDOE, but it couldn't be loaded. ...
+```
+
+Manually install them with `pip install emcee pyDOE scikit-optimize`
+---
