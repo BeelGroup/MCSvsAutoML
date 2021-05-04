@@ -1,0 +1,109 @@
+{
+  "means": {
+    "acc": {
+      "classifier_KNN": 0.8205235013956657,
+      "classifier_MLP": 0.8115364186236926,
+      "classifier_LR": 0.8021401171639729,
+      "classifier_XGB": 0.8478049763665301,
+      "classifier_NB": 0.7632132984475141,
+      "classifier_TR": 0.8463368274078887,
+      "selector_desknorau": 0.8527475333341101,
+      "selector_metades": 0.8536202541566396,
+      "selector_mla": 0.7997707506634693,
+      "selector_desrrc": 0.8467255812713799,
+      "selector_autosklearn": 0.8537210586297342,
+      "selector_lca": 0.7999330088599289,
+      "baseline_autosklearn": 0.8671154148430491,
+      "baseline_tpot": 0.8687103720101744,
+      "baseline_stacking": 0.8631257916555783,
+      "static_baseline_oracle": 0.9401942737068985,
+      "static_baseline_single_best": 0.8624986098232356
+    },
+    "norm_score": {
+      "classifier_KNN": -1.4530334086947518,
+      "classifier_MLP": -1.0383378137631707,
+      "classifier_LR": -2.935359243552889,
+      "classifier_XGB": -0.32235204984319776,
+      "classifier_NB": -5.8182425212278215,
+      "classifier_TR": -0.16866711881875604,
+      "selector_desknorau": -0.24938985365724242,
+      "selector_metades": -0.10926010685898954,
+      "selector_mla": -3.3492481476291744,
+      "selector_desrrc": -0.3939278330487527,
+      "selector_autosklearn": -0.15291532831483196,
+      "selector_lca": -3.348213558731837,
+      "baseline_autosklearn": 0.15203679568194878,
+      "baseline_tpot": 0.18538958363554073,
+      "baseline_stacking": -0.04190899087102401,
+      "static_baseline_oracle": 1,
+      "static_baseline_single_best": 0
+    }
+  },
+  "std": {
+    "acc": {
+      "classifier_KNN": 0.16816308557578105,
+      "classifier_MLP": 0.19303041519744565,
+      "classifier_LR": 0.18335079705632257,
+      "classifier_XGB": 0.1556223598902111,
+      "classifier_NB": 0.16973642925739046,
+      "classifier_TR": 0.16242920389098434,
+      "selector_desknorau": 0.15731513658958696,
+      "selector_metades": 0.15764887395516217,
+      "selector_mla": 0.15872543316947527,
+      "selector_desrrc": 0.16268472221657312,
+      "selector_autosklearn": 0.15746951808261042,
+      "selector_lca": 0.15861288017124586,
+      "baseline_autosklearn": 0.152072865699496,
+      "baseline_tpot": 0.14950429540897123,
+      "baseline_stacking": 0.1506233123024059,
+      "static_baseline_oracle": 0.08245577387184143,
+      "static_baseline_single_best": 0.15191293470038514
+    },
+    "norm_score": {
+      "classifier_KNN": 3.6670632280665334,
+      "classifier_MLP": 2.7237469286663685,
+      "classifier_LR": 14.720348027099607,
+      "classifier_XGB": 0.772155012022961,
+      "classifier_NB": 19.783801688528268,
+      "classifier_TR": 0.5565300098810749,
+      "selector_desknorau": 0.7731476929833496,
+      "selector_metades": 0.4439246461765692,
+      "selector_mla": 10.724465561964795,
+      "selector_desrrc": 1.1408766696387933,
+      "selector_autosklearn": 0.46948417195978454,
+      "selector_lca": 10.724949931647343,
+      "baseline_autosklearn": 0.5779053586180013,
+      "baseline_tpot": 0.5668334772215032,
+      "baseline_stacking": 0.48764156865003533,
+      "static_baseline_oracle": 0,
+      "static_baseline_single_best": 0
+    }
+  },
+  "overall_best": {
+    "baseline_tpot": 21,
+    "baseline_autosklearn": 18,
+    "classifier_TR": 5,
+    "selector_desknorau": 2,
+    "baseline_stacking": 5,
+    "classifier_XGB": 4,
+    "classifier_KNN": 4,
+    "selector_autosklearn": 1,
+    "classifier_MLP": 1,
+    "classifier_NB": 1
+  },
+  "classifiers_best": {
+    "classifier_XGB": 16,
+    "classifier_MLP": 6,
+    "classifier_TR": 24,
+    "classifier_KNN": 9,
+    "classifier_LR": 5,
+    "classifier_NB": 2
+  },
+  "selectors_baselines": {
+    "baseline_tpot": 23,
+    "baseline_autosklearn": 21,
+    "selector_autosklearn": 6,
+    "selector_desknorau": 6,
+    "baseline_stacking": 6
+  }
+}
