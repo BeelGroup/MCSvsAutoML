@@ -103,28 +103,34 @@ def centered_plot(best_values: pd.DataFrame, best_names: pd.DataFrame):
 
     # Axis lines within box of radius 1
     ax.plot((xlims[0], 1), (0, 0), c='black',
-            linestyle=':', linewidth=0.4)
+            linestyle=':', linewidth=0.5)
     ax.plot((0, 0), (ylims[0], 1), c='black',
-            linestyle=':', linewidth=0.4)
+            linestyle=':', linewidth=0.5)
 
-    # Lines to create outisde of box
+    # Horizontal Oracle line
     ax.plot((xlims[0], 1), (1, 1), c='black',
-            linestyle=':', linewidth=0.4)
+            linestyle=':', linewidth=1.0)
+
+    # Vertical line for outisde box
     ax.plot((1, 1), (ylims[0], ylims[1]), c='black',
-            linestyle=':', linewidth=0.4)
+            linestyle=':', linewidth=0.5)
 
     # Diagonal line for marking which side is better
     ax.plot((xlims[0],1), (ylims[0], 1), c='grey', linestyle='--', linewidth=0.2)
 
     # Text indicating the regions
     offsets = (0.1, 0.05)
-    ax.text(0 + offsets[0], ylims[0] + offsets[1], "best selector > single best",
+    ax.text(0 + 0.3 + offsets[0], ylims[0] + offsets[1],
+            "best baseline < single best\nbest selector > single best",
             fontsize=8)
-    ax.text(xlims[0] + offsets[0], ylims[0] + offsets[1], "best selector, baseline < single best",
+    ax.text(xlims[0] + offsets[0], ylims[0] + offsets[1],
+            "best baseline < single best\nbest selector < single best",
             fontsize=8)
-    ax.text(xlims[0] + offsets[0], 0 + offsets[1], "best baseline > single best",
+    ax.text(xlims[0] + offsets[0], 0 + offsets[1],
+            "best baseline > single best\nbest selector < single best",
             fontsize=8)
-    ax.text(0 + offsets[0], 0 + offsets[1], "best selector, baseline > single best",
+    ax.text(0 + 0.3 + offsets[0], 0 + offsets[1],
+            "best baseline > single best\nbest selector > single best",
             fontsize=8)
     ax.text(0 + offsets[0], 1 + offsets[1], "baseline > oracle",
             fontsize=8)
