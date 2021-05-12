@@ -92,4 +92,3 @@ ImportError: smac attempted to use a functionality that requires module pyDOE, b
 ```
 
 Manually install them with `pip install emcee pyDOE scikit-optimize`
----
