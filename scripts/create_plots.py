@@ -15,11 +15,7 @@ from sklearn.preprocessing import StandardScaler
 
 from piasbenchmark import Benchmark
 
-#from umap import UMAP
-#from sklearn.preprocessing import StandardScaler
-
 def process(df: pd.DataFrame) -> Dict[str, Any]:
-    """ Used in create_plots.py and extra_details.py """
     classifier_results = df[df.apply(
         lambda row: 'classifier' in row.name, axis=1
     )]
@@ -280,5 +276,7 @@ if __name__ == "__main__":
 
     fig = umap_dataset_properties(pr_accs['best_values'], pr_accs['best_names'], 
                                   cached_metaprops)
-    plt.savefig(f'{plot_umap_projection}.svg', dpi=300, format='svg')
-    plt.savefig(f'{plot_umap_projection}.jpg', dpi=300, format='jpg')
+    plt.savefig(f'{plot_umap_projection}.svg', dpi=300, format='svg',
+                bbox_inches='tight')
+    plt.savefig(f'{plot_umap_projection}.jpg', dpi=300, format='jpg',
+                bbox_inches='tight')
