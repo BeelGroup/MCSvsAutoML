@@ -146,8 +146,10 @@ def centered_plot(best_values: pd.DataFrame, best_names: pd.DataFrame):
     ax.set_title('Selector/Baseline performances for 62 Datasets')
     return fig
 
-def umap_dataset_properties(best_values: pd.DataFrame, best_names: pd.DataFrame,
-                            cached_metaprops: str, random_state=5):
+def umap_dataset_properties_all_categories(best_values: pd.DataFrame,
+                                           best_names: pd.DataFrame,
+                                           cached_metaprops: str,
+                                           random_state=5):
     if os.path.exists(cached_metaprops):
         df_metaprops = pd.read_csv(cached_metaprops, index_col=0)
     else:
@@ -229,7 +231,97 @@ def umap_dataset_properties(best_values: pd.DataFrame, best_names: pd.DataFrame,
 
     ax.set_xlabel('UMAP axis 1')
     ax.set_ylabel('UMAP axis 2')
-    ax.set_title('UMAP projection of dataset meta-features')
+    ax.set_title('UMAP projection of dataset meta-features - all categories')
+
+    return fig
+
+def umap_dataset_properties_selectors_baselines(best_values: pd.DataFrame,
+                                                best_names: pd.DataFrame,
+                                                cached_metaprops: str,
+                                                random_state=5):
+    if os.path.exists(cached_metaprops):
+        df_metaprops = pd.read_csv(cached_metaprops, index_col=0)
+    else:
+        tasks = list(map(int, best_values.index))
+        dataset_ids = [openml.tasks.get_task(task).dataset_id for task in tasks]
+
+        # This will take a while to get
+        # Hence the caching
+        dataset_metaprops = [openml.datasets.get_dataset(dataset_id).qualities
+                             for dataset_id in dataset_ids]
+
+        available_keys = reduce(
+            lambda acc, metaprops: acc.intersection(metaprops.keys()),
+            dataset_metaprops, set(dataset_metaprops[0].keys())
+        )
+        dict_metaprops = {
+            k : [ metaprop[k] for metaprop in dataset_metaprops]
+            for k in available_keys
+        }
+        df_metaprops = pd.DataFrame.from_dict(dict_metaprops, orient='index',
+                                              columns=tasks)
+        df_metaprops.to_csv(cached_metaprops)
+
+    # Drop features that have more than 30% missing
+    cut_percentage = 0.00 # Most features have 0%, 12% or 67% missing
+    for row in df_metaprops.index:
+        missing = sum(df_metaprops.loc[row].isnull()) / len(df_metaprops.loc[row])
+        if missing > cut_percentage:
+            df_metaprops.drop(index=row, inplace=True)
+
+    # Convert the rest of the nans to the mean (8/62 had 24/48 missing features)
+    df_metaprops = df_metaprops.apply(lambda row: row.fillna(row.mean()),
+                                      axis=1)
+
+    df_metaprops = df_metaprops.T # Make the tasks be on the index
+
+    # Scale Data according to UMAPS recommendation
+    df_scaled_metaprops = StandardScaler().fit_transform(df_metaprops)
+
+    # Use UMAP to produce embedding
+    umapper = UMAP(n_neighbors=10, random_state=random_state)
+    embeddings = umapper.fit_transform(df_scaled_metaprops)
+
+    figsize = (10, 12)
+    fig = plt.figure(figsize=figsize)
+    ax = fig.add_subplot(1,1,1)
+
+    # Take out classifiers
+    best_values = best_values.drop(columns='classifiers')
+    best_names = best_names.drop(columns='classifiers')
+
+    # We choose the label name of which performed better
+    labels = [
+        best_names.loc[task, category]
+        for task, category
+        in best_values.idxmax(axis=1).items()
+    ]
+
+    # Assign colors so selectors and baselines are visually distinct
+    selector_names = set(filter(lambda name: 'selector' in name, labels))
+    baseline_names = set(filter(lambda name: 'baseline' in name, labels))
+
+    selector_colors = sns.color_palette('viridis_r', len(selector_names) * 2)
+    baseline_colors = sns.color_palette('rocket', len(baseline_names))
+
+    cmap = {
+        ** { name: selector_colors[i] for i, name in enumerate(selector_names)},
+        ** { name: baseline_colors[i] for i, name in enumerate(baseline_names)},
+    }
+    colors = [cmap[label] for label in labels]
+
+    ax.scatter(embeddings[:,0], embeddings[:,1], c=colors)
+
+    legend_lines = [
+        Line2D([0], [0], color='w', marker='o', markerfacecolor=col,
+               label=name.replace('_', ' '))
+        for name, col in cmap.items()
+    ]
+    ax.legend(handles=legend_lines)
+
+    ax.set_xlabel('UMAP axis 1')
+    ax.set_ylabel('UMAP axis 2')
+    ax.set_title('UMAP projection of dataset meta-features - Selectors / AutoML')
 
     return fig
 
@@ -258,7 +350,8 @@ if __name__ == "__main__":
 
     plot_path = os.path.abspath(args.plotsdir)
     plot_centered_path = os.path.join(plot_path, f'{bench.id}_centered')
-    plot_umap_projection = os.path.join(plot_path, f'{bench.id}_umap_projection')
+    plot_umap_projection_all = os.path.join(plot_path, f'{bench.id}_umap_projection_all')
+    plot_umap_projection_selectors_baselines = os.path.join(plot_path, f'{bench.id}_umap_projection_selectors_baselines')
 
     df_accs = pd.read_csv(accuracies_path, index_col=0)
     pr_accs = process(df_accs)
@@ -274,9 +367,20 @@ if __name__ == "__main__":
     plt.savefig(f'{plot_centered_path}.svg', dpi=300, format='svg')
     plt.savefig(f'{plot_centered_path}.jpg', dpi=300, format='jpg')
 
-    fig = umap_dataset_properties(pr_accs['best_values'], pr_accs['best_names'], 
-                                  cached_metaprops)
-    plt.savefig(f'{plot_umap_projection}.svg', dpi=300, format='svg',
+    # Umap wih all categories
+    fig = umap_dataset_properties_all_categories(pr_accs['best_values'],
+                                                 pr_accs['best_names'],
+                                                 cached_metaprops)
+    plt.savefig(f'{plot_umap_projection_all}.svg', dpi=300, format='svg',
                 bbox_inches='tight')
-    plt.savefig(f'{plot_umap_projection}.jpg', dpi=300, format='jpg',
+    plt.savefig(f'{plot_umap_projection_all}.jpg', dpi=300, format='jpg',
+                bbox_inches='tight')
+
+    # Umap wih all categories
+    fig = umap_dataset_properties_selectors_baselines(pr_accs['best_values'],
+                                                      pr_accs['best_names'],
+                                                      cached_metaprops)
+    plt.savefig(f'{plot_umap_projection_selectors_baselines}.svg', dpi=300, format='svg',
+                bbox_inches='tight')
+    plt.savefig(f'{plot_umap_projection_selectors_baselines}.jpg', dpi=300, format='jpg',
                 bbox_inches='tight')
