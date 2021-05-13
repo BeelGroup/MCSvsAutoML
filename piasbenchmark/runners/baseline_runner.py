@@ -1,8 +1,8 @@
 import sys
 import json
 
-from tpotbench.models import baseline_classes
-from tpotbench.util import get_task_split
+from piasbenchmark.models import baseline_classes
+from piasbenchmark.util import get_task_split
 
 
 def run(config_path):

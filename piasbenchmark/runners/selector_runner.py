@@ -1,9 +1,9 @@
 import sys
 import json
 
-from tpotbench.models import selector_classes
-from tpotbench.util import get_task_split, predictions_to_selector_labels
-from tpotbench.models.selectors import DESSelectorModel
+from piasbenchmark.models import selector_classes
+from piasbenchmark.util import get_task_split, predictions_to_selector_labels
+from piasbenchmark.models.selectors import DESSelectorModel
 
 
 def run(config_path):
