@@ -18,411 +18,360 @@
   "classifier": [
     {
       "algo_type": "tpot",
-      "name": "T-NB_3_1_5",
-      "time": 1,
+      "name": "T-NB_3_3_5",
+      "time": 3,
       "task": 3,
-      "cpus": 4,
-      "memory": 12000,
+      "cpus": 2,
+      "memory": 4000,
       "model_config": {
         "algorithm_family": "NB"
       }
     },
     {
       "algo_type": "tpot",
-      "name": "T-NB_6_1_5",
-      "time": 1,
+      "name": "T-NB_6_3_5",
+      "time": 3,
       "task": 6,
-      "cpus": 4,
-      "memory": 12000,
+      "cpus": 2,
+      "memory": 4000,
       "model_config": {
         "algorithm_family": "NB"
       }
     },
     {
       "algo_type": "tpot",
-      "name": "T-NB_11_1_5",
-      "time": 1,
+      "name": "T-NB_11_3_5",
+      "time": 3,
       "task": 11,
-      "cpus": 4,
-      "memory": 12000,
+      "cpus": 2,
+      "memory": 4000,
       "model_config": {
         "algorithm_family": "NB"
       }
     },
     {
       "algo_type": "tpot",
-      "name": "T-TR_3_1_5",
-      "time": 1,
+      "name": "T-TR_3_3_5",
+      "time": 3,
       "task": 3,
-      "cpus": 4,
-      "memory": 12000,
+      "cpus": 2,
+      "memory": 4000,
       "model_config": {
         "algorithm_family": "TR"
       }
     },
     {
       "algo_type": "tpot",
-      "name": "T-TR_6_1_5",
-      "time": 1,
+      "name": "T-TR_6_3_5",
+      "time": 3,
       "task": 6,
-      "cpus": 4,
-      "memory": 12000,
+      "cpus": 2,
+      "memory": 4000,
       "model_config": {
         "algorithm_family": "TR"
       }
     },
     {
       "algo_type": "tpot",
-      "name": "T-TR_11_1_5",
-      "time": 1,
+      "name": "T-TR_11_3_5",
+      "time": 3,
       "task": 11,
-      "cpus": 4,
-      "memory": 12000,
+      "cpus": 2,
+      "memory": 4000,
       "model_config": {
         "algorithm_family": "TR"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-LR_3_1_5",
-      "time": 1,
-      "task": 3,
-      "cpus": 4,
-      "memory": 12000,
-      "model_config": {
-        "algorithm_family": "LR"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-LR_6_1_5",
-      "time": 1,
-      "task": 6,
-      "cpus": 4,
-      "memory": 12000,
-      "model_config": {
-        "algorithm_family": "LR"
-      }
-    },
-    {
-      "algo_type": "tpot",
-      "name": "T-LR_11_1_5",
-      "time": 1,
-      "task": 11,
-      "cpus": 4,
-      "memory": 12000,
-      "model_config": {
-        "algorithm_family": "LR"
       }
     }
   ],
   "selector": [
     {
       "algo_type": "autosklearn",
-      "name": "ASK-3_1_5",
-      "time": 1,
+      "name": "ASK-3_3_5",
+      "time": 3,
       "task": 3,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_3_1_5",
-        "T-TR_3_1_5",
-        "T-LR_3_1_5"
+        "T-NB_3_3_5",
+        "T-TR_3_3_5"
       ]
     },
     {
       "algo_type": "autosklearn",
-      "name": "ASK-6_1_5",
-      "time": 1,
+      "name": "ASK-6_3_5",
+      "time": 3,
       "task": 6,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_6_1_5",
-        "T-TR_6_1_5",
-        "T-LR_6_1_5"
+        "T-NB_6_3_5",
+        "T-TR_6_3_5"
       ]
     },
     {
       "algo_type": "autosklearn",
-      "name": "ASK-11_1_5",
-      "time": 1,
+      "name": "ASK-11_3_5",
+      "time": 3,
       "task": 11,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_11_1_5",
-        "T-TR_11_1_5",
-        "T-LR_11_1_5"
+        "T-NB_11_3_5",
+        "T-TR_11_3_5"
       ]
     },
     {
       "algo_type": "metades",
-      "name": "MDES-3_1_5",
-      "time": 1,
+      "name": "MDES-3_3_5",
+      "time": 3,
       "task": 3,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_3_1_5",
-        "T-TR_3_1_5",
-        "T-LR_3_1_5"
+        "T-NB_3_3_5",
+        "T-TR_3_3_5"
       ]
     },
     {
       "algo_type": "metades",
-      "name": "MDES-6_1_5",
-      "time": 1,
+      "name": "MDES-6_3_5",
+      "time": 3,
       "task": 6,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_6_1_5",
-        "T-TR_6_1_5",
-        "T-LR_6_1_5"
+        "T-NB_6_3_5",
+        "T-TR_6_3_5"
       ]
     },
     {
       "algo_type": "metades",
-      "name": "MDES-11_1_5",
-      "time": 1,
+      "name": "MDES-11_3_5",
+      "time": 3,
       "task": 11,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_11_1_5",
-        "T-TR_11_1_5",
-        "T-LR_11_1_5"
+        "T-NB_11_3_5",
+        "T-TR_11_3_5"
       ]
     },
     {
       "algo_type": "desrrc",
-      "name": "DESRRC-3_1_5",
-      "time": 1,
+      "name": "DESRRC-3_3_5",
+      "time": 3,
       "task": 3,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_3_1_5",
-        "T-TR_3_1_5",
-        "T-LR_3_1_5"
+        "T-NB_3_3_5",
+        "T-TR_3_3_5"
       ]
     },
     {
       "algo_type": "desrrc",
-      "name": "DESRRC-6_1_5",
-      "time": 1,
+      "name": "DESRRC-6_3_5",
+      "time": 3,
       "task": 6,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_6_1_5",
-        "T-TR_6_1_5",
-        "T-LR_6_1_5"
+        "T-NB_6_3_5",
+        "T-TR_6_3_5"
       ]
     },
     {
       "algo_type": "desrrc",
-      "name": "DESRRC-11_1_5",
-      "time": 1,
+      "name": "DESRRC-11_3_5",
+      "time": 3,
       "task": 11,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_11_1_5",
-        "T-TR_11_1_5",
-        "T-LR_11_1_5"
+        "T-NB_11_3_5",
+        "T-TR_11_3_5"
       ]
     },
     {
       "algo_type": "desknorau",
-      "name": "KNORAU-3_1_5",
-      "time": 1,
+      "name": "KNORAU-3_3_5",
+      "time": 3,
       "task": 3,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_3_1_5",
-        "T-TR_3_1_5",
-        "T-LR_3_1_5"
+        "T-NB_3_3_5",
+        "T-TR_3_3_5"
       ]
     },
     {
       "algo_type": "desknorau",
-      "name": "KNORAU-6_1_5",
-      "time": 1,
+      "name": "KNORAU-6_3_5",
+      "time": 3,
       "task": 6,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_6_1_5",
-        "T-TR_6_1_5",
-        "T-LR_6_1_5"
+        "T-NB_6_3_5",
+        "T-TR_6_3_5"
       ]
     },
     {
       "algo_type": "desknorau",
-      "name": "KNORAU-11_1_5",
-      "time": 1,
+      "name": "KNORAU-11_3_5",
+      "time": 3,
       "task": 11,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_11_1_5",
-        "T-TR_11_1_5",
-        "T-LR_11_1_5"
+        "T-NB_11_3_5",
+        "T-TR_11_3_5"
       ]
     },
     {
       "algo_type": "lca",
-      "name": "LCA-3_1_5",
-      "time": 1,
+      "name": "LCA-3_3_5",
+      "time": 3,
       "task": 3,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_3_1_5",
-        "T-TR_3_1_5",
-        "T-LR_3_1_5"
+        "T-NB_3_3_5",
+        "T-TR_3_3_5"
       ]
     },
     {
       "algo_type": "lca",
-      "name": "LCA-6_1_5",
-      "time": 1,
+      "name": "LCA-6_3_5",
+      "time": 3,
       "task": 6,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_6_1_5",
-        "T-TR_6_1_5",
-        "T-LR_6_1_5"
+        "T-NB_6_3_5",
+        "T-TR_6_3_5"
       ]
     },
     {
       "algo_type": "lca",
-      "name": "LCA-11_1_5",
-      "time": 1,
+      "name": "LCA-11_3_5",
+      "time": 3,
       "task": 11,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_11_1_5",
-        "T-TR_11_1_5",
-        "T-LR_11_1_5"
+        "T-NB_11_3_5",
+        "T-TR_11_3_5"
       ]
     },
     {
       "algo_type": "mla",
-      "name": "MLA-3_1_5",
-      "time": 1,
+      "name": "MLA-3_3_5",
+      "time": 3,
       "task": 3,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_3_1_5",
-        "T-TR_3_1_5",
-        "T-LR_3_1_5"
+        "T-NB_3_3_5",
+        "T-TR_3_3_5"
       ]
     },
     {
       "algo_type": "mla",
-      "name": "MLA-6_1_5",
-      "time": 1,
+      "name": "MLA-6_3_5",
+      "time": 3,
       "task": 6,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_6_1_5",
-        "T-TR_6_1_5",
-        "T-LR_6_1_5"
+        "T-NB_6_3_5",
+        "T-TR_6_3_5"
       ]
     },
     {
       "algo_type": "mla",
-      "name": "MLA-11_1_5",
-      "time": 1,
+      "name": "MLA-11_3_5",
+      "time": 3,
       "task": 11,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {},
       "classifiers": [
-        "T-NB_11_1_5",
-        "T-TR_11_1_5",
-        "T-LR_11_1_5"
+        "T-NB_11_3_5",
+        "T-TR_11_3_5"
       ]
     }
   ],
   "baseline": [
     {
       "algo_type": "autosklearn",
-      "name": "bASK-3_1_5",
-      "time": 1,
+      "name": "bASK-3_3_5",
+      "time": 3,
       "task": 3,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {}
     },
     {
       "algo_type": "autosklearn",
-      "name": "bASK-6_1_5",
-      "time": 1,
+      "name": "bASK-6_3_5",
+      "time": 3,
       "task": 6,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {}
     },
     {
       "algo_type": "autosklearn",
-      "name": "bASK-11_1_5",
-      "time": 1,
+      "name": "bASK-11_3_5",
+      "time": 3,
       "task": 11,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {}
     },
     {
       "algo_type": "tpot",
-      "name": "bTPOT-3_1_5",
-      "time": 1,
+      "name": "bTPOT-3_3_5",
+      "time": 3,
       "task": 3,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {}
     },
     {
       "algo_type": "tpot",
-      "name": "bTPOT-6_1_5",
-      "time": 1,
+      "name": "bTPOT-6_3_5",
+      "time": 3,
       "task": 6,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {}
     },
     {
       "algo_type": "tpot",
-      "name": "bTPOT-11_1_5",
-      "time": 1,
+      "name": "bTPOT-11_3_5",
+      "time": 3,
       "task": 11,
-      "cpus": 4,
-      "memory": 20000,
+      "cpus": 2,
+      "memory": 6000,
       "model_config": {}
     }
   ]

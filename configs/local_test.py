@@ -7,13 +7,13 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 config_path = os.path.join(current_dir, f'{benchmark_name}.json')
 
 tasks = [3, 6, 11]
-times_in_mins = [1]
+times_in_mins = [3]
 seed = 5
 split = [0.5, 0.3, 0.2]
-cpus = 4
-memory_classifiers = 12000
-memory_selectors = 20000
-tpot_classifiers = ['NB', 'TR', 'LR']
+cpus = 2
+memory_classifiers = 4000
+memory_selectors = 6000
+tpot_classifiers = ['NB', 'TR']
 selectors = ['autosklearn', 'metades']
 baselines = ['autosklearn', 'tpot']
 
