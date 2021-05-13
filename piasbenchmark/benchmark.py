@@ -1,25 +1,17 @@
 """
 Manages job objects for the benchmark given a config to work from
 """
-from typing import Dict, Iterable, Optional, List, Tuple, Any
+from typing import Dict, Iterable, Optional, List, Tuple, Any, Union
 
 import os
 import json
 from itertools import chain
 
-import numpy as np
 from slurmjobmanager import LocalEnvironment, SlurmEnvironment
 
 from .slurm import slurm_job_options
 from .jobs import job_types, BenchmarkJob
 from .util import get_task_split
-
-# TODO
-# Finished writing up the autosklearn selector and classifiers, should
-# fix it all up and start running it on HORUS.
-# After that, I should to begin to get the other selectors up and running
-# and then start keeping track of metrics
-
 
 class Benchmark:
 
@@ -186,11 +178,13 @@ class Benchmark:
 
     def run(
         self,
-        jobs: Optional[Iterable[BenchmarkJob]] = None
+        jobs: Optional[Union[BenchmarkJob, Iterable[BenchmarkJob]]] = None
     ) -> None:
-        # If no jobs specified, collect all the available ones
-        if jobs is None:
+        if jobs is None: # Collect all jobs if none specified
             jobs = self.jobs()
+
+        elif isinstance(jobs, BenchmarkJob): # If only single job passed
+            jobs = [jobs]
 
         # Filter out any complete or failed jobs
         jobs = [
