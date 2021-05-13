@@ -179,7 +179,7 @@ from piasbenchmark import Benchmark
 
 benchmark = Benchmark('path/to/config')
 failed_jobs = benchmark
-bench.run() # Runs any jobs that have not failed
+bench.run() # Runs any jobs that are not blocked, not complete and not failed
 
 status = bench.status()
 failed_jobs = status['failed']
