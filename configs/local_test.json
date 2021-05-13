@@ -13,7 +13,8 @@
   "tasks": [
     3,
     6,
-    11
+    11,
+    12
   ],
   "classifier": [
     {
@@ -51,6 +52,17 @@
     },
     {
       "algo_type": "tpot",
+      "name": "T-NB_12_3_5",
+      "time": 3,
+      "task": 12,
+      "cpus": 2,
+      "memory": 4000,
+      "model_config": {
+        "algorithm_family": "NB"
+      }
+    },
+    {
+      "algo_type": "tpot",
       "name": "T-TR_3_3_5",
       "time": 3,
       "task": 3,
@@ -76,6 +88,17 @@
       "name": "T-TR_11_3_5",
       "time": 3,
       "task": 11,
+      "cpus": 2,
+      "memory": 4000,
+      "model_config": {
+        "algorithm_family": "TR"
+      }
+    },
+    {
+      "algo_type": "tpot",
+      "name": "T-TR_12_3_5",
+      "time": 3,
+      "task": 12,
       "cpus": 2,
       "memory": 4000,
       "model_config": {
@@ -124,6 +147,19 @@
       ]
     },
     {
+      "algo_type": "autosklearn",
+      "name": "ASK-12_3_5",
+      "time": 3,
+      "task": 12,
+      "cpus": 2,
+      "memory": 6000,
+      "model_config": {},
+      "classifiers": [
+        "T-NB_12_3_5",
+        "T-TR_12_3_5"
+      ]
+    },
+    {
       "algo_type": "metades",
       "name": "MDES-3_3_5",
       "time": 3,
@@ -160,6 +196,19 @@
       "classifiers": [
         "T-NB_11_3_5",
         "T-TR_11_3_5"
+      ]
+    },
+    {
+      "algo_type": "metades",
+      "name": "MDES-12_3_5",
+      "time": 3,
+      "task": 12,
+      "cpus": 2,
+      "memory": 6000,
+      "model_config": {},
+      "classifiers": [
+        "T-NB_12_3_5",
+        "T-TR_12_3_5"
       ]
     },
     {
@@ -202,6 +251,19 @@
       ]
     },
     {
+      "algo_type": "desrrc",
+      "name": "DESRRC-12_3_5",
+      "time": 3,
+      "task": 12,
+      "cpus": 2,
+      "memory": 6000,
+      "model_config": {},
+      "classifiers": [
+        "T-NB_12_3_5",
+        "T-TR_12_3_5"
+      ]
+    },
+    {
       "algo_type": "desknorau",
       "name": "KNORAU-3_3_5",
       "time": 3,
@@ -238,6 +300,19 @@
       "classifiers": [
         "T-NB_11_3_5",
         "T-TR_11_3_5"
+      ]
+    },
+    {
+      "algo_type": "desknorau",
+      "name": "KNORAU-12_3_5",
+      "time": 3,
+      "task": 12,
+      "cpus": 2,
+      "memory": 6000,
+      "model_config": {},
+      "classifiers": [
+        "T-NB_12_3_5",
+        "T-TR_12_3_5"
       ]
     },
     {
@@ -280,6 +355,19 @@
       ]
     },
     {
+      "algo_type": "lca",
+      "name": "LCA-12_3_5",
+      "time": 3,
+      "task": 12,
+      "cpus": 2,
+      "memory": 6000,
+      "model_config": {},
+      "classifiers": [
+        "T-NB_12_3_5",
+        "T-TR_12_3_5"
+      ]
+    },
+    {
       "algo_type": "mla",
       "name": "MLA-3_3_5",
       "time": 3,
@@ -317,6 +405,19 @@
         "T-NB_11_3_5",
         "T-TR_11_3_5"
       ]
+    },
+    {
+      "algo_type": "mla",
+      "name": "MLA-12_3_5",
+      "time": 3,
+      "task": 12,
+      "cpus": 2,
+      "memory": 6000,
+      "model_config": {},
+      "classifiers": [
+        "T-NB_12_3_5",
+        "T-TR_12_3_5"
+      ]
     }
   ],
   "baseline": [
@@ -348,6 +449,15 @@
       "model_config": {}
     },
     {
+      "algo_type": "autosklearn",
+      "name": "bASK-12_3_5",
+      "time": 3,
+      "task": 12,
+      "cpus": 2,
+      "memory": 6000,
+      "model_config": {}
+    },
+    {
       "algo_type": "tpot",
       "name": "bTPOT-3_3_5",
       "time": 3,
@@ -370,6 +480,15 @@
       "name": "bTPOT-11_3_5",
       "time": 3,
       "task": 11,
+      "cpus": 2,
+      "memory": 6000,
+      "model_config": {}
+    },
+    {
+      "algo_type": "tpot",
+      "name": "bTPOT-12_3_5",
+      "time": 3,
+      "task": 12,
       "cpus": 2,
       "memory": 6000,
       "model_config": {}

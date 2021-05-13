@@ -6,7 +6,7 @@ benchmark_name = 'local_test'
 current_dir = os.path.dirname(os.path.abspath(__file__))
 config_path = os.path.join(current_dir, f'{benchmark_name}.json')
 
-tasks = [3, 6, 11]
+tasks = [3, 6, 11, 12]
 times_in_mins = [3]
 seed = 5
 split = [0.5, 0.3, 0.2]
