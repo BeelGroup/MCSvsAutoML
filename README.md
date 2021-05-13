@@ -16,7 +16,7 @@ running is available.
 For any issues we are aware of, please see [Issues](#Issues)
 
 ## TLDR;
-```BASH
+```sh
 # ...in the cloned and installed git repo
 python ./scripts/run.py --config ./configs/local_test.json    # ~30 min
 
@@ -40,7 +40,7 @@ For installing, first the repository must be downloaded and then the dependancie
 We recommend setting up a [virtual environment](https://docs.python.org/3/library/venv.html)  before installing to prevent conflicts from any other libraries
 on your system.
 
-```BASH
+```sh
 # Get source code
 git clone https://github.com/jonathandoe-submission/PerInstanceAlgorithmSelectionBenchmark/
 
@@ -83,7 +83,7 @@ Please see the provided configurations for more information.
 ## Running the benchmark
 A benchmark config can be run using `scripts/run.py`
 
-```Bash
+```sh
 python ./scripts/run.py --config ./configs/local_test.json    # ~30 min
 ```
 
@@ -97,7 +97,7 @@ Logs for each job can also be found in these folders.
 ## Generating Results and Plots
 Results can be generated with
 
-```Bash
+```sh
 # Create a directory to store results in
 mkdir my_results_folder
 
@@ -105,7 +105,6 @@ mkdir my_results_folder
 python ./scripts/gen_results.py \
     --config ./configs/local_test.json \
     --results ./my_results_folder
-
 ```
 
 The following results are created and also provided for the primary experiment
@@ -115,7 +114,7 @@ The following results are created and also provided for the primary experiment
 * `{benchname}_normscores.csv` - Normalized scores for all models on all datasets.
 
 Furthermore, the plots can be generated with:
-```Bash
+```sh
 # Create the plots for the benchmark
 python ./scripts/create_plots.py \
     --config ./configs/local_test.json \
@@ -154,6 +153,7 @@ As every slurm configuration will be different, please see `piasbenchmark/slurm.
 for slurm parameters for your own slurm HPC.
 
 # Issues
+#### Please call fit() first
 ---
 ```
 RuntimeError: A pipeline has not yet been optimized. Please call fit() first.
@@ -178,6 +178,7 @@ For other distributed computing software, please adapt as required.
     provide more memory for those specific datasets or to exclude them if 
     that is not possible.
 
+#### smac attempted to use a functionality that requires module ...
 ---
 ```
 ImportError: smac attempted to use a functionality that requires module pyDOE, but it couldn't be loaded. ...
