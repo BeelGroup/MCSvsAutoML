@@ -2,6 +2,7 @@ from typing import Dict, Any
 
 import os
 import json
+import math
 import argparse
 from functools import reduce
 
@@ -150,6 +151,10 @@ def umap_dataset_properties_all_categories(best_values: pd.DataFrame,
                                            best_names: pd.DataFrame,
                                            cached_metaprops: str,
                                            random_state=5):
+    if len(best_values.index) < 4:
+        print("Can't create meaningful UMAP of less than 4 points")
+        return
+
     if os.path.exists(cached_metaprops):
         df_metaprops = pd.read_csv(cached_metaprops, index_col=0)
     else:
@@ -190,7 +195,10 @@ def umap_dataset_properties_all_categories(best_values: pd.DataFrame,
     df_scaled_metaprops = StandardScaler().fit_transform(df_metaprops)
 
     # Use UMAP to produce embedding
-    umapper = UMAP(n_neighbors=10, random_state=random_state)
+    # Doesn't really make sense with low number of datasets
+    n_datasets = len(df_metaprops)
+    K = math.ceil(n_datasets/2) if n_datasets < 20 else 10
+    umapper = UMAP(n_neighbors=K, random_state=random_state)
     embeddings = umapper.fit_transform(df_scaled_metaprops)
 
     figsize = (10, 12)
@@ -239,6 +247,10 @@ def umap_dataset_properties_selectors_baselines(best_values: pd.DataFrame,
                                                 best_names: pd.DataFrame,
                                                 cached_metaprops: str,
                                                 random_state=5):
+    if len(best_values.index) < 4:
+        print("Can't create meaningful UMAP of less than 4 points")
+        return
+
     if os.path.exists(cached_metaprops):
         df_metaprops = pd.read_csv(cached_metaprops, index_col=0)
     else:
@@ -279,7 +291,10 @@ def umap_dataset_properties_selectors_baselines(best_values: pd.DataFrame,
     df_scaled_metaprops = StandardScaler().fit_transform(df_metaprops)
 
     # Use UMAP to produce embedding
-    umapper = UMAP(n_neighbors=10, random_state=random_state)
+    # Doesn't really make sense with low number of datasets
+    n_datasets = len(df_metaprops)
+    K = math.ceil(n_datasets/2) if n_datasets < 20 else 10
+    umapper = UMAP(n_neighbors=K, random_state=random_state)
     embeddings = umapper.fit_transform(df_scaled_metaprops)
 
     figsize = (10, 12)
