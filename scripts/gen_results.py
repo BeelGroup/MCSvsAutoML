@@ -118,9 +118,11 @@ def generate_results(bench: Benchmark) -> Dict[str, Any]:
 
         single_best_acc = np.max(classifier_accuracies)
 
-        task_results[task] = {
-            'static_baseline_oracle': { 'acc': oracle_acc, 'norm_score': 1 },
-            'static_baseline_single_best': { 'acc': single_best_acc, 'norm_score': 0 },
+        task_results[task]['static_baseline_oracle'] = {
+                'acc': oracle_acc, 'norm_score': 1 
+        }
+        task_results[task]['static_baseline_single_best'] = {
+                'acc': single_best_acc, 'norm_score': 1 
         }
 
         # Generate norm scores for the task, minus the two static baselines
