@@ -152,6 +152,43 @@ benchmark_config = {
 As every slurm configuration will be different, please see `piasbenchmark/slurm.py`
 for slurm parameters for your own slurm HPC.
 
+## Running on a slurm cluster
+Running over a slurm cluster can be a bit more involved as jobs will fail
+and can exceed the amount of jobs that allowed to be allocated.
+
+For this we recommend either interactively running jobs or creating your own
+scripts
+
+#### Running jobs
+```Python
+from piasbenchmark import Benchmark
+
+benchmark = Benchmark('path/to/config')
+bench.run() # Runs any jobs that have not failed
+```
+
+#### List and rerun failed jobs
+Jobs can fail for a number of reasons, please see
+`{path}/{jobname}/log.txt` for specific reasosn and act accordingly.
+
+The complete status of all jobs can be seen with `benchmark.status()`.
+Job states are different when running on a cluster vs locally and so
+when running with a local config, not all status types will be available.
+```Python
+from piasbenchmark import Benchmark
+
+benchmark = Benchmark('path/to/config')
+failed_jobs = benchmark
+bench.run() # Runs any jobs that have not failed
+
+status = bench.status()
+failed_jobs = status['failed']
+for job in failed_jobs:
+    job.reset() # Deletes the folder {path}/{jobname}
+
+bench.run(failed_jobs) # Rerun the failed jobs
+```
+
 # Issues
 #### Please call fit() first
 ---
