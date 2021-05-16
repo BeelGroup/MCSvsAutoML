@@ -42,10 +42,10 @@ on your system.
 
 ```sh
 # Get source code
-git clone https://github.com/jonathandoe-submission/PerInstanceAlgorithmSelectionBenchmark/
+git clone https://github.com/eddiebergman/piasbenchmark/
 
 # Enter repository
-cd PerInstanceAlgorithmSelectionBenchmark
+cd piasbenchmark
 
 # Install all dependancies as listed in 
 pip install -r requirements.txt
