@@ -42,7 +42,7 @@ on your system.
 
 ```sh
 # Get source code
-git clone https://github.com/eddiebergman/piasbenchmark/
+git clone https://github.com/BeelGroup/piasbenchmark/
 
 # Enter repository
 cd piasbenchmark
